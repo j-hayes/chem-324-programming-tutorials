@@ -1,4 +1,5 @@
-# JupyterSite
+
+# Jupyter Site
 
 JupyterSite allows you to easily build a suite of rendered documents from Jupyter
 notebooks. Jupyter notebooks go in, html/markdown pages, PDFs, slideshows, and tex
@@ -11,7 +12,7 @@ can be disabled by commenting out the appropriate lines).
 
 ## Example Site
 
-An example of the product this package generates can be found at: https://github.com/UCIDataScienceInitiative/IntroToJulia .
+An example of the product this package generates can be found at: https://github.com/UCIDataScienceInitiative/IntroToJulia . 
 
 The site that this generates is: http://UCIDataScienceInitiative.github.io/IntroToJulia/
 
@@ -86,6 +87,7 @@ code with images will allow the PDFs to build, but the images will not appear).
 This repository is also setup as a Julia package repository. To have users easily
 open up the Jupyter notebooks, they can use the commands from within Julia:
 
+
 ```julia
 Pkg.add("IJulia") # use once to install IJulia
 Pkg.clone("https://github.com/ChrisRackauckas/JupyterSite") # Change this to your Github repo
@@ -95,13 +97,14 @@ notebook(dir=Pkg.dir("JupyterSite")*"/Notebooks")
 
 This will open up the Jupyter notebook at the location of your notebooks
 
-### Addition: Continuous Integration Testing
+### Additional Feature: Continuous Integration Testing
 
 One can use Julia's continuous integration testing framework to test your notebooks.
 To do so, check out [this blog post](http://www.stochasticlifestyle.com/finalizing-julia-package-documentation-testing-coverage-publishing/)
 for how to setup Julia CI and [NBinclude.jl](https://github.com/stevengj/NBInclude.jl) for how
 to include notebook files into Julia. Use this to add tests to the test/runtests.jl
 file. To run the tests locally, use the commands
+
 
 ```julia
 Pkg.test("JupyterSite")
@@ -121,7 +124,7 @@ https://chrisrackauckas.github.io/JupyterSite/Html/GithubIntroduction.html
 
 ## Slides
 
-https://chrisrackauckas.github.io/JupyterSite/
+https://chrisrackauckas.github.io/JupyterSite/Slides/Index.html
 
 https://chrisrackauckas.github.io/JupyterSite/Slides/GithubIntroduction.html
 
@@ -136,9 +139,3 @@ https://github.com/ChrisRackauckas/JupyterSite/tree/master/Tex
 ## PDF
 
 https://github.com/ChrisRackauckas/JupyterSite/tree/master/Pdfs
-
-
-# Live Notebooks
-
-For mixing the "live" part of the notebook with slideshows, try [RISE](https://github.com/damianavila/RISE).
-RISE works with the notebooks included in this repository.
