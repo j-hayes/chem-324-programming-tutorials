@@ -1,0 +1,623 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>An IJulia Demo &#8212; CHEM 324</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Julia Binder demo" href="README.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">CHEM 324</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="README.html">
+   Julia Binder demo
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   An IJulia Demo
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/demo.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/j-hayes/chem-324-programming-tutorials"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/j-hayes/chem-324-programming-tutorials/issues/new?title=Issue%20on%20page%20%2Fdemo.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/j-hayes/chem-324-programming-tutorials/main?urlpath=lab/tree/demo.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/j-hayes/chem-324-programming-tutorials/blob/main/demo.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   An IJulia Demo
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#basic-julia-interaction">
+     Basic Julia interaction
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#interactive-plotting-in-ijulia">
+   Interactive Plotting in IJulia
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#multimedia-display-in-ijulia">
+     Multimedia display in IJulia
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>An IJulia Demo</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   An IJulia Demo
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#basic-julia-interaction">
+     Basic Julia interaction
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#interactive-plotting-in-ijulia">
+   Interactive Plotting in IJulia
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#multimedia-display-in-ijulia">
+     Multimedia display in IJulia
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <p><strong>NOTE</strong>: This is a Julia demo for Binder, it’s been adapted from the Julia demo on the nbconvert website.</p>
+<p>Binder is an open-source project and Julia support is early in development. If you’d like to improve Julia support in Binder, see our issue on adding Julia support here: <a class="reference external" href="https://github.com/jupyter/repo2docker/issues/23">https://github.com/jupyter/repo2docker/issues/23</a>. We’d love to hear from you!</p>
+<div class="tex2jax_ignore mathjax_ignore section" id="an-ijulia-demo">
+<h1>An IJulia Demo<a class="headerlink" href="#an-ijulia-demo" title="Permalink to this headline">¶</a></h1>
+<p>This notebook uses <strong>IJulia</strong>: a <a class="reference external" href="http://julialang.org/">Julia-language</a> backend combined with the <a class="reference external" href="http://ipython.org/">IPython</a> interactive environment.   This combination allows you to interact with the Julia language using IPython’s powerful <a class="reference external" href="http://ipython.org/notebook.html">graphical notebook</a>, which combines code, formatted text, math, and multimedia in a single document.</p>
+<div class="section" id="basic-julia-interaction">
+<h2>Basic Julia interaction<a class="headerlink" href="#basic-julia-interaction" title="Permalink to this headline">¶</a></h2>
+<p>Basic mathematical expressions work like you expect:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="o">+</span> <span class="n">sin</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.1411200080598671
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can define variables, write loops, and execute arbitrary multiline code blocks.  Here is an example of an alternating harmonic series <span class="math notranslate nohighlight">\(\sum_{n=1}^\infty \frac{(-1)^n}{n}\)</span> from a <a class="reference external" href="http://homerreid.ath.cx/teaching/18.330/JuliaProgramming.shtml#SimplePrograms">Julia tutorial by Homer Reid</a>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="k">for</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">1</span><span class="o">:</span><span class="mi">2</span><span class="o">:</span><span class="mi">10000</span>
+    <span class="n">s</span> <span class="o">+=</span> <span class="mi">1</span><span class="o">/</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">end</span>
+<span class="n">s</span> <span class="c"># an expression on the last line (if it doesn&#39;t end with &quot;;&quot;) is printed as &quot;Out&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6930971830599458
+</pre></div>
+</div>
+</div>
+</div>
+<p>Previous outputs can be referred to via <code class="docutils literal notranslate"><span class="pre">Out[</span></code><em>n</em><code class="docutils literal notranslate"><span class="pre">]</span></code>, following the IPython, for example <code class="docutils literal notranslate"><span class="pre">Out[2]</span></code> for the result above.  You can also use the shorthand <code class="docutils literal notranslate"><span class="pre">_2</span></code>, or <code class="docutils literal notranslate"><span class="pre">_</span></code> for the previous result, as in IPython.  Like in Matlab, <code class="docutils literal notranslate"><span class="pre">ans</span></code> can also be used to refer to the previous result, <em>even if it was not printed</em> (when the command ended with <code class="docutils literal notranslate"><span class="pre">;</span></code>).</p>
+<p>For example, the harmonic series above should be converging (slowly) to <span class="math notranslate nohighlight">\(\ln 2\)</span>, and we can check this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">Out</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="n">log</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-4.9997499999454575e-5
+</pre></div>
+</div>
+</div>
+</div>
+<p>Like Matlab or Scipy + Numpy, Julia has lots of mathematical functions and linear algebra built in.  For example, we can define a <span class="math notranslate nohighlight">\(500\times500\)</span> random matrix <span class="math notranslate nohighlight">\(R\)</span> and form the positive-definite matrix <span class="math notranslate nohighlight">\(R^* R\)</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">R</span> <span class="o">=</span> <span class="n">rand</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span><span class="mi">500</span><span class="p">)</span>
+<span class="n">R</span><span class="o">&#39;</span> <span class="o">*</span> <span class="n">R</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>500×500 Matrix{Float64}:
+ 159.321  119.096  125.809  119.44   …  116.299  112.048  117.386  125.247
+ 119.096  164.07   131.457  120.328     119.273  115.089  119.536  128.35
+ 125.809  131.457  174.423  131.492     129.098  122.37   124.978  130.889
+ 119.44   120.328  131.492  173.006     125.494  119.671  122.307  129.75
+ 122.11   120.754  128.367  127.28      119.276  114.847  120.632  123.719
+ 119.865  122.381  129.643  125.988  …  122.997  118.326  124.985  131.685
+ 120.935  120.552  128.811  129.747     120.43   119.337  122.357  127.619
+ 122.194  123.14   127.616  123.138     120.378  118.204  118.761  127.393
+ 117.19   116.679  125.864  117.769     115.333  111.998  114.307  121.104
+ 119.079  121.193  129.53   126.936     123.203  116.139  115.939  128.431
+ 123.071  126.35   133.529  125.883  …  124.116  119.417  120.128  129.506
+ 122.723  124.686  131.876  128.373     123.29   118.789  122.005  130.673
+ 117.726  123.846  130.171  129.253     124.048  119.766  120.997  130.032
+   ⋮                                 ⋱                             
+ 122.599  124.925  128.648  127.221     123.784  114.909  119.493  127.397
+ 123.603  126.905  132.63   126.764     127.002  123.175  124.734  132.137
+ 117.804  119.372  124.464  121.445  …  116.398  110.697  115.528  122.953
+ 120.533  123.274  132.72   132.095     121.788  114.739  124.531  127.777
+ 121.261  116.785  127.387  124.257     120.363  115.658  121.403  125.446
+ 122.661  120.204  129.639  127.769     125.506  116.467  120.551  131.138
+ 129.097  128.064  133.772  132.334     126.336  124.216  130.014  132.139
+ 122.278  123.402  132.139  121.461  …  123.017  113.267  119.75   125.512
+ 116.299  119.273  129.098  125.494     162.091  118.272  118.356  123.331
+ 112.048  115.089  122.37   119.671     118.272  153.659  114.735  123.914
+ 117.386  119.536  124.978  122.307     118.356  114.735  162.178  124.483
+ 125.247  128.35   130.889  129.75      123.331  123.914  124.483  170.825
+</pre></div>
+</div>
+</div>
+</div>
+<p>(Notice that, by default, only a portion of a large matrix is shown.  You didn’t really want to read <span class="math notranslate nohighlight">\(500^2 = 250,000\)</span> numbers, did you?)</p>
+<p>Standard output from Julia is also captured and sent to the IJulia notebook as you’d expect:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Hello world!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">)</span>
+<span class="n">println</span><span class="p">(</span><span class="nb">stderr</span><span class="p">,</span> <span class="s">&quot;Börk börk börk, some unicode output on stderr...</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello world!
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Börk börk börk, some unicode output on stderr...
+</pre></div>
+</div>
+</div>
+</div>
+<p>IJulia even captures output from external C libraries (and notice how easy it is using Julia’s <code class="docutils literal notranslate"><span class="pre">ccall</span></code> intrinsic):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="k">ccall</span><span class="p">(</span><span class="ss">:printf</span><span class="p">,</span> <span class="kt">Cint</span><span class="p">,</span> <span class="p">(</span><span class="kt">Ptr</span><span class="p">{</span><span class="kt">UInt8</span><span class="p">},),</span> <span class="s">&quot;Hello from C!!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello from C!!
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can define functions, of course, and use them in later input cells:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">=</span> <span class="n">x</span> <span class="o">.+</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>f (generic function with 1 method)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">println</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">f</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">8</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6-element Vector{Int64}:
+ 2
+ 2
+ 3
+ 4
+ 6
+ 9
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice that the input above both printed an scalar to <code class="docutils literal notranslate"><span class="pre">STDOUT</span></code> and also returned a vector, the latter using Julia’s ability to write polymorphic functions and built-in array operations.</p>
+<p>On the other hand adding a string to a number is not defined (there is no <code class="docutils literal notranslate"><span class="pre">+</span></code> method defined for those types, although we could easily add one), and attempting to do so will throw an exception:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">(</span><span class="s">&quot;Hello?&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="ne">MethodError</span>: no method matching +(::String, ::Int64)
+<span class="n">Closest</span> <span class="n">candidates</span> <span class="n">are</span><span class="p">:</span>
+  <span class="o">+</span><span class="p">(::</span><span class="n">Any</span><span class="p">,</span> <span class="p">::</span><span class="n">Any</span><span class="p">,</span> <span class="p">::</span><span class="n">Any</span><span class="p">,</span> <span class="p">::</span><span class="n">Any</span><span class="o">...</span><span class="p">)</span> <span class="n">at</span> <span class="n">operators</span><span class="o">.</span><span class="n">jl</span><span class="p">:</span><span class="mi">560</span>
+  <span class="o">+</span><span class="p">(::</span><span class="n">T</span><span class="p">,</span> <span class="p">::</span><span class="n">T</span><span class="p">)</span> <span class="n">where</span> <span class="n">T</span><span class="o">&lt;</span><span class="p">:</span><span class="n">Union</span><span class="p">{</span><span class="n">Int128</span><span class="p">,</span> <span class="n">Int16</span><span class="p">,</span> <span class="n">Int32</span><span class="p">,</span> <span class="n">Int64</span><span class="p">,</span> <span class="n">Int8</span><span class="p">,</span> <span class="n">UInt128</span><span class="p">,</span> <span class="n">UInt16</span><span class="p">,</span> <span class="n">UInt32</span><span class="p">,</span> <span class="n">UInt64</span><span class="p">,</span> <span class="n">UInt8</span><span class="p">}</span> <span class="n">at</span> <span class="nb">int</span><span class="o">.</span><span class="n">jl</span><span class="p">:</span><span class="mi">87</span>
+  <span class="o">+</span><span class="p">(::</span><span class="n">LinearAlgebra</span><span class="o">.</span><span class="n">UniformScaling</span><span class="p">,</span> <span class="p">::</span><span class="n">Number</span><span class="p">)</span> <span class="n">at</span> <span class="o">/</span><span class="n">buildworker</span><span class="o">/</span><span class="n">worker</span><span class="o">/</span><span class="n">package_linux64</span><span class="o">/</span><span class="n">build</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">julia</span><span class="o">/</span><span class="n">stdlib</span><span class="o">/</span><span class="n">v1</span><span class="mf">.6</span><span class="o">/</span><span class="n">LinearAlgebra</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">uniformscaling</span><span class="o">.</span><span class="n">jl</span><span class="p">:</span><span class="mi">145</span>
+  <span class="o">...</span>
+
+<span class="ne">Stacktrace</span>:
+ <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="n">_broadcast_getindex_evalf</span>
+   <span class="o">@</span> <span class="o">./</span><span class="n">broadcast</span><span class="o">.</span><span class="n">jl</span><span class="p">:</span><span class="mi">648</span> <span class="p">[</span><span class="n">inlined</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="n">_broadcast_getindex</span>
+   <span class="o">@</span> <span class="o">./</span><span class="n">broadcast</span><span class="o">.</span><span class="n">jl</span><span class="p">:</span><span class="mi">621</span> <span class="p">[</span><span class="n">inlined</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="n">getindex</span>
+   <span class="o">@</span> <span class="o">./</span><span class="n">broadcast</span><span class="o">.</span><span class="n">jl</span><span class="p">:</span><span class="mi">575</span> <span class="p">[</span><span class="n">inlined</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="n">copy</span>
+   <span class="o">@</span> <span class="o">./</span><span class="n">broadcast</span><span class="o">.</span><span class="n">jl</span><span class="p">:</span><span class="mi">898</span> <span class="p">[</span><span class="n">inlined</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="n">materialize</span>
+   <span class="o">@</span> <span class="o">./</span><span class="n">broadcast</span><span class="o">.</span><span class="n">jl</span><span class="p">:</span><span class="mi">883</span> <span class="p">[</span><span class="n">inlined</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">6</span><span class="p">]</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">::</span><span class="n">String</span><span class="p">)</span>
+   <span class="o">@</span> <span class="n">Main</span> <span class="o">./</span><span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">]:</span><span class="mi">1</span>
+ <span class="p">[</span><span class="mi">7</span><span class="p">]</span> <span class="n">top</span><span class="o">-</span><span class="n">level</span> <span class="n">scope</span>
+   <span class="o">@</span> <span class="n">In</span><span class="p">[</span><span class="mi">9</span><span class="p">]:</span><span class="mi">1</span>
+ <span class="p">[</span><span class="mi">8</span><span class="p">]</span> <span class="nb">eval</span>
+   <span class="o">@</span> <span class="o">./</span><span class="n">boot</span><span class="o">.</span><span class="n">jl</span><span class="p">:</span><span class="mi">360</span> <span class="p">[</span><span class="n">inlined</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">9</span><span class="p">]</span> <span class="n">include_string</span><span class="p">(</span><span class="n">mapexpr</span><span class="p">::</span><span class="n">typeof</span><span class="p">(</span><span class="n">REPL</span><span class="o">.</span><span class="n">softscope</span><span class="p">),</span> <span class="n">mod</span><span class="p">::</span><span class="n">Module</span><span class="p">,</span> <span class="n">code</span><span class="p">::</span><span class="n">String</span><span class="p">,</span> <span class="n">filename</span><span class="p">::</span><span class="n">String</span><span class="p">)</span>
+   <span class="o">@</span> <span class="n">Base</span> <span class="o">./</span><span class="n">loading</span><span class="o">.</span><span class="n">jl</span><span class="p">:</span><span class="mi">1116</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="interactive-plotting-in-ijulia">
+<h1>Interactive Plotting in IJulia<a class="headerlink" href="#interactive-plotting-in-ijulia" title="Permalink to this headline">¶</a></h1>
+<p>Below we’ll show off some plotting using the excellent Gadfly package. The plots are heavily inspired by <a class="reference external" href="http://int8.io/basic-visualization-in-julia-gadfly/">this blog post</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="k">using</span> <span class="n">RDatasets</span>
+<span class="n">sleep</span> <span class="o">=</span> <span class="n">dataset</span><span class="p">(</span><span class="s">&quot;lme4&quot;</span><span class="p">,</span><span class="s">&quot;sleepstudy&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="k">using</span> <span class="n">Gadfly</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">sleep</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s">&quot;Days&quot;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s">&quot;Reaction&quot;</span><span class="p">,</span> <span class="n">Geom</span><span class="o">.</span><span class="n">point</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">sleep</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s">&quot;Reaction&quot;</span><span class="p">,</span> <span class="n">Geom</span><span class="o">.</span><span class="n">density</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s">&quot;Subject&quot;</span><span class="p">,</span> <span class="n">Scale</span><span class="o">.</span><span class="n">x_continuous</span><span class="p">(</span><span class="n">minvalue</span><span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">maxvalue</span><span class="o">=</span> <span class="mi">500</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">sleep</span><span class="p">[</span><span class="o">!</span><span class="p">,</span> <span class="ss">:Reaction</span><span class="p">],</span> <span class="n">Geom</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">bincount</span> <span class="o">=</span> <span class="mi">30</span><span class="p">),</span> <span class="n">Scale</span><span class="o">.</span><span class="n">x_continuous</span><span class="p">(</span><span class="n">minvalue</span> <span class="o">=</span> <span class="mi">200</span><span class="p">),</span> <span class="n">color</span> <span class="o">=</span> <span class="n">sleep</span><span class="p">[</span><span class="o">!</span><span class="p">,</span> <span class="ss">:Days</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="multimedia-display-in-ijulia">
+<h2>Multimedia display in IJulia<a class="headerlink" href="#multimedia-display-in-ijulia" title="Permalink to this headline">¶</a></h2>
+<p>Like most programming languages, Julia has a built-in <code class="docutils literal notranslate"><span class="pre">print(x)</span></code> function for outputting an object <code class="docutils literal notranslate"><span class="pre">x</span></code> as text, and you can override the resulting text representation of a user-defined type by overloading Julia’s <code class="docutils literal notranslate"><span class="pre">show</span></code> function.  The next version of Julia, however, will extend this to a more general mechanism to display <strong>arbitrary multimedia representations</strong> of objects, as defined by standard <a class="reference external" href="https://en.wikipedia.org/wiki/Internet_media_type">MIME types</a>.   More specifically, the Julia <a class="reference external" href="http://docs.julialang.org/en/latest/stdlib/base/#multimedia-i-o">multimedia I/O API</a> provides:</p>
+<ul class="simple">
+<li><p>A <code class="docutils literal notranslate"><span class="pre">display(x)</span></code> function requests the richest available multimedia display of a Julia object x (with a <code class="docutils literal notranslate"><span class="pre">text/plain</span></code> fallback).</p></li>
+<li><p>Overloading <code class="docutils literal notranslate"><span class="pre">writemime</span></code> allows one to indicate arbitrary multimedia representations (keyed by standard MIME types) of user-defined types.</p></li>
+<li><p>Multimedia-capable display backends may be registered by subclassing a generic <code class="docutils literal notranslate"><span class="pre">Display</span></code> type.  IJulia provides one such backend which, thanks to the IPython notebook, is capable of displaying HTML, LaTeX, SVG, PNG, and JPEG media formats.</p></li>
+</ul>
+<p>The last two points are critical, because they separate <strong>multimedia export</strong> (which is defined by functions associated with the originating Julia data) from <strong>multimedia display</strong> (defined by backends which know nothing about the source of the data).</p>
+<p>Precisely these mechanism were used to create the inline PyPlot plots above.   To start with, the simplest thing is to provide the MIME type of the data when you call <code class="docutils literal notranslate"><span class="pre">display</span></code>, which allows you to pass “raw” data in the corresponding format:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="s">&quot;text/html&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;&quot;Hello &lt;b&gt;world&lt;/b&gt; in &lt;font color=&quot;red&quot;&gt;HTML&lt;/font&gt;!&quot;&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>However, it will be more common to attach this information to types, so that they display correctly automatically.  For example, let’s define a simple <code class="docutils literal notranslate"><span class="pre">HTML</span></code> type in Julia that contains a string and automatically displays as HTML (given an HTML-capable backend such as IJulia):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="k">mutable struct</span> <span class="kt">HTML</span>
+   <span class="n">s</span><span class="o">::</span><span class="kt">String</span>
+<span class="k">end</span>
+
+<span class="n">Base</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">io</span><span class="o">::</span><span class="kt">IO</span><span class="p">,</span> <span class="o">::</span><span class="kt">MIME</span><span class="s">&quot;text/html&quot;</span><span class="p">,</span> <span class="n">x</span><span class="o">::</span><span class="kt">HTML</span><span class="p">)</span> <span class="o">=</span> <span class="n">print</span><span class="p">(</span><span class="n">io</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here, <code class="docutils literal notranslate"><span class="pre">Base.show</span></code> is just a function that writes <code class="docutils literal notranslate"><span class="pre">x</span></code> in the corresponding format (<code class="docutils literal notranslate"><span class="pre">text/html</span></code>) to the I/O stream <code class="docutils literal notranslate"><span class="pre">io</span></code>.</p>
+<p>This <code class="docutils literal notranslate"><span class="pre">show</span></code> definition is all that we need to make any object of type <code class="docutils literal notranslate"><span class="pre">HTML</span></code> display automatically as HTML text in IJulia:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="kt">HTML</span><span class="p">(</span><span class="s">&quot;&lt;ul&gt; &lt;li&gt; Hello from a bulleted list! &lt;/ul&gt;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">println</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "j-hayes/chem-324-programming-tutorials",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "julia-1.6"
+        },
+        kernelOptions: {
+            kernelName: "julia-1.6",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'julia-1.6'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="README.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Julia Binder demo</p>
+        </div>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Jackson Hayes<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
