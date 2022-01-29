@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>An IJulia Demo &#8212; My Jupyter Book</title>
+    <title>An IJulia Demo &#8212; CHEM 324</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -46,13 +46,14 @@
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Julia Binder demo" href="README.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -76,7 +77,7 @@
       
       
       
-      <h1 class="site-logo" id="site-title">My Jupyter Book</h1>
+      <h1 class="site-logo" id="site-title">CHEM 324</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
@@ -91,6 +92,14 @@
   </a>
  </li>
 </ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   An IJulia Demo
+  </a>
+ </li>
+</ul>
+
     </div>
 </nav> <!-- To handle the deprecated key -->
 
@@ -141,6 +150,22 @@
 
             <!-- Source interaction buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/j-hayes/chem-324-programming-tutorials"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/j-hayes/chem-324-programming-tutorials/issues/new?title=Issue%20on%20page%20%2Fdemo.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
             <!-- Full screen (wrap in <a> to have style consistency -->
 
 <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
@@ -155,7 +180,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/demo.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/j-hayes/chem-324-programming-tutorials/main?urlpath=lab/tree/demo.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -163,6 +188,14 @@
         
         
         
+        <a class="colab-button" href="https://colab.research.google.com/github/j-hayes/chem-324-programming-tutorials/blob/main/demo.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
         
     </div>
 </div>
@@ -315,32 +348,32 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>500×500 Matrix{Float64}:
- 177.091  128.363  134.197  128.4    …  127.489  131.413  131.836  135.548
- 128.363  166.62   125.69   124.249     122.972  124.444  129.488  130.904
- 134.197  125.69   177.525  127.564     125.108  127.064  132.424  134.181
- 128.4    124.249  127.564  168.482     126.315  120.771  127.884  132.844
- 135.607  123.376  130.053  125.377     123.368  125.939  127.401  128.963
- 125.991  119.997  127.446  122.835  …  117.021  122.709  125.292  124.031
- 137.267  125.114  132.464  128.083     128.27   131.021  127.755  134.236
- 132.587  126.246  129.302  127.264     123.08   127.108  127.228  128.547
- 134.474  129.214  132.612  129.654     123.431  126.507  133.911  132.498
- 139.645  134.621  132.603  134.12      131.152  131.172  133.774  140.903
- 127.733  129.385  126.547  127.307  …  123.121  127.825  127.471  127.256
- 125.346  117.084  125.255  117.897     117.601  117.832  121.655  120.358
- 132.524  125.176  132.162  129.861     122.688  128.685  131.434  130.327
+ 159.321  119.096  125.809  119.44   …  116.299  112.048  117.386  125.247
+ 119.096  164.07   131.457  120.328     119.273  115.089  119.536  128.35
+ 125.809  131.457  174.423  131.492     129.098  122.37   124.978  130.889
+ 119.44   120.328  131.492  173.006     125.494  119.671  122.307  129.75
+ 122.11   120.754  128.367  127.28      119.276  114.847  120.632  123.719
+ 119.865  122.381  129.643  125.988  …  122.997  118.326  124.985  131.685
+ 120.935  120.552  128.811  129.747     120.43   119.337  122.357  127.619
+ 122.194  123.14   127.616  123.138     120.378  118.204  118.761  127.393
+ 117.19   116.679  125.864  117.769     115.333  111.998  114.307  121.104
+ 119.079  121.193  129.53   126.936     123.203  116.139  115.939  128.431
+ 123.071  126.35   133.529  125.883  …  124.116  119.417  120.128  129.506
+ 122.723  124.686  131.876  128.373     123.29   118.789  122.005  130.673
+ 117.726  123.846  130.171  129.253     124.048  119.766  120.997  130.032
    ⋮                                 ⋱                             
- 127.898  123.584  125.231  124.793     121.503  118.463  125.408  125.221
- 125.911  122.62   128.444  126.056     122.487  121.994  126.519  126.877
- 129.502  122.074  125.67   121.103  …  117.931  123.885  125.753  126.792
- 128.77   120.828  128.233  121.938     122.445  119.409  126.013  124.294
- 125.57   123.772  126.903  126.748     123.338  120.729  125.859  129.342
- 133.28   125.645  132.382  125.094     121.526  123.826  125.349  131.02
- 133.648  126.348  129.079  123.938     122.821  127.691  127.063  130.71
- 136.22   132.094  137.835  133.165  …  127.794  132.365  134.695  140.637
- 127.489  122.972  125.108  126.315     162.033  121.361  124.628  128.821
- 131.413  124.444  127.064  120.771     121.361  167.926  126.305  125.276
- 131.836  129.488  132.424  127.884     124.628  126.305  170.098  129.788
- 135.548  130.904  134.181  132.844     128.821  125.276  129.788  177.266
+ 122.599  124.925  128.648  127.221     123.784  114.909  119.493  127.397
+ 123.603  126.905  132.63   126.764     127.002  123.175  124.734  132.137
+ 117.804  119.372  124.464  121.445  …  116.398  110.697  115.528  122.953
+ 120.533  123.274  132.72   132.095     121.788  114.739  124.531  127.777
+ 121.261  116.785  127.387  124.257     120.363  115.658  121.403  125.446
+ 122.661  120.204  129.639  127.769     125.506  116.467  120.551  131.138
+ 129.097  128.064  133.772  132.334     126.336  124.216  130.014  132.139
+ 122.278  123.402  132.139  121.461  …  123.017  113.267  119.75   125.512
+ 116.299  119.273  129.098  125.494     162.091  118.272  118.356  123.331
+ 112.048  115.089  122.37   119.671     118.272  153.659  114.735  123.914
+ 117.386  119.536  124.978  122.307     118.356  114.735  162.178  124.483
+ 125.247  128.35   130.889  129.75      123.331  123.914  124.483  170.825
 </pre></div>
 </div>
 </div>
@@ -538,8 +571,8 @@
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
-            ref: "master",
+            repo: "j-hayes/chem-324-programming-tutorials",
+            ref: "main",
         },
         codeMirrorConfig: {
             theme: "abcdef",
@@ -558,7 +591,14 @@
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="README.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Julia Binder demo</p>
+        </div>
+    </a>
 </div>
             
         </div>
@@ -566,7 +606,7 @@
     <footer class="footer">
   <p>
     
-      By The Jupyter Book community<br/>
+      By Jackson Hayes<br/>
     
         &copy; Copyright 2021.<br/>
   </p>
