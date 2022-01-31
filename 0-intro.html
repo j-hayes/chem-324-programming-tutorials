@@ -1,0 +1,727 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introduction and Overview &#8212; CHEM 324</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Loops" href="1-loops.html" />
+    <link rel="prev" title="CHEM 324 Programming Tutorials" href="README.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">CHEM 324</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="README.html">
+   CHEM 324 Programming Tutorials
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Main Content
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Introduction and Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="1-loops.html">
+   Loops
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2-arrays.html">
+   Arrays and Matrices
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="3-iterative-methods.html">
+   Iterative Methods
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Advanced Topics
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="advanced/0-software-engineering-concepts.html">
+   Software Engineering Concepts
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="advanced/1-computer-science-topics.html">
+   Computer Science Topics
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/0-intro.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/j-hayes/chem-324-programming-tutorials"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/j-hayes/chem-324-programming-tutorials/issues/new?title=Issue%20on%20page%20%2F0-intro.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/j-hayes/chem-324-programming-tutorials/main?urlpath=lab/tree/0-intro.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Introduction and Overview
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#meta-thoughts">
+     Meta Thoughts:
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#what-are-these-pages-and-how-do-they-work">
+       What are these pages and how do they work.
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#what-we-are-and-are-not-going-to-do-in-these-tutorials">
+       What we are and are not going to do in these tutorials:
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#computational-thinking-1">
+     Computational thinking: 1
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#decomposition">
+       Decomposition
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#pattern-recognition">
+       Pattern recognition
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#abstraction">
+       Abstraction
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#algorithms">
+       Algorithms
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#programming-languages">
+     Programming Languages
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#syntax">
+       Syntax:
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#your-first-program">
+     Your First Program
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#another-example">
+     Another Example
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#before-we-move-any-further">
+     Before we move any further…
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-1">
+     Exercise 1
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#comments">
+   Comments
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#functions">
+   Functions
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#types-and-variables">
+     Types and Variables
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#syntax-errors">
+     Syntax Errors
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Introduction and Overview</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Introduction and Overview
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#meta-thoughts">
+     Meta Thoughts:
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#what-are-these-pages-and-how-do-they-work">
+       What are these pages and how do they work.
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#what-we-are-and-are-not-going-to-do-in-these-tutorials">
+       What we are and are not going to do in these tutorials:
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#computational-thinking-1">
+     Computational thinking: 1
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#decomposition">
+       Decomposition
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#pattern-recognition">
+       Pattern recognition
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#abstraction">
+       Abstraction
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#algorithms">
+       Algorithms
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#programming-languages">
+     Programming Languages
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#syntax">
+       Syntax:
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#your-first-program">
+     Your First Program
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#another-example">
+     Another Example
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#before-we-move-any-further">
+     Before we move any further…
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-1">
+     Exercise 1
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#comments">
+   Comments
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#functions">
+   Functions
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#types-and-variables">
+     Types and Variables
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#syntax-errors">
+     Syntax Errors
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="introduction-and-overview">
+<h1>Introduction and Overview<a class="headerlink" href="#introduction-and-overview" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="meta-thoughts">
+<h2>Meta Thoughts:<a class="headerlink" href="#meta-thoughts" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="what-are-these-pages-and-how-do-they-work">
+<h3>What are these pages and how do they work.<a class="headerlink" href="#what-are-these-pages-and-how-do-they-work" title="Permalink to this headline">¶</a></h3>
+<p>These pages are called Jupyter notebooks. They allow one to run snippets of code in a web environment without any setup, downloads, or configuration. This dramatically reduces the learning curve for getting up and running on the first day. Just click the button up at the <i class="fas fa-rocket"></i> button at the top and click the “Binder” link. It will open up an environment where you can run the code in these snippets as well as make edits and run your own code. More on this will be explained as we go along.</p>
+</div>
+<div class="section" id="what-we-are-and-are-not-going-to-do-in-these-tutorials">
+<h3>What we are and are not going to do in these tutorials:<a class="headerlink" href="#what-we-are-and-are-not-going-to-do-in-these-tutorials" title="Permalink to this headline">¶</a></h3>
+<p><strong>We will</strong></p>
+<ul class="simple">
+<li><p>learn how to think about problems like a programmer</p></li>
+<li><p>learn how to learn like a programmer</p></li>
+<li><p>learn to write programs</p></li>
+<li><p>learn about the fundamentals of writing “good” code, good programming habits, and the principles of software-engineering.</p></li>
+<li><p>learn how to do basic troubleshooting / debugging</p></li>
+</ul>
+<p><strong>We won’t</strong></p>
+<ul class="simple">
+<li><p>talk about how computers work unless absolutely necessary</p></li>
+<li><p>“master” the skill of programming</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="computational-thinking-1">
+<h2>Computational thinking: <a class="reference external" href="https://ctpdonline.org/computational-thinking/">1</a><a class="headerlink" href="#computational-thinking-1" title="Permalink to this headline">¶</a></h2>
+<p>You may or may not know it, but you have been taught some concepts about how to think like a programmer all your life. The first step to writing code is to understand what is is you are going to do, that is what are you going to “compute.” Like science and engineering problems, first the ideas must be understood, then described in equations. Only then can the “answers” be acquired.</p>
+<p>Using computational thinking one has the tools required to synthesize problems and arrive at their solutions.</p>
+<div class="section" id="decomposition">
+<h3>Decomposition<a class="headerlink" href="#decomposition" title="Permalink to this headline">¶</a></h3>
+<p>breaking down a complex problem or system into smaller, more manageable parts</p>
+<ul class="simple">
+<li><p>“Don’t solve the whole problem at once.”</p></li>
+</ul>
+</div>
+<div class="section" id="pattern-recognition">
+<h3>Pattern recognition<a class="headerlink" href="#pattern-recognition" title="Permalink to this headline">¶</a></h3>
+<p>looking for similarities among and within problems</p>
+<ul class="simple">
+<li><p>“Have I done something similar before?”</p></li>
+<li><p>“Don’t reinvent the wheel”</p></li>
+</ul>
+</div>
+<div class="section" id="abstraction">
+<h3>Abstraction<a class="headerlink" href="#abstraction" title="Permalink to this headline">¶</a></h3>
+<p>focusing on the important information only, ignoring irrelevant detail</p>
+<ul class="simple">
+<li><p>“Synthesize the real world concept into the necessary infromation for solving the problem”</p></li>
+<li><p>“Model the real system, concept, etc. with data and procedures”</p></li>
+</ul>
+</div>
+<div class="section" id="algorithms">
+<h3>Algorithms<a class="headerlink" href="#algorithms" title="Permalink to this headline">¶</a></h3>
+<p>developing a step-by-step solution to the problem, or the rules to follow to solve the problem</p>
+<ul class="simple">
+<li><p>examples in day to day life</p>
+<ul>
+<li><p>Cooking Recipes</p></li>
+<li><p>Directions from your house to the grocery store</p></li>
+<li><p>Sorting Papers in alphabetical order</p></li>
+<li><p>Performing mathematical operations using PEMDAS.</p></li>
+</ul>
+</li>
+</ul>
+<p>Algorithms are the steps to the solution of a problem. In programming we write code to “implement” these algorithms, so they can be “executed” on a computer to get a solution.</p>
+</div>
+</div>
+<div class="section" id="programming-languages">
+<h2>Programming Languages<a class="headerlink" href="#programming-languages" title="Permalink to this headline">¶</a></h2>
+<p>“A programming language is any set of rules that converts [text], to various kinds of machine code output. Programming languages are one kind of computer language, and are used in computer programming to implement algorithms.”` <a class="reference external" href="https://en.wikipedia.org/wiki/Programming_language">2</a></p>
+<div class="section" id="syntax">
+<h3>Syntax:<a class="headerlink" href="#syntax" title="Permalink to this headline">¶</a></h3>
+<p>Just as a spoken language has syntax, so does a computer programming language. The rules are just as strict for communicating properly. I cannot stress this highly enough, a computer can only understand machine code (a topic for later.) But a short description for now is that a computer can, using a program called a compiler/interpreter (or other similar concepts), convert the text of a program written in a programming language into it to machine code, which are instructions that it can execute. <strong>If any of the code does not conform to the rules of the programming language that process will fail and you will not be able to run your code.</strong>  At the end of the module there are examples of the programs that won’t work because of “syntax errors”.</p>
+<p>Just remember:
+<strong>“The computer does not speak english!”</strong>””</p>
+</div>
+</div>
+<div class="section" id="your-first-program">
+<h2>Your First Program<a class="headerlink" href="#your-first-program" title="Permalink to this headline">¶</a></h2>
+<p>There is a time honored tradition in the instruction of programming. The first program one is taught code is almost always the same. The program is called “Hello World.” We will continue this tradition.</p>
+<p>The purpose of Hello World is to print the text hello world to the output. (You can run this “Program” by clicking the start button to the left of the code.)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Hello World!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello World!
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s break down set of each characters on the screen:</p>
+<ul class="simple">
+<li><p>println(   )</p>
+<ul>
+<li><p>This is the function we are calling, it prints a line of text to the output. The println is a function provided by the julia. A function in programming can be thought of in the same way as one thinks about a function in mathematics. It has parameters and “returns” an output. In mathematics it is always numbers in and numbers out. In programming we have more freedom to express other ideas through functions.</p></li>
+<li><p>The println function takes one value, in this case some text.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;Hello</span> <span class="pre">World!&quot;</span></code></p>
+<ul>
+<li><p>This is a “string” of text. Using the <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> symbol defines the beginning and end of a string.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="another-example">
+<h2>Another Example<a class="headerlink" href="#another-example" title="Permalink to this headline">¶</a></h2>
+<p>What do you think it will print? Will it work?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">print</span><span class="p">(</span><span class="s">&quot;My Favorite Number is: &quot;</span><span class="p">)</span>
+<span class="n">print</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>My Favorite Number is: 7
+</pre></div>
+</div>
+</div>
+</div>
+<details>
+  <summary>Run Code then click to expand Explanation</summary>
+<p>Notice we used a different function print() vs println(). The difference between the print function and the println function is that the println function starts a new line at the end of the output.</p>
+<p>Copy and Paste the following into the box below and execute the code to see the difference</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;My Favorite Number is: &quot;</span><span class="p">)</span>
+<span class="n">println</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+</pre></div>
+</div>
+</details>
+</div>
+<div class="section" id="before-we-move-any-further">
+<h2>Before we move any further…<a class="headerlink" href="#before-we-move-any-further" title="Permalink to this headline">¶</a></h2>
+<p>As we move along in this tutorial I will be introducing some attributes and concepts that key to learning to be a programmer and being what some call a “software-craftsman” (yes there is a difference.) I will introduce them as early as they can be relevant, helpful, and instructive.</p>
+<p>The first lesson (which actually is relevant outside of just programming):
+**Google your exact question and look at the top few results before you ask anyone for help. Especially when you are first starting out, you will likely find the answer.
+**</p>
+<p>As you gain more experience you will get better at phrasing your questions. There are a lot of new terms to learn for programming. There is no need to learn it all at once, taking it one step at a time is a good thing.</p>
+</div>
+<div class="section" id="exercise-1">
+<h2>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">¶</a></h2>
+<p>Google this exact phrase “How do I get the square root of a number in julia” and see if you can output the square root of 25 to the screen.</p>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="comments">
+<h1>Comments<a class="headerlink" href="#comments" title="Permalink to this headline">¶</a></h1>
+<p>A comment in code is text that is not executed by the computer but serves as explanation of the code by the programmer. This is also useful for <strong>temporarily</strong> removing a line from execution while debugging code.</p>
+<p>More on how and when to use comments can be found in <span class="xref myst">Software Engineering Concepts</span></p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="functions">
+<h1>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h1>
+<p>“Functions are “self contained” modules of code that accomplish a specific task. Functions usually “take in” data, process it, and “return” a result. Once a function is written, it can be used over and over and over again. Functions can be “called” from the inside of other functions. Functions “Encapsulate” a task (they combine many instructions” which can be used by other modules.</p>
+<p>The data they take in are called parameters, there none, one, or many. They perform some tasks and they return the result to the other code that called the function. Functions can call other functions. just like in math.</p>
+<p><span class="math notranslate nohighlight">\(f(x) = xsin(x) + xcos(x)\)</span></p>
+<p>Let’s do an example. Lets put the code from our previous example into a function and call it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="n">print_my_favorite_number</span><span class="p">(</span><span class="n">favorite_number</span><span class="p">)</span>
+    <span class="n">print</span><span class="p">(</span><span class="s">&quot;My Favorite Number is: &quot;</span><span class="p">)</span>
+    <span class="n">print</span><span class="p">(</span><span class="n">favorite_number</span><span class="p">)</span>
+<span class="k">end</span>
+
+<span class="n">print_my_favorite_number</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>My Favorite Number is: 7
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="types-and-variables">
+<h2>Types and Variables<a class="headerlink" href="#types-and-variables" title="Permalink to this headline">¶</a></h2>
+<p>One main concept in writing code is the usage of “variables.” If you think of a code as a main function</p>
+</div>
+<div class="section" id="syntax-errors">
+<h2>Syntax Errors<a class="headerlink" href="#syntax-errors" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "julia-1.6"
+        },
+        kernelOptions: {
+            kernelName: "julia-1.6",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'julia-1.6'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="README.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">CHEM 324 Programming Tutorials</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="1-loops.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Loops</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Jackson Hayes<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
