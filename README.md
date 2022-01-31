@@ -1,6 +1,8 @@
-# Julia Binder demo
+# CHEM 324 Programming Tutorials
 
-This is a demo of Julia functionality for the Binder project. Simply
-go to the URL below and it will launch an interactive Julia environment:
+This is a companion site for CHEM 324 course at Iowa State University with tutorials on the basics of programming and how to use it for scientific and mathematical purposes. 
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/binder-examples/demo-julia/HEAD?filepath=demo.ipynb)
+The table of contents can be found on the left sidebar and has the various modules and exercises. 
+
+
+

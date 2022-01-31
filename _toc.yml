@@ -1,4 +1,13 @@
 format: jb-book
 root: README
-chapters:
-- file: demo
+parts: 
+  - caption: Main Content
+    chapters:
+    - file: 0-intro
+    - file: 1-loops
+    - file: 2-arrays
+    - file: 3-iterative-methods
+  - caption: Advanced Topics
+    chapters:
+    - file: advanced/0-software-engineering-concepts
+    - file: advanced/1-computer-science-topics
