@@ -34,6 +34,24 @@ end
 println(square_root(16))
 println(square_root(square_root(16))) # notice that you can nest function calls just like in math f(g(x)) or in this case f(f(x))
 
+an_integer = 0 
+a_float = -10.2
+float_zero = 0.0000
+
+println(an_integer)
+println(a_float)
+println(float_zero)
+
+my_boolean = true
+print("my_boolean = ")
+println(my_boolean)
+not_my_boolean = !my_boolean
+print("not_my_boolean = ")
+println(not_my_boolean)
+
+print("! not_my_boolean = ")
+println(!not_my_boolean)
+
 function some_variables(input_variable:: Int)
     the_number_one :: Int = 1 # an integer with the value of one
     decimal_one :: Float32 = 1.0 # a floating point decimal number with the value of 1.0
@@ -51,17 +69,6 @@ const unchanging_number = 15 # a global constant value
 
 some_variables(unchanging_number)
 some_variables(30)
-
-
-my_boolean = true
-print("my_boolean = ")
-println(my_boolean)
-not_my_boolean = !my_boolean
-print("not_my_boolean = ")
-println(not_my_boolean)
-
-print("! not_my_boolean = ")
-println(!not_my_boolean)
 
 
 # copy the code here

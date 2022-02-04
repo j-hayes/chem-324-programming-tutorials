@@ -347,16 +347,21 @@
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#variable-names">
-       Variable names
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#not-operator">
        Not operator
       </a>
      </li>
     </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-function">
+     Example Function
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#variable-names">
+     Variable names
+    </a>
    </li>
   </ul>
  </li>
@@ -509,16 +514,21 @@
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#variable-names">
-       Variable names
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#not-operator">
        Not operator
       </a>
      </li>
     </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-function">
+     Example Function
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#variable-names">
+     Variable names
+    </a>
    </li>
   </ul>
  </li>
@@ -764,10 +774,10 @@
 2.0
 2
 3
-256
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>true
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>256
+true
 2.0
 23
 </pre></div>
@@ -816,6 +826,26 @@
 </li>
 <li><p>Many operations in Julia can be used with floats and integer without having to specify the specific type of number. in that case you can use <code class="docutils literal notranslate"><span class="pre">Number</span></code>.</p></li>
 </ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">an_integer</span> <span class="o">=</span> <span class="mi">0</span> 
+<span class="n">a_float</span> <span class="o">=</span> <span class="o">-</span><span class="mf">10.2</span>
+<span class="n">float_zero</span> <span class="o">=</span> <span class="mf">0.0000</span>
+
+<span class="n">println</span><span class="p">(</span><span class="n">an_integer</span><span class="p">)</span>
+<span class="n">println</span><span class="p">(</span><span class="n">a_float</span><span class="p">)</span>
+<span class="n">println</span><span class="p">(</span><span class="n">float_zero</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+-10.2
+0.0
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="boolean">
 <h3>Boolean<a class="headerlink" href="#boolean" title="Permalink to this headline">¶</a></h3>
@@ -831,6 +861,35 @@ A boolean can take the only one of two values:</p>
 </ul>
 </li>
 </ul>
+<div class="section" id="not-operator">
+<h4>Not operator<a class="headerlink" href="#not-operator" title="Permalink to this headline">¶</a></h4>
+<p>With boolean variables, there is an operator that flips the value to the other value. i.e. a value of true is converted into false, a value of false is converted to true. The syntax is to put a <code class="docutils literal notranslate"><span class="pre">!</span></code> symbol in front of the variable. The way it is said is not, e.g. <code class="docutils literal notranslate"><span class="pre">!x</span></code> is said not x.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">my_boolean</span> <span class="o">=</span> <span class="nb">true</span>
+<span class="n">print</span><span class="p">(</span><span class="s">&quot;my_boolean = &quot;</span><span class="p">)</span>
+<span class="n">println</span><span class="p">(</span><span class="n">my_boolean</span><span class="p">)</span>
+<span class="n">not_my_boolean</span> <span class="o">=</span> <span class="o">!</span><span class="n">my_boolean</span>
+<span class="n">print</span><span class="p">(</span><span class="s">&quot;not_my_boolean = &quot;</span><span class="p">)</span>
+<span class="n">println</span><span class="p">(</span><span class="n">not_my_boolean</span><span class="p">)</span>
+
+<span class="n">print</span><span class="p">(</span><span class="s">&quot;! not_my_boolean = &quot;</span><span class="p">)</span>
+<span class="n">println</span><span class="p">(</span><span class="o">!</span><span class="n">not_my_boolean</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>my_boolean = true
+not_my_boolean = false
+! not_my_boolean = true
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="example-function">
+<h3>Example Function<a class="headerlink" href="#example-function" title="Permalink to this headline">¶</a></h3>
 <p>Below is a function that initializes some variables.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -863,8 +922,9 @@ Does Jackson Like Ice Cream true
 </div>
 </div>
 </div>
+</div>
 <div class="section" id="variable-names">
-<h4>Variable names<a class="headerlink" href="#variable-names" title="Permalink to this headline">¶</a></h4>
+<h3>Variable names<a class="headerlink" href="#variable-names" title="Permalink to this headline">¶</a></h3>
 <p>as long as the variables follow the allowed syntax (don’t use any disallowed characters) you can name a variable anything you want. It is always recommended to use variable names that describe what the variable is.</p>
 <p><code class="docutils literal notranslate"><span class="pre">address</span> <span class="pre">=</span> <span class="pre">&quot;123</span> <span class="pre">main</span> <span class="pre">street&quot;</span></code></p>
 <p>is preferred to</p>
@@ -874,35 +934,8 @@ Does Jackson Like Ice Cream true
 <p>A great book on coding “style”:
 <a class="reference external" href="https://www.oreilly.com/library/view/clean-code-a/9780136083238/">Clean Code by Robert C. Martin</a></p>
 <p>A quick summary of my thoughts on style can be found in the <a class="reference internal" href="advanced/0-software-engineering-concepts.html"><span class="doc std std-doc">Software Engineering</span></a> page.</p>
-</div>
-<div class="section" id="not-operator">
-<h4>Not operator<a class="headerlink" href="#not-operator" title="Permalink to this headline">¶</a></h4>
-<p>With boolean variables, there is an operator that flips the value to the other value. i.e. a value of true is converted into false, a value of false is converted to true. The syntax is to put a <code class="docutils literal notranslate"><span class="pre">!</span></code> symbol in front of the variable. The way it is said is not, e.g. <code class="docutils literal notranslate"><span class="pre">!x</span></code> is said not x.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">my_boolean</span> <span class="o">=</span> <span class="nb">true</span>
-<span class="n">print</span><span class="p">(</span><span class="s">&quot;my_boolean = &quot;</span><span class="p">)</span>
-<span class="n">println</span><span class="p">(</span><span class="n">my_boolean</span><span class="p">)</span>
-<span class="n">not_my_boolean</span> <span class="o">=</span> <span class="o">!</span><span class="n">my_boolean</span>
-<span class="n">print</span><span class="p">(</span><span class="s">&quot;not_my_boolean = &quot;</span><span class="p">)</span>
-<span class="n">println</span><span class="p">(</span><span class="n">not_my_boolean</span><span class="p">)</span>
-
-<span class="n">print</span><span class="p">(</span><span class="s">&quot;! not_my_boolean = &quot;</span><span class="p">)</span>
-<span class="n">println</span><span class="p">(</span><span class="o">!</span><span class="n">not_my_boolean</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>my_boolean = true
-not_my_boolean = false
-! not_my_boolean = true
-</pre></div>
-</div>
-</div>
-</div>
 <p>In the above you can see that <code class="docutils literal notranslate"><span class="pre">!!x</span></code> is equal to <code class="docutils literal notranslate"><span class="pre">x</span></code>
 This can be extended to as many times as you want. An odd number of !s is the same as one !. An even number of !s is the same as the original value.</p>
-</div>
 </div>
 </div>
 <div class="section" id="control-flow">
