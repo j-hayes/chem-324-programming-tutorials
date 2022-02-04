@@ -27,17 +27,56 @@ println(abs(-23))
 # etc...
 
 
-function some_variables()
-    the_number_one :: Int = 1 # an integer with the value of one
-    decimal_one :: Float32 = 1.0 # a floating point decimal number with the value of 1.0
-    does_jackson_like_icecream = true # a boolean with the value of true. 
-    two_is_bigger_than_one = 2 > 1
-
-    added_numbers = the_number_one + decimal_one
-    println(added_numbers)
+function square_root(number)
+    return number ^ (1/2)
 end
 
-some_variables()
+println(square_root(16))
+println(square_root(square_root(16))) # notice that you can nest function calls just like in math f(g(x)) or in this case f(f(x))
+
+function some_variables(input_variable:: Int)
+    the_number_one :: Int = 1 # an integer with the value of one
+    decimal_one :: Float32 = 1.0 # a floating point decimal number with the value of 1.0
+    does_jackson_like_icecream :: Bool = true # a boolean with the value of true. 
+    two_is_bigger_than_one = 2 > 1
+   
+
+    added_numbers = the_number_one + decimal_one
+    println(input_variable * added_numbers)
+    print("Does Jackson Like Ice Cream ")
+    println(does_jackson_like_icecream)
+
+end
+const unchanging_number = 15 # a global constant value
+
+some_variables(unchanging_number)
+some_variables(30)
+
+
+my_boolean = true
+print("my_boolean = ")
+println(my_boolean)
+not_my_boolean = !my_boolean
+print("not_my_boolean = ")
+println(not_my_boolean)
+
+print("! not_my_boolean = ")
+println(!not_my_boolean)
+
+
+# copy the code here
+
+function get_item_price(give_discount::Bool)
+    item_price = 100.00
+    if give_discount
+        return .7 * item_price
+    else
+        item_price
+    end
+end
+
+println(get_item_price(false))
+println(get_item_price(true))
 
 
 
