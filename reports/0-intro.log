@@ -17,22 +17,19 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-my_boolean = true
-print("my_boolean = ")
-print(my_boolean)
-not_my_boolean = !my_boolean
+# Remove this line and copy and paste here
+println("hello world" 
 
-my
 ------------------
 
-UndefVarError: my not defined
+syntax: incomplete: premature end of input
 
 Stacktrace:
  [1] top-level scope
-   @ :0
+   @ In[5]:2
  [2] eval
    @ ./boot.jl:360 [inlined]
  [3] include_string(mapexpr::typeof(REPL.softscope), mod::Module, code::String, filename::String)
    @ Base ./loading.jl:1116
-LoadError: UndefVarError: my not defined
+LoadError: syntax: incomplete: premature end of input
 

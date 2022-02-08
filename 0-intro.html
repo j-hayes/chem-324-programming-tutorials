@@ -327,6 +327,11 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#syntax-errors">
+   Syntax Errors
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#mathematical-operations">
    Mathematical Operations
   </a>
@@ -345,10 +350,15 @@
     <a class="reference internal nav-link" href="#boolean">
      Boolean
     </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#value-comparison">
+     Value Comparison
+    </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#not-operator">
-       Not operator
+      <a class="reference internal nav-link" href="#first-boolean-operator-not">
+       First Boolean Operator: Not
       </a>
      </li>
     </ul>
@@ -371,21 +381,11 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#if-and-else-statements">
-     IF and ELSE statements
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#boolean-logic">
-     Boolean Logic
+    <a class="reference internal nav-link" href="#boolean-operations-and-logic">
+     Boolean Operations and Logic
     </a>
    </li>
   </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#syntax-errors">
-   Syntax Errors
-  </a>
  </li>
 </ul>
 
@@ -494,6 +494,11 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#syntax-errors">
+   Syntax Errors
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#mathematical-operations">
    Mathematical Operations
   </a>
@@ -512,10 +517,15 @@
     <a class="reference internal nav-link" href="#boolean">
      Boolean
     </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#value-comparison">
+     Value Comparison
+    </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#not-operator">
-       Not operator
+      <a class="reference internal nav-link" href="#first-boolean-operator-not">
+       First Boolean Operator: Not
       </a>
      </li>
     </ul>
@@ -538,21 +548,11 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#if-and-else-statements">
-     IF and ELSE statements
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#boolean-logic">
-     Boolean Logic
+    <a class="reference internal nav-link" href="#boolean-operations-and-logic">
+     Boolean Operations and Logic
     </a>
    </li>
   </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#syntax-errors">
-   Syntax Errors
-  </a>
  </li>
 </ul>
 
@@ -727,7 +727,7 @@
 <div class="section" id="functions">
 <h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
 <p>“Functions are “self contained” modules of code that accomplish a specific task. Functions usually “take in” data, process it, and “return” a result. Once a function is written, it can be used over and over and over again. Functions can be “called” from the inside of other functions. Functions “Encapsulate” a task (they combine many instructions” which can be used by other modules.</p>
-<p>The data they take in are called parameters, there none, one, or many. They perform some tasks and they return the result to the other code that called the function. Functions can call other functions. just like in math.</p>
+<p>The data they take in are called parameters, there can be none, one, or many. They perform some task(s) and they return the result to the other code that called the function. Functions can call other functions, just like in math.</p>
 <p><span class="math notranslate nohighlight">\(f(x) = xsin(x) + xcos(x)\)</span></p>
 <p>Let’s do an example. Lets put the code from our previous example into a function and call it.</p>
 <div class="cell docutils container">
@@ -748,6 +748,37 @@
 </div>
 </div>
 </div>
+<div class="section" id="syntax-errors">
+<h2>Syntax Errors<a class="headerlink" href="#syntax-errors" title="Permalink to this headline">¶</a></h2>
+<p>A syntax error is where there is some code that is not “valid.” Julia tries to execute the code, but it cannot understand it, so it has to terminate the program. Here is an example: can you find the error?</p>
+<p>Copy the following into the box below and run it:</p>
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">println</span><span class="p">(</span><span class="s">&quot;hello world&quot;</span> 
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="c"># Remove this line and copy and paste here</span>
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;hello world&quot;</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="ne">syntax</span>: incomplete: premature end of input
+
+<span class="ne">Stacktrace</span>:
+ <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="n">top</span><span class="o">-</span><span class="n">level</span> <span class="n">scope</span>
+   <span class="o">@</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">]:</span><span class="mi">2</span>
+ <span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="nb">eval</span>
+   <span class="o">@</span> <span class="o">./</span><span class="n">boot</span><span class="o">.</span><span class="n">jl</span><span class="p">:</span><span class="mi">360</span> <span class="p">[</span><span class="n">inlined</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="n">include_string</span><span class="p">(</span><span class="n">mapexpr</span><span class="p">::</span><span class="n">typeof</span><span class="p">(</span><span class="n">REPL</span><span class="o">.</span><span class="n">softscope</span><span class="p">),</span> <span class="n">mod</span><span class="p">::</span><span class="n">Module</span><span class="p">,</span> <span class="n">code</span><span class="p">::</span><span class="n">String</span><span class="p">,</span> <span class="n">filename</span><span class="p">::</span><span class="n">String</span><span class="p">)</span>
+   <span class="o">@</span> <span class="n">Base</span> <span class="o">./</span><span class="n">loading</span><span class="o">.</span><span class="n">jl</span><span class="p">:</span><span class="mi">1116</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The main takeaway here is: <strong>Code has to be precise, it isn’t like a human language where if it is close people will understand it. If it is a little wrong, it won’t run at all.</strong></p>
+<p>This kind of thing will come up often as you are writing code. Thankfully there are tools called “Integrated Development Environments” that will underline code that is incorrect. More on this later. For now know that often the best thing to do, if you can’t figure out the error, is copy and paste the exact error message you get, such as “syntax: incomplete: premature end of input” and put it into google, usually you can find an answer.</p>
+</div>
 <div class="section" id="mathematical-operations">
 <h2>Mathematical Operations<a class="headerlink" href="#mathematical-operations" title="Permalink to this headline">¶</a></h2>
 <p>All of the mathematical operations that you would expect to have are included in Julia. There are also many other functions to do other mathmetical operations. <a class="reference external" href="https://docs.julialang.org/en/v1/manual/mathematical-operations/">Documentation</a></p>
@@ -764,22 +795,6 @@
 <span class="n">println</span><span class="p">(</span><span class="n">round</span><span class="p">(</span><span class="mf">2.4</span><span class="p">))</span>
 <span class="n">println</span><span class="p">(</span><span class="n">abs</span><span class="p">(</span><span class="o">-</span><span class="mi">23</span><span class="p">))</span>
 <span class="c"># etc...</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
-0
-25
-2.0
-2
-3
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>256
-true
-2.0
-23
 </pre></div>
 </div>
 </div>
@@ -861,8 +876,41 @@ A boolean can take the only one of two values:</p>
 </ul>
 </li>
 </ul>
-<div class="section" id="not-operator">
-<h4>Not operator<a class="headerlink" href="#not-operator" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="value-comparison">
+<h3>Value Comparison<a class="headerlink" href="#value-comparison" title="Permalink to this headline">¶</a></h3>
+<p>Boolean values often come from comparison of two values. We saw above how we could compare two numbers in the mathematical way. This concept can be applied to many other types of variables. The most important extension of this mathematical idea is the idea of “equality.” An equality check is performed by using the <code class="docutils literal notranslate"><span class="pre">==</span></code> operation. The opposite, non-equality, can be checked with the <code class="docutils literal notranslate"><span class="pre">!=</span></code> operation.</p>
+<p>Example:</p>
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">are_they_equal</span> <span class="o">=</span> <span class="mi">12</span> <span class="o">==</span> <span class="mi">3</span><span class="o">*</span><span class="mi">4</span>
+<span class="n">are_the_strings_equal</span> <span class="o">=</span> <span class="s">&quot;Hello world&quot;</span> <span class="o">==</span> <span class="s">&quot;Hello universe&quot;</span> 
+
+<span class="n">println</span><span class="p">(</span><span class="n">are_they_equal</span><span class="p">)</span>
+<span class="n">println</span><span class="p">(</span><span class="n">are_the_strings_equal</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">are_they_equal</span> <span class="o">=</span> <span class="mi">12</span> <span class="o">==</span> <span class="mi">3</span><span class="o">*</span><span class="mi">4</span>
+<span class="n">are_the_strings_equal</span> <span class="o">=</span> <span class="s">&quot;Hello world&quot;</span> <span class="o">==</span> <span class="s">&quot;Hello universe&quot;</span> 
+<span class="n">are_the_strings_not_equal</span> <span class="o">=</span> <span class="s">&quot;Hello world&quot;</span> <span class="o">!=</span> <span class="s">&quot;Hello universe&quot;</span> 
+
+
+<span class="n">println</span><span class="p">(</span><span class="n">are_they_equal</span><span class="p">)</span>
+<span class="n">println</span><span class="p">(</span><span class="n">are_the_strings_equal</span><span class="p">)</span>
+<span class="n">println</span><span class="p">(</span><span class="n">are_the_strings_not_equal</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>true
+false
+</pre></div>
+</div>
+</div>
+</div>
+<p>The use of = and == may not be intuitive at first. We are used to the “=” meaning equal to. In programming “=” is the assignment operator and “==” is “are the left and right equal?”</p>
+<div class="section" id="first-boolean-operator-not">
+<h4>First Boolean Operator: Not<a class="headerlink" href="#first-boolean-operator-not" title="Permalink to this headline">¶</a></h4>
 <p>With boolean variables, there is an operator that flips the value to the other value. i.e. a value of true is converted into false, a value of false is converted to true. The syntax is to put a <code class="docutils literal notranslate"><span class="pre">!</span></code> symbol in front of the variable. The way it is said is not, e.g. <code class="docutils literal notranslate"><span class="pre">!x</span></code> is said not x.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -878,14 +926,9 @@ A boolean can take the only one of two values:</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>my_boolean = true
-not_my_boolean = false
-! not_my_boolean = true
-</pre></div>
 </div>
-</div>
-</div>
+<p>In the above you can see that <code class="docutils literal notranslate"><span class="pre">!!x</span></code> is equal to <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
+<p>This can be extended to as many times as you want. An odd number of !s is the same as one !. An even number of !s is the same as the original value.</p>
 </div>
 </div>
 <div class="section" id="example-function">
@@ -934,8 +977,6 @@ Does Jackson Like Ice Cream true
 <p>A great book on coding “style”:
 <a class="reference external" href="https://www.oreilly.com/library/view/clean-code-a/9780136083238/">Clean Code by Robert C. Martin</a></p>
 <p>A quick summary of my thoughts on style can be found in the <a class="reference internal" href="advanced/0-software-engineering-concepts.html"><span class="doc std std-doc">Software Engineering</span></a> page.</p>
-<p>In the above you can see that <code class="docutils literal notranslate"><span class="pre">!!x</span></code> is equal to <code class="docutils literal notranslate"><span class="pre">x</span></code>
-This can be extended to as many times as you want. An odd number of !s is the same as one !. An even number of !s is the same as the original value.</p>
 </div>
 </div>
 <div class="section" id="control-flow">
@@ -956,7 +997,7 @@ This can be extended to as many times as you want. An odd number of !s is the sa
 </div>
 </div>
 </div>
-<p>Now an if-else in a function where we can control what the function does by changing the input. In our hypothetical “store” we sell one item that is sometimes on sale for 30% off.</p>
+<p>Now an if-else in a function where we can control what the function does by changing the input. In the following example we have some code that might be used in a retail store application. In our hypothetical “store” we sell one item that is sometimes on sale for 30% off.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="n">get_item_price</span><span class="p">(</span><span class="n">give_discount</span><span class="o">::</span><span class="kt">Bool</span><span class="p">)</span>
@@ -980,16 +1021,108 @@ This can be extended to as many times as you want. An odd number of !s is the sa
 </div>
 </div>
 </div>
-<div class="section" id="if-and-else-statements">
-<h3>IF and ELSE statements<a class="headerlink" href="#if-and-else-statements" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="boolean-operations-and-logic">
+<h3>Boolean Operations and Logic<a class="headerlink" href="#boolean-operations-and-logic" title="Permalink to this headline">¶</a></h3>
+<p>There are several operations that one can apply to boolean values. Several of them we have already discussed.
+These operations are:</p>
+<ul class="simple">
+<li><p>== (Equality)</p></li>
+<li><p>!= (Inequalty)</p></li>
+<li><p>! (not)</p></li>
+<li><p>&amp;&amp; “And” (Are both values true)</p></li>
+<li><p>|| “Or” (Is either one true)</p></li>
+</ul>
+<p>Examples:</p>
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">println</span><span class="p">(</span><span class="s">&quot;true and true is: </span><span class="si">$</span><span class="p">(</span><span class="nb">true</span> <span class="o">&amp;&amp;</span> <span class="nb">true</span><span class="p">)</span><span class="s">&quot;</span><span class="p">)</span> <span class="c"># $() converts values into a string &quot;inline&quot;</span>
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;true and false is: </span><span class="si">$</span><span class="p">(</span><span class="nb">true</span> <span class="o">&amp;&amp;</span> <span class="nb">false</span><span class="p">)</span><span class="s">&quot;</span><span class="p">)</span>
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;false and true is: </span><span class="si">$</span><span class="p">(</span><span class="nb">false</span> <span class="o">&amp;&amp;</span> <span class="nb">true</span><span class="p">)</span><span class="s">&quot;</span><span class="p">)</span>
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;false and true is: </span><span class="si">$</span><span class="p">(</span><span class="nb">false</span> <span class="o">&amp;&amp;</span> <span class="nb">false</span><span class="p">)</span><span class="s">&quot;</span><span class="p">)</span>
+
+<span class="n">println</span><span class="p">()</span>
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;true or true is: </span><span class="si">$</span><span class="p">(</span><span class="nb">true</span> <span class="o">||</span> <span class="nb">true</span><span class="p">)</span><span class="s">&quot;</span><span class="p">)</span>
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;false or false is: </span><span class="si">$</span><span class="p">(</span><span class="nb">true</span> <span class="o">||</span> <span class="nb">true</span><span class="p">)</span><span class="s">&quot;</span><span class="p">)</span>
+</pre></div>
 </div>
-<div class="section" id="boolean-logic">
-<h3>Boolean Logic<a class="headerlink" href="#boolean-logic" title="Permalink to this headline">¶</a></h3>
-<p><strong>TODO Finish this section</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">println</span><span class="p">(</span><span class="s">&quot;true and true is: </span><span class="si">$</span><span class="p">(</span><span class="nb">true</span> <span class="o">&amp;&amp;</span> <span class="nb">true</span><span class="p">)</span><span class="s">&quot;</span><span class="p">)</span> <span class="c"># $() converts values into a string &quot;inline&quot;</span>
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;true and false is: </span><span class="si">$</span><span class="p">(</span><span class="nb">true</span> <span class="o">&amp;&amp;</span> <span class="nb">false</span><span class="p">)</span><span class="s">&quot;</span><span class="p">)</span>
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;false and true is: </span><span class="si">$</span><span class="p">(</span><span class="nb">false</span> <span class="o">&amp;&amp;</span> <span class="nb">true</span><span class="p">)</span><span class="s">&quot;</span><span class="p">)</span>
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;false and true is: </span><span class="si">$</span><span class="p">(</span><span class="nb">false</span> <span class="o">&amp;&amp;</span> <span class="nb">false</span><span class="p">)</span><span class="s">&quot;</span><span class="p">)</span>
+
+<span class="n">println</span><span class="p">()</span>
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;true or true is: </span><span class="si">$</span><span class="p">(</span><span class="nb">true</span> <span class="o">||</span> <span class="nb">true</span><span class="p">)</span><span class="s">&quot;</span><span class="p">)</span>
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;true or false is: </span><span class="si">$</span><span class="p">(</span><span class="nb">true</span> <span class="o">||</span> <span class="nb">false</span><span class="p">)</span><span class="s">&quot;</span><span class="p">)</span>
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;true or false is: </span><span class="si">$</span><span class="p">(</span><span class="nb">false</span> <span class="o">||</span> <span class="nb">false</span><span class="p">)</span><span class="s">&quot;</span><span class="p">)</span>
+</pre></div>
 </div>
 </div>
-<div class="section" id="syntax-errors">
-<h2>Syntax Errors<a class="headerlink" href="#syntax-errors" title="Permalink to this headline">¶</a></h2>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>true and true is: true
+true and false is: false
+false and true is: false
+false and true is: false
+
+true or true is: true
+false or false is: true
+</pre></div>
+</div>
+</div>
+</div>
+<p>Below is an example of using booleans to control flow, using the operations we have discussed above. We will test check against known names and email addresses and say if they are in “our contacts.” What this shows is that you can do the same kind of thing two different ways with booleans. The first way in both cases is better, but the second can help you better understand what <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code> and <code class="docutils literal notranslate"><span class="pre">||</span></code> do.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="n">print_is_in_contacts_message</span><span class="p">(</span><span class="n">name</span><span class="o">::</span><span class="kt">String</span><span class="p">,</span> <span class="n">email_address</span><span class="o">::</span><span class="kt">String</span><span class="p">)</span> <span class="o">::</span> <span class="kt">String</span>
+    <span class="c">#an example of how the &amp;&amp; operation works</span>
+    <span class="n">is_jackson_message</span> <span class="o">=</span> <span class="s">&quot;I am this person!&quot;</span>
+    <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s">&quot;Jackson&quot;</span> <span class="o">&amp;&amp;</span> <span class="n">email_address</span> <span class="o">==</span> <span class="s">&quot;jhayes1@iastate.edu&quot;</span>
+        <span class="k">return</span> <span class="n">is_jackson_message</span>        
+    <span class="k">end</span> 
+
+    <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s">&quot;Jackson&quot;</span>
+        <span class="k">if</span> <span class="n">email_address</span> <span class="o">==</span> <span class="s">&quot;jhayes1@iastate.edu&quot;</span>
+            <span class="k">return</span> <span class="n">is_jackson_message</span> <span class="c"># this code is unreachable because the if block is the same as the check above</span>
+        <span class="k">end</span>         
+    <span class="k">end</span>
+    
+    <span class="c"># here we show that || is like doing two if statements that both do the same thing</span>
+    <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s">&quot;Joe&quot;</span> <span class="o">||</span> <span class="n">email_address</span> <span class="o">==</span> <span class="s">&quot;joechem@iastate.edu&quot;</span>
+        <span class="k">return</span> <span class="s">&quot;I know </span><span class="si">$</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="s">&quot;</span>
+    <span class="k">end</span> 
+    <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s">&quot;Nick&quot;</span> 
+        <span class="k">return</span> <span class="s">&quot;I know </span><span class="si">$</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="s">&quot;</span>
+    <span class="k">elseif</span> <span class="n">email_address</span> <span class="o">==</span> <span class="s">&quot;nick@iastate.edu&quot;</span>
+        <span class="k">return</span> <span class="s">&quot;I know </span><span class="si">$</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="s">&quot;</span>
+    <span class="k">end</span>
+
+    <span class="k">return</span> <span class="s">&quot;I don&#39;t know this person&quot;</span>
+    
+<span class="k">end</span>
+
+<span class="c"># output = print_is_in_contacts_message(&quot;Jackson&quot;, &quot;jhayes1@iastate.edu&quot;)</span>
+<span class="c"># println(output)</span>
+
+<span class="c"># output = print_is_in_contacts_message(&quot;Joe&quot;, &quot;joeWrongEmail@blah.edu&quot;)</span>
+<span class="c"># println(output)</span>
+
+<span class="c"># output = print_is_in_contacts_message(&quot;Nick&quot;, &quot;nick@iastate.edu&quot;)</span>
+<span class="c"># println(output)</span>
+
+<span class="c"># output = print_is_in_contacts_message(&quot;Sam&quot;, &quot;sam@blahblah.edu&quot;)</span>
+<span class="c"># println(output)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>I am this person!
+I know Joe
+I know Nick
+I don&#39;t know this person
+</pre></div>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 
