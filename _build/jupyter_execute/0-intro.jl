@@ -90,7 +90,7 @@ function get_item_price(give_discount::Bool)
     if give_discount
         return .7 * item_price
     else
-        item_price
+        return item_price
     end
 end
 
@@ -106,7 +106,7 @@ println("false and true is: $(false && false)")
 println()
 println("true or true is: $(true || true)")
 println("true or false is: $(true || false)")
-println("true or false is: $(false || false)")
+println("false or false is: $(false || false)")
 
 
 function print_is_in_contacts_message(name::String, email_address::String) :: String
