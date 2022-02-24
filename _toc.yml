@@ -4,6 +4,7 @@ parts:
   - caption: Main Content
     chapters:
     - file: 0-intro
+    - file: 0-intro-videos
     - file: 1-loops
     - file: 2-arrays
     - file: 3-iterative-methods
