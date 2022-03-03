@@ -5,9 +5,10 @@ parts:
     chapters:
     - file: 0-intro
     - file: 0-intro-videos
-    - file: 1-loops
-    - file: 2-arrays
-    - file: 3-iterative-methods
+    - file: 1-series-loops
+    - file: 2-matricies-determinants
+    - file: 3-matrix-eigenvalue
+    - file: 4-quantum-mechanical-applications
   - caption: Advanced Topics
     chapters:
     - file: advanced/0-software-engineering-concepts
