@@ -1,3 +1,7 @@
-function hello() :: string
-    return "hello world"
+function hello()
+    return "hello"
+end
+
+function hello(name)
+    return "hello $(name)"
 end

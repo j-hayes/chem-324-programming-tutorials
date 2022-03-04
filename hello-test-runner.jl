@@ -1,6 +1,14 @@
+using Test
 include("hello.jl")
-include("Test")
-function run_tests()
+
+function run_tests_module_hello()
     hello_text = hello()
-    @test hello_text == "hello"
+    @testset "hello tests" begin;
+         @test hello_text == "hello"
+    end 
+
+    hello_text = hello("Jackson")
+    @testset "hello name tests" begin;
+        @test hello_text == "hello Jackson"
+   end 
 end

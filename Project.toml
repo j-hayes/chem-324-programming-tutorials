@@ -1,2 +1,8 @@
+name = "CHEM_324_Tutorials"
+uuid = "0a8e60a1-ba30-11e9-2bf2-2eef263b0d75"
+
 [compat]
 julia = "1.6"
+
+[deps]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
