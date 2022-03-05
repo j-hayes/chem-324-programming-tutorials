@@ -1,0 +1,1366 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loops, Arrays (Vectors), and Series &#8212; CHEM 324 Programming Tutorials</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">CHEM 324 Programming Tutorials</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../README.html">
+   CHEM 324 Programming Tutorials
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Main Content
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../module3/matrices-determinants.html">
+   Matricies and Determinants
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../module4/matrix-eigenvalue.html">
+   Solving Matrix Eigenvalue equations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../module5/quantum-mechanical-applications.html">
+   Applications in Quantum Mechanics
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Advanced Topics
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../advanced/0-software-engineering-concepts.html">
+   Software Engineering Concepts
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../advanced/1-computer-science-topics.html">
+   Computer Science Topics
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/module2/2-series-loops.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/j-hayes/chem-324-programming-tutorials"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/j-hayes/chem-324-programming-tutorials/issues/new?title=Issue%20on%20page%20%2Fmodule2/2-series-loops.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/j-hayes/chem-324-programming-tutorials/main?urlpath=lab/tree/module2/2-series-loops.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#loops">
+   Loops
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#for-loop">
+     For loop
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#while-loop">
+     While loop
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#print-out-even-numbers">
+     Print out even numbers
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#a-simple-way-of-doing-it-if-statement">
+       A simple way of doing it if statement
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#print-out-even-numbers-in-a-smarter-way-2-i">
+     Print out even numbers in a smarter way (2*i)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calling-a-function-in-a-loop">
+     Calling a function in a loop
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#arrays">
+   Arrays
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#getting-a-value-at-a-specific-index">
+     Getting a value at a specific index
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#julia-one-based-indexing-vs-zero-based-indexing">
+       Julia one based indexing vs zero based indexing
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iterate-over-an-array-using-a-loop">
+     Iterate over an array using a loop
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#note-on-what-we-just-did-above">
+       Note on what we just did above
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#convergence-and-divergence-of-series">
+   Convergence And Divergence of Series
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-many-terms-until-we-reach-sufficient-convergence-for-the-series-expansions-of-certain-functions">
+     how many terms until we reach sufficient convergence for the series expansions of certain functions
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#e-x">
+       <span class="math notranslate nohighlight">
+        \( e^x \)
+       </span>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#cos-x-and-sin-x">
+       cos(x) and sin(x)
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise">
+   Exercise
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#going-forward">
+     Going forward
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#submitting">
+     Submitting
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-file">
+     Exercise File
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#test-runner">
+     Test Runner
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-test-runner">
+     Example Test Runner
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-1-build-an-array">
+     Problem 1 - Build an Array
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-2-implement-sin-x-as-a-series-expansion">
+     Problem 2 - Implement sin(x) as a series expansion
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-3">
+     Problem 3 -
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#some-other-thoughts-before-you-go">
+   Some other thoughts before you go:
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#complex-numbers-in-julia">
+     Complex Numbers in Julia
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#vscode-ide">
+   VSCode IDE
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#virtues-of-using-an-ide">
+     virtues of using an ide
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#download-links-and-installation-instructions">
+     download links and installation instructions
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Loops, Arrays (Vectors), and Series</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#loops">
+   Loops
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#for-loop">
+     For loop
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#while-loop">
+     While loop
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#print-out-even-numbers">
+     Print out even numbers
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#a-simple-way-of-doing-it-if-statement">
+       A simple way of doing it if statement
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#print-out-even-numbers-in-a-smarter-way-2-i">
+     Print out even numbers in a smarter way (2*i)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calling-a-function-in-a-loop">
+     Calling a function in a loop
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#arrays">
+   Arrays
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#getting-a-value-at-a-specific-index">
+     Getting a value at a specific index
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#julia-one-based-indexing-vs-zero-based-indexing">
+       Julia one based indexing vs zero based indexing
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iterate-over-an-array-using-a-loop">
+     Iterate over an array using a loop
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#note-on-what-we-just-did-above">
+       Note on what we just did above
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#convergence-and-divergence-of-series">
+   Convergence And Divergence of Series
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-many-terms-until-we-reach-sufficient-convergence-for-the-series-expansions-of-certain-functions">
+     how many terms until we reach sufficient convergence for the series expansions of certain functions
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#e-x">
+       <span class="math notranslate nohighlight">
+        \( e^x \)
+       </span>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#cos-x-and-sin-x">
+       cos(x) and sin(x)
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise">
+   Exercise
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#going-forward">
+     Going forward
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#submitting">
+     Submitting
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-file">
+     Exercise File
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#test-runner">
+     Test Runner
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-test-runner">
+     Example Test Runner
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-1-build-an-array">
+     Problem 1 - Build an Array
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-2-implement-sin-x-as-a-series-expansion">
+     Problem 2 - Implement sin(x) as a series expansion
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-3">
+     Problem 3 -
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#some-other-thoughts-before-you-go">
+   Some other thoughts before you go:
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#complex-numbers-in-julia">
+     Complex Numbers in Julia
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#vscode-ide">
+   VSCode IDE
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#virtues-of-using-an-ide">
+     virtues of using an ide
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#download-links-and-installation-instructions">
+     download links and installation instructions
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="loops-arrays-vectors-and-series">
+<h1>Loops, Arrays (Vectors), and Series<a class="headerlink" href="#loops-arrays-vectors-and-series" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="loops">
+<h2>Loops<a class="headerlink" href="#loops" title="Permalink to this headline">¶</a></h2>
+<p>A loop is a programming construct that allows the programmer to run the block of code multiple times without having to write the code multiple times.</p>
+<div class="section" id="for-loop">
+<h3>For loop<a class="headerlink" href="#for-loop" title="Permalink to this headline">¶</a></h3>
+<p>Example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">println</span><span class="p">(</span><span class="s">&quot;The copy paste way: (bad)&quot;</span><span class="p">)</span>
+
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;hello world&quot;</span><span class="p">)</span>
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;hello world&quot;</span><span class="p">)</span>
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;hello world&quot;</span><span class="p">)</span>
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;hello world&quot;</span><span class="p">)</span>
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;hello world&quot;</span><span class="p">)</span>
+
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;-----------&quot;</span><span class="p">)</span>
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;The loop way:&quot;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="o">:</span><span class="mi">5</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">&quot;hello world&quot;</span><span class="p">)</span>
+<span class="k">end</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The copy paste way: (bad)
+hello world
+hello world
+hello world
+hello world
+hello world
+-----------
+The loop way:
+hello world
+hello world
+hello world
+hello world
+hello world
+</pre></div>
+</div>
+</div>
+</div>
+<p>The syntax of a loop:</p>
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="c">## begins the loop</span>
+    <span class="c"># block of code that will be run multiple times </span>
+<span class="k">end</span> <span class="c"># ends the loop</span>
+</pre></div>
+</div>
+<p>i : the “index” of the loop
+1:5 : a range of numbers from 1-5 inclusive (i.e 1,2,3,4,5)
+in : says to do the loop for each value in the following. The loop will assign the values 1,2,3,4,5 in order.</p>
+<p>Here is an example corresponding to the following summation. It will print the value at each iteration</p>
+<p><span class="math notranslate nohighlight">\(\sum_{i=1}^{10} i\)</span></p>
+<p>(note) the operator += adds the value on the right side of the operator to the existing value in the value to the left;</p>
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="mi">1</span> 
+<span class="n">number</span> <span class="o">+=</span> <span class="mi">1</span> <span class="c"># now number equals 2</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">summation_value</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="o">:</span><span class="mi">10</span>
+    <span class="n">summation_value</span> <span class="o">+=</span> <span class="n">i</span> 
+    <span class="n">println</span><span class="p">(</span><span class="s">&quot;value at i=</span><span class="si">$</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="s">: </span><span class="si">$</span><span class="p">(</span><span class="n">summation_value</span><span class="p">)</span><span class="s">&quot;</span><span class="p">)</span>
+<span class="k">end</span>
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;final value: </span><span class="si">$</span><span class="p">(</span><span class="n">summation_value</span><span class="p">)</span><span class="s">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value at i=1: 1
+value at i=2: 3
+value at i=3: 6
+value at i=4: 10
+value at i=5: 15
+value at i=6: 21
+value at i=7: 28
+value at i=8: 36
+value at i=9: 45
+value at i=10: 55
+final value: 55
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="while-loop">
+<h3>While loop<a class="headerlink" href="#while-loop" title="Permalink to this headline">¶</a></h3>
+<p>You can accomplish the same concepts with a while loop. A while loop continues to run until the condition after the word while is false.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">summation_value</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">10</span>
+    <span class="n">summation_value</span> <span class="o">+=</span> <span class="n">i</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span> <span class="c"># make sure to do the incrementing of i as the last line of code in the loop or you will get the wrong result </span>
+<span class="k">end</span>
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;final value: </span><span class="si">$</span><span class="p">(</span><span class="n">summation_value</span><span class="p">)</span><span class="s">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>final value: 55
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="print-out-even-numbers">
+<h3>Print out even numbers<a class="headerlink" href="#print-out-even-numbers" title="Permalink to this headline">¶</a></h3>
+<p>Let’s print out the first 5 even numbers</p>
+<div class="section" id="a-simple-way-of-doing-it-if-statement">
+<h4>A simple way of doing it if statement<a class="headerlink" href="#a-simple-way-of-doing-it-if-statement" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="o">:</span><span class="mi">10</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="c"># does i divided by 2 have a remainder not equal to zero</span>
+        <span class="n">println</span><span class="p">(</span><span class="s">&quot;</span><span class="si">$</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="s">&quot;</span><span class="p">)</span>
+    <span class="k">end</span>    
+<span class="k">end</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+4
+6
+8
+10
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="print-out-even-numbers-in-a-smarter-way-2-i">
+<h3>Print out even numbers in a smarter way (2*i)<a class="headerlink" href="#print-out-even-numbers-in-a-smarter-way-2-i" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="o">:</span><span class="mi">5</span>   
+    <span class="n">println</span><span class="p">(</span><span class="s">&quot;</span><span class="si">$</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="p">)</span><span class="s">&quot;</span><span class="p">)</span>   
+<span class="k">end</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+4
+6
+8
+10
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="calling-a-function-in-a-loop">
+<h3>Calling a function in a loop<a class="headerlink" href="#calling-a-function-in-a-loop" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="n">print_iteration_message</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">summation_value</span><span class="p">)</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">&quot;value at i=</span><span class="si">$</span><span class="p">(</span><span class="n">index</span><span class="p">)</span><span class="s">: </span><span class="si">$</span><span class="p">(</span><span class="n">summation_value</span><span class="p">)</span><span class="s">&quot;</span><span class="p">)</span>
+<span class="k">end</span>
+
+<span class="n">summation_value</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="o">:</span><span class="mi">10</span>
+    <span class="n">summation_value</span> <span class="o">+=</span> <span class="n">i</span> 
+    <span class="n">print_iteration_message</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">summation_value</span><span class="p">)</span>
+<span class="k">end</span>
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;final value: </span><span class="si">$</span><span class="p">(</span><span class="n">summation_value</span><span class="p">)</span><span class="s">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value at i=1: 1
+value at i=2: 3
+value at i=3: 6
+value at i=4: 10
+value at i=5: 15
+value at i=6: 21
+value at i=7: 28
+value at i=8: 36
+value at i=9: 45
+value at i=10: 55
+final value: 55
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="arrays">
+<h2>Arrays<a class="headerlink" href="#arrays" title="Permalink to this headline">¶</a></h2>
+<p>An array is similar to the mathematical construct of a vector (julia actually calls them vectors, other languages call them arrays and is more common, As such I am going to refer to them as arrays.). It is a list of values. A common use of vectors is to define a point in space (x,y,z). You can use the normal vector algebra you would expect.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">point_int_space_origin</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">display</span><span class="p">(</span><span class="n">point_int_space_origin</span><span class="p">)</span> <span class="c"># display is a fancy print function with more information about the object you pass in</span>
+
+<span class="n">second_point</span> <span class="o">=</span> <span class="n">point_int_space_origin</span> <span class="o">+</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">display</span><span class="p">(</span><span class="n">second_point</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3-element Vector{Int64}:
+ 0
+ 0
+ 0
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3-element Vector{Int64}:
+ 1
+ 1
+ 2
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can do “element-wise” operations using .{operator here} (for multiplication this is called a Hadamard Product)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">multiplied_point</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span> <span class="o">.*</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> 
+<span class="n">display</span><span class="p">(</span><span class="n">multiplied_point</span><span class="p">)</span>
+<span class="c">#which is the same as</span>
+
+<span class="n">multiplied_point</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span> 
+<span class="n">display</span><span class="p">(</span><span class="n">multiplied_point</span><span class="p">)</span>
+
+<span class="c">#but could be used to do </span>
+<span class="n">multiplied_point</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span> <span class="o">.*</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">]</span> 
+<span class="n">display</span><span class="p">(</span><span class="n">multiplied_point</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3-element Vector{Int64}:
+ 2
+ 4
+ 6
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3-element Vector{Int64}:
+ 2
+ 4
+ 6
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3-element Vector{Int64}:
+  3
+ 10
+ 30
+</pre></div>
+</div>
+</div>
+</div>
+<p>Of course, we don’t have to limit ourselves to loops with length 3. Julia provides some operations functions for getting attributes of the array.</p>
+<div class="section" id="getting-a-value-at-a-specific-index">
+<h3>Getting a value at a specific index<a class="headerlink" href="#getting-a-value-at-a-specific-index" title="Permalink to this headline">¶</a></h3>
+<p>To get a specific value use the [] operator after the name of the array variable</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">]</span>
+<span class="c">### print the first value in the array of values</span>
+<span class="n">println</span><span class="p">(</span><span class="n">values</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="n">longer_vector</span> <span class="o">=</span> <span class="p">[</span><span class="mf">12.23</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mf">.12</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="o">-</span><span class="mf">8.32</span><span class="p">]</span>
+<span class="n">sum_of_first_two_terms</span> <span class="o">=</span> <span class="n">longer_vector</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">longer_vector</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">println</span><span class="p">(</span><span class="n">sum_of_first_two_terms</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>13.23
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="julia-one-based-indexing-vs-zero-based-indexing">
+<h4>Julia one based indexing vs zero based indexing<a class="headerlink" href="#julia-one-based-indexing-vs-zero-based-indexing" title="Permalink to this headline">¶</a></h4>
+<p><strong>Note most other programming languages use zero based indexing</strong></p>
+<p>i.e. to get the first value in an array you use values[0]. It is intended to be less confusing, but if you are looking at algorithms online/in literature for how to implement something assume zero based indexing.</p>
+</div>
+</div>
+<div class="section" id="iterate-over-an-array-using-a-loop">
+<h3>Iterate over an array using a loop<a class="headerlink" href="#iterate-over-an-array-using-a-loop" title="Permalink to this headline">¶</a></h3>
+<p>One powerful thing we can do with a loop is iterate over an array and perform an operation. As an example lets do the dot product of two vectors.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="n">dot_product</span><span class="p">(</span><span class="n">vector1</span><span class="p">,</span> <span class="n">vector2</span><span class="p">)</span>
+    <span class="nd">@assert</span> <span class="n">length</span><span class="p">(</span><span class="n">vector1</span><span class="p">)</span> <span class="o">==</span> <span class="n">length</span><span class="p">(</span><span class="n">vector2</span><span class="p">)</span> <span class="c"># makes sure the vectors are the same size, if not throws an error</span>
+    
+    <span class="n">dot_product_value</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="o">:</span><span class="n">length</span><span class="p">(</span><span class="n">vector1</span><span class="p">)</span>
+        <span class="n">dot_product_value</span> <span class="o">+=</span> <span class="n">vector1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">vector2</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="k">end</span>
+    <span class="k">return</span> <span class="n">dot_product_value</span>
+<span class="k">end</span>
+
+<span class="n">vector_a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">vector_b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
+
+<span class="n">value</span> <span class="o">=</span> <span class="n">dot_product</span><span class="p">(</span><span class="n">vector_a</span><span class="p">,</span> <span class="n">vector_b</span><span class="p">)</span>
+<span class="n">println</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+<span class="c">## we can compare this with the built in julia function for dot product </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>32
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="k">using</span> <span class="n">LinearAlgebra</span> <span class="c"># built in julia library providing linear algebra functions such as dot(): which computes the dot product</span>
+
+<span class="n">vector_a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">vector_b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
+<span class="n">julia_computed_value</span> <span class="o">=</span> <span class="n">dot</span><span class="p">(</span><span class="n">vector_a</span><span class="p">,</span><span class="n">vector_b</span><span class="p">)</span>
+<span class="n">println</span><span class="p">(</span><span class="n">julia_computed_value</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>32
+</pre></div>
+</div>
+</div>
+</div>
+<p>Just for fun lets do the dot product of a huge vector, i.e. something you’d never want to have to do by hand. A convenient way to make an “empty” array is to use the <code class="docutils literal notranslate"><span class="pre">zeros(n)</span></code> function, which gives you an array with the length you provide.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="k">using</span> <span class="n">LinearAlgebra</span>
+<span class="n">powers_of_2</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="c">#array with length 100, all values = 0 </span>
+<span class="n">powers_of_4</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="o">:</span><span class="mi">100</span>
+    <span class="n">powers_of_2</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span><span class="o">^</span><span class="n">i</span>
+    <span class="n">powers_of_4</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">4</span><span class="o">^</span><span class="n">i</span>
+<span class="k">end</span>
+
+<span class="n">dot_product_value</span> <span class="o">=</span> <span class="n">dot</span><span class="p">(</span><span class="n">powers_of_2</span><span class="p">,</span> <span class="n">powers_of_4</span><span class="p">)</span>
+<span class="n">print</span><span class="p">(</span><span class="n">dot_product_value</span><span class="p">)</span> <span class="c"># ya that is a big number</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.131830893060919e28
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="note-on-what-we-just-did-above">
+<h4>Note on what we just did above<a class="headerlink" href="#note-on-what-we-just-did-above" title="Permalink to this headline">¶</a></h4>
+<p>Most of the examples above were just that, examples. We were “re-inventing the wheel” because it was useful for us to learn looping and how it relates to math. You would not want to implement your own dot product function, or summation function. This type of functionality is provided for you by the Julia language. Here are a few examples. You can find more information at the <a class="reference external" href="https://docs.julialang.org/en/v1/stdlib/LinearAlgebra/#man-linalg">Linear Algebra Documentation Page.</a>, the <a class="reference external" href="https://docs.julialang.org/en/v1/base/math/">Math Documentation Page</a>, and <a class="reference external" href="https://docs.julialang.org/en/v1/stdlib/Statistics/">Statistics Documentation Page</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="k">using</span> <span class="n">LinearAlgebra</span> 
+<span class="k">using</span> <span class="n">Statistics</span> <span class="c"># statistical functions</span>
+<span class="n">our_vector</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span> <span class="mi">30</span><span class="p">]</span>
+<span class="n">our_sum</span> <span class="o">=</span> <span class="n">sum</span><span class="p">(</span><span class="n">our_vector</span><span class="p">)</span>
+<span class="n">our_average</span> <span class="o">=</span> <span class="n">mean</span><span class="p">(</span><span class="n">our_vector</span><span class="p">)</span>
+<span class="n">our_median</span> <span class="o">=</span> <span class="n">median</span><span class="p">(</span><span class="n">our_vector</span><span class="p">)</span>
+
+
+<span class="n">println</span><span class="p">(</span><span class="n">our_sum</span><span class="p">)</span>
+<span class="n">println</span><span class="p">(</span><span class="n">our_average</span><span class="p">)</span>
+<span class="n">println</span><span class="p">(</span><span class="n">our_median</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100
+8.333333333333334
+6.5
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="convergence-and-divergence-of-series">
+<h2>Convergence And Divergence of Series<a class="headerlink" href="#convergence-and-divergence-of-series" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="how-many-terms-until-we-reach-sufficient-convergence-for-the-series-expansions-of-certain-functions">
+<h3>how many terms until we reach sufficient convergence for the series expansions of certain functions<a class="headerlink" href="#how-many-terms-until-we-reach-sufficient-convergence-for-the-series-expansions-of-certain-functions" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="e-x">
+<h4><span class="math notranslate nohighlight">\( e^x \)</span><a class="headerlink" href="#e-x" title="Permalink to this headline">¶</a></h4>
+<p><span class="math notranslate nohighlight">\( e^x = \sum_{n=0}^{\infty} \frac{x^n}{n!} = 1 + x + \frac{x^2}{2!} +... \)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="c"># big(number) is a function that creates a </span>
+<span class="c"># number that julia can handle more reasoly if the number is very large</span>
+
+<span class="k">function</span> <span class="n">calculate_exp_series_term</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">x</span><span class="o">^</span><span class="n">i</span><span class="p">)</span><span class="o">/</span><span class="n">factorial</span><span class="p">(</span><span class="n">big</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> 
+<span class="k">end</span>
+
+<span class="k">function</span> <span class="n">calculate_series_exponential</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">series_expansion_value</span> <span class="o">=</span> <span class="mi">0</span> 
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span> <span class="c">#iteration index </span>
+    <span class="n">exp_exact</span> <span class="o">=</span> <span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+    <span class="c"># loop until the difference between exact value and series expansion value</span>
+    <span class="c"># stop at 10000 iterations </span>
+    <span class="k">while</span> <span class="n">abs</span><span class="p">(</span><span class="n">exp_exact</span> <span class="o">-</span> <span class="n">series_expansion_value</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="o">^-</span><span class="mi">7</span> <span class="o">&amp;&amp;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10000</span>
+        <span class="n">series_term_i</span> <span class="o">=</span> <span class="n">calculate_exp_series_term</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="n">series_expansion_value</span> <span class="o">+=</span> <span class="n">series_term_i</span>
+        <span class="n">i</span><span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">end</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">&quot;number of iterations </span><span class="si">$</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="s">&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">series_expansion_value</span>
+<span class="k">end</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">exp_exact</span> <span class="o">=</span> <span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">exp_exact</span> <span class="o">=</span> <span class="n">round</span><span class="p">(</span><span class="n">exp_exact</span><span class="p">;</span> <span class="n">digits</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span> <span class="c">#don&#39;t worry too much about how this rounding works</span>
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;</span><span class="si">$</span><span class="p">(</span><span class="n">exp_exact</span><span class="p">)</span><span class="s"> exp_exact&quot;</span><span class="p">)</span>
+<span class="n">series_expansion_value</span> <span class="o">=</span> <span class="n">calculate_series_exponential</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="c">#round off some extra values</span>
+<span class="n">rounded_value</span> <span class="o">=</span> <span class="kt">Float64</span><span class="p">(</span><span class="n">round</span><span class="p">(</span><span class="n">series_expansion_value</span><span class="p">;</span> <span class="n">digits</span><span class="o">=</span><span class="mi">10</span><span class="p">))</span> <span class="c">#don&#39;t worry too much about how this rounding works</span>
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;</span><span class="si">$</span><span class="p">(</span><span class="n">rounded_value</span><span class="p">)</span><span class="s"> series_expansion_value&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>148.4131591026 exp_exact
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of iterations 25
+148.4131590788 series_expansion_value
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="cos-x-and-sin-x">
+<h4>cos(x) and sin(x)<a class="headerlink" href="#cos-x-and-sin-x" title="Permalink to this headline">¶</a></h4>
+<p><span class="math notranslate nohighlight">\( cos(x) = \sum_{n=0}^{\infty} (-1)^{n}\frac{x^{2n}}{(2n)!} = 1 - x + \frac{x^2}{2!} -... \)</span></p>
+<p><span class="math notranslate nohighlight">\( sin(x) = \sum_{n=0}^{\infty} (-1)^{n}\frac{x^{2n+1}}{(2n+1)!} = x -\frac{x^3}{3!} + \frac{x^5}{5!} -... \)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="n">calculate_cos_series_term</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">^</span><span class="n">i</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">^</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="p">))</span><span class="o">/</span><span class="n">factorial</span><span class="p">(</span><span class="n">big</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="p">))</span> 
+<span class="k">end</span>
+
+<span class="k">function</span> <span class="n">calculate_series_cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">series_expansion_value</span> <span class="o">=</span> <span class="mi">0</span> 
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span> <span class="c">#iteration index </span>
+    <span class="n">exact</span> <span class="o">=</span> <span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="c"># loop until the difference between exact value and series expansion value</span>
+    <span class="c"># stop at 10000 iterations </span>
+    <span class="k">while</span> <span class="n">abs</span><span class="p">(</span><span class="n">exact</span> <span class="o">-</span> <span class="n">series_expansion_value</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="o">^-</span><span class="mi">7</span> <span class="o">&amp;&amp;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10000</span>
+        <span class="n">series_term_i</span> <span class="o">=</span> <span class="n">calculate_cos_series_term</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="n">series_expansion_value</span> <span class="o">+=</span> <span class="n">series_term_i</span>
+        <span class="n">i</span><span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">end</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">&quot;number of iterations </span><span class="si">$</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="s">&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">series_expansion_value</span>
+<span class="k">end</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="mf">.4</span>
+<span class="n">cos_exact</span> <span class="o">=</span> <span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">cos_exact</span> <span class="o">=</span> <span class="n">round</span><span class="p">(</span><span class="n">cos_exact</span><span class="p">;</span> <span class="n">digits</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span> <span class="c">#don&#39;t worry too much about how this rounding works</span>
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;</span><span class="si">$</span><span class="p">(</span><span class="n">cos_exact</span><span class="p">)</span><span class="s"> cos_exact&quot;</span><span class="p">)</span>
+<span class="n">series_expansion_value</span> <span class="o">=</span> <span class="n">calculate_series_cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="c">#round off some extra values</span>
+<span class="n">rounded_value</span> <span class="o">=</span> <span class="kt">Float64</span><span class="p">(</span><span class="n">round</span><span class="p">(</span><span class="n">series_expansion_value</span><span class="p">;</span> <span class="n">digits</span><span class="o">=</span><span class="mi">10</span><span class="p">))</span> <span class="c">#don&#39;t worry too much about how this rounding works</span>
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;</span><span class="si">$</span><span class="p">(</span><span class="n">rounded_value</span><span class="p">)</span><span class="s"> series_expansion_value&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.921060994 cos_exact
+number of iterations 4
+0.9210609778 series_expansion_value
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice how the calculate_series_cos and calculate_series_exponential were essentially identical. They only thing that is different is the function that calculates the ith series term.</p>
+<p>You will do sin(x) as a exercise problem.</p>
+</div>
+</div>
+</div>
+<div class="section" id="exercise">
+<h2>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">¶</a></h2>
+<p><strong>REMINDER!!!</strong></p>
+<p>When working in Binder/Jupyter book, your files and changes are not persisted unless you are consistently using it. (If it goes idle you may lose your work!) <strong>Save your files to your computer early and often!!!</strong></p>
+<div class="section" id="going-forward">
+<h3>Going forward<a class="headerlink" href="#going-forward" title="Permalink to this headline">¶</a></h3>
+<p>Going forward all of the end of module exercises will be done in separate julia files(extension .jl). You can use the jupyter notebook to run them (this will be set up for you in the notebook). There will be two files of interest for the exercises:</p>
+</div>
+<div class="section" id="submitting">
+<h3>Submitting<a class="headerlink" href="#submitting" title="Permalink to this headline">¶</a></h3>
+<p>Please submit your exercises julia files in a folder named <strong>LastName_FirstName_Module_N_Exercise</strong> and save it to a zip file. <strong>Do not change the file names</strong></p>
+</div>
+<div class="section" id="exercise-file">
+<h3>Exercise File<a class="headerlink" href="#exercise-file" title="Permalink to this headline">¶</a></h3>
+<p>There will be a file called m-module-e-exercise.jl (where n is the module number, m is the problem number). This file will have a scaffolding of functions that you will need to complete.</p>
+<p>Here is an example of how to use a julia file in jupyter notebook:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">include</span><span class="p">(</span><span class="s">&quot;hello.jl&quot;</span><span class="p">)</span>
+<span class="n">hello_text</span> <span class="o">=</span> <span class="n">hello</span><span class="p">()</span>
+<span class="n">println</span><span class="p">(</span><span class="n">hello_text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hello
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="test-runner">
+<h3>Test Runner<a class="headerlink" href="#test-runner" title="Permalink to this headline">¶</a></h3>
+<p>There will be a file called n-exercise-test-runner.jl for each module. This file runs test that will call the functions in your exercise file. <strong>DO NOT MODIFY THIS FILE.</strong> These test files will let you know if you have done the exercise correctly.</p>
+<p>Inside this file are tests called “Unit Tests.” These types of tests are very common in software engineering. In a good codebase, unit tests should be written to account for every scenario your code is expected to fulfil.</p>
+<p>An example of a unit test in julia:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="k">using</span> <span class="n">Test</span>
+<span class="n">expected_value</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">our_value</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span>
+<span class="nd">@test</span> <span class="n">expected_value</span> <span class="o">==</span> <span class="n">our_value</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold -Color-Bold-Green">Test Passed</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="k">using</span> <span class="n">Test</span>
+<span class="n">expected_value</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">wrong_value</span> <span class="o">=</span> <span class="mi">25</span> <span class="o">/</span> <span class="mi">3</span>
+<span class="nd">@test</span> <span class="n">our_value</span> <span class="o">==</span> <span class="n">wrong_value</span> <span class="c"># a test that will fail</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">Test Failed</span> at <span class=" -Color -Color-Bold">In[18]:4</span>
+  Expression: our_value == wrong_value
+   Evaluated: 5.0 == 8.333333333333334
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">There</span> <span class="n">was</span> <span class="n">an</span> <span class="n">error</span> <span class="n">during</span> <span class="n">testing</span>
+
+<span class="ne">Stacktrace</span>:
+ <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="n">record</span><span class="p">(</span><span class="n">ts</span><span class="p">::</span><span class="n">Test</span><span class="o">.</span><span class="n">FallbackTestSet</span><span class="p">,</span> <span class="n">t</span><span class="p">::</span><span class="n">Union</span><span class="p">{</span><span class="n">Test</span><span class="o">.</span><span class="n">Error</span><span class="p">,</span> <span class="n">Test</span><span class="o">.</span><span class="n">Fail</span><span class="p">})</span>
+   <span class="o">@</span> <span class="n">Test</span> <span class="o">/</span><span class="n">buildworker</span><span class="o">/</span><span class="n">worker</span><span class="o">/</span><span class="n">package_linux64</span><span class="o">/</span><span class="n">build</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">julia</span><span class="o">/</span><span class="n">stdlib</span><span class="o">/</span><span class="n">v1</span><span class="mf">.6</span><span class="o">/</span><span class="n">Test</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">Test</span><span class="o">.</span><span class="n">jl</span><span class="p">:</span><span class="mi">772</span>
+ <span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="n">do_test</span><span class="p">(</span><span class="n">result</span><span class="p">::</span><span class="n">Test</span><span class="o">.</span><span class="n">ExecutionResult</span><span class="p">,</span> <span class="n">orig_expr</span><span class="p">::</span><span class="n">Any</span><span class="p">)</span>
+   <span class="o">@</span> <span class="n">Test</span> <span class="o">/</span><span class="n">buildworker</span><span class="o">/</span><span class="n">worker</span><span class="o">/</span><span class="n">package_linux64</span><span class="o">/</span><span class="n">build</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">julia</span><span class="o">/</span><span class="n">stdlib</span><span class="o">/</span><span class="n">v1</span><span class="mf">.6</span><span class="o">/</span><span class="n">Test</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">Test</span><span class="o">.</span><span class="n">jl</span><span class="p">:</span><span class="mi">555</span>
+ <span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="n">top</span><span class="o">-</span><span class="n">level</span> <span class="n">scope</span>
+   <span class="o">@</span> <span class="n">In</span><span class="p">[</span><span class="mi">18</span><span class="p">]:</span><span class="mi">4</span>
+ <span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="nb">eval</span>
+   <span class="o">@</span> <span class="o">./</span><span class="n">boot</span><span class="o">.</span><span class="n">jl</span><span class="p">:</span><span class="mi">360</span> <span class="p">[</span><span class="n">inlined</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="n">include_string</span><span class="p">(</span><span class="n">mapexpr</span><span class="p">::</span><span class="n">typeof</span><span class="p">(</span><span class="n">REPL</span><span class="o">.</span><span class="n">softscope</span><span class="p">),</span> <span class="n">mod</span><span class="p">::</span><span class="n">Module</span><span class="p">,</span> <span class="n">code</span><span class="p">::</span><span class="n">String</span><span class="p">,</span> <span class="n">filename</span><span class="p">::</span><span class="n">String</span><span class="p">)</span>
+   <span class="o">@</span> <span class="n">Base</span> <span class="o">./</span><span class="n">loading</span><span class="o">.</span><span class="n">jl</span><span class="p">:</span><span class="mi">1116</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="example-test-runner">
+<h3>Example Test Runner<a class="headerlink" href="#example-test-runner" title="Permalink to this headline">¶</a></h3>
+<p>Here is how to use one, the tests will be grouped and named to help you figure out which pass and which fail:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">include</span><span class="p">(</span><span class="s">&quot;hello-test-runner.jl&quot;</span><span class="p">)</span>
+<span class="n">run_tests_module_hello</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="problem-1-build-an-array">
+<h3>Problem 1 - Build an Array<a class="headerlink" href="#problem-1-build-an-array" title="Permalink to this headline">¶</a></h3>
+<p>a) Write a function that takes in a number n (named number_of_values) as a parameter and returns an array containing the first n odd numbers. (Hint: Starting from 1 going to n)</p>
+<p>b) Write a function that takes in a number n (number_of_values) as a parameter and returns an array containing the first n powers of 3. (Hint: starting from 0 to n-1, remember 1 based indexing!)</p>
+<p>Implement these in the provided file: <span class="xref myst">module-2-exercise-1.jl</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">include</span><span class="p">(</span><span class="s">&quot;module-2-exercise-1.jl&quot;</span><span class="p">)</span>
+<span class="n">odd_numbers</span> <span class="o">=</span> <span class="n">get_odd_numbers</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">odd_numbers</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7-element Vector{Float64}:
+  1.0
+  3.0
+  5.0
+  7.0
+  9.0
+ 11.0
+ 13.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">include</span><span class="p">(</span><span class="s">&quot;module-2-exercise-1.jl&quot;</span><span class="p">)</span>
+<span class="n">powers_of_there</span> <span class="o">=</span> <span class="n">get_powers_of_three</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">powers_of_there</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4-element Vector{Float64}:
+ 0.0
+ 0.0
+ 0.0
+ 0.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can run the code below to run the unit tests against your implementation of the exercises. It will give you error messages if something is wrong, and will print out the tests as successful if it succeeds.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">include</span><span class="p">(</span><span class="s">&quot;module-2-exercise-1a-test-runner.jl&quot;</span><span class="p">)</span> <span class="c">#including the file runs the tests</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold -Color-Bold-White">Test Summary:                        | </span><span class=" -Color -Color-Bold -Color-Bold-Green">Pass  </span><span class=" -Color -Color-Bold -Color-Bold-Cyan">Total</span>
+PUT YOUR NAME HERE: odd number tests | <span class=" -Color -Color-Green">   3  </span><span class=" -Color -Color-Cyan">    3</span>
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Test.DefaultTestSet(&quot;PUT YOUR NAME HERE: odd number tests&quot;, Any[Test.DefaultTestSet(&quot;1&quot;, Any[], 1, false, false), Test.DefaultTestSet(&quot;2&quot;, Any[], 1, false, false), Test.DefaultTestSet(&quot;4&quot;, Any[], 1, false, false)], 0, false, false)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">include</span><span class="p">(</span><span class="s">&quot;module-2-exercise-1b-test-runner.jl&quot;</span><span class="p">)</span> <span class="c">#including the file runs the tests</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold -Color-Bold-White">Test Summary:                             | </span><span class=" -Color -Color-Bold -Color-Bold-Green">Pass  </span><span class=" -Color -Color-Bold -Color-Bold-Cyan">Total</span>
+PUT YOUR NAME HERE: powers of three tests | <span class=" -Color -Color-Green">   4  </span><span class=" -Color -Color-Cyan">    4</span>
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Test.DefaultTestSet(&quot;PUT YOUR NAME HERE: powers of three tests&quot;, Any[], 4, false, false)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="problem-2-implement-sin-x-as-a-series-expansion">
+<h3>Problem 2 - Implement sin(x) as a series expansion<a class="headerlink" href="#problem-2-implement-sin-x-as-a-series-expansion" title="Permalink to this headline">¶</a></h3>
+<p>Using similar functions to the cos(x) example above, implement a series expansion of sin(x).</p>
+</div>
+<div class="section" id="problem-3">
+<h3>Problem 3 -<a class="headerlink" href="#problem-3" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="some-other-thoughts-before-you-go">
+<h2>Some other thoughts before you go:<a class="headerlink" href="#some-other-thoughts-before-you-go" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="complex-numbers-in-julia">
+<h3>Complex Numbers in Julia<a class="headerlink" href="#complex-numbers-in-julia" title="Permalink to this headline">¶</a></h3>
+<p>By the way, I forgot to mention this in the last module, but Julia natively can handle complex numbers;</p>
+<p>See <a class="reference external" href="https://docs.julialang.org/en/v1/manual/complex-and-rational-numbers/#Complex-Numbers">Documentation</a> for more information and operations availible with complex numbers</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">complex_1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span><span class="nb">im</span><span class="p">)</span>
+<span class="n">print</span><span class="p">(</span><span class="s">&quot;A complex number: &quot;</span><span class="p">)</span>
+<span class="n">println</span><span class="p">(</span><span class="n">complex_1</span><span class="p">)</span>
+
+<span class="n">print</span><span class="p">(</span><span class="s">&quot;A complex number addition operation: &quot;</span><span class="p">)</span>
+<span class="n">complex_3</span> <span class="o">=</span> <span class="n">complex_1</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span><span class="nb">im</span><span class="p">)</span>
+<span class="n">println</span><span class="p">(</span><span class="n">complex_3</span> <span class="p">)</span>
+
+<span class="n">print</span><span class="p">(</span><span class="s">&quot;real part of complex 1: &quot;</span><span class="p">)</span>
+<span class="n">println</span><span class="p">(</span><span class="n">real</span><span class="p">(</span><span class="n">complex_1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="vscode-ide">
+<h2>VSCode IDE<a class="headerlink" href="#vscode-ide" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="virtues-of-using-an-ide">
+<h3>virtues of using an ide<a class="headerlink" href="#virtues-of-using-an-ide" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="download-links-and-installation-instructions">
+<h3>download links and installation instructions<a class="headerlink" href="#download-links-and-installation-instructions" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "julia-1.6"
+        },
+        kernelOptions: {
+            kernelName: "julia-1.6",
+            path: "./module2"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'julia-1.6'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Jackson Hayes<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
