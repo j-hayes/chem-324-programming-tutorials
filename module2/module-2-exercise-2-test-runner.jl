@@ -1,12 +1,13 @@
-function get_odd_numbers(number_of_values)
-    odd_numbers = zeros(number_of_values)
-    # implement the loop here
-    return odd_numbers
-end
+using Test
+include("module-2-exercise-2.jl")
 
-function get_powers_of_three(number_of_values)
-    powers_of_three = zeros(number_of_values)
-    # implement the loop here
-    return powers_of_three
+@testset "sin tests" begin
+    x = pi
+    @test isapprox(sin(x), calculate_series_sin(x); atol = 0.05)
+    x = 2*pi
+    @test isapprox(sin(x), calculate_series_sin(x); atol = 0.05)
+    x = 0
+    @test isapprox(sin(x), calculate_series_sin(x); atol = 0.05)
+    x = pi/7
+    @test isapprox(sin(x), calculate_series_sin(x); atol = 0.05)
 end
-

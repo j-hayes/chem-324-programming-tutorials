@@ -1,11 +1,21 @@
-function get_odd_numbers(number_of_values)
-    odd_numbers = zeros(number_of_values)
-    # implement the loop here
-    return odd_numbers
+
+function get_module_2_excersise_3_author_name()
+    return "YOUR NAME HERE"
 end
 
-function get_powers_of_three(number_of_values)
-    powers_of_three = zeros(number_of_values)
-    # implement the loop here
-    return powers_of_three
+function wave_function(x, quantum_number, box_length)
+    return 0 #implement the wave function here use the built in sin(x) function
+end
+
+# Numerical integration procedure for one dimensional particle in a box
+# PIB = Particle In a Box
+function one_dimensional_PIB_numerical_integration(quantum_number,
+    box_length,
+    number_of_rectangles,
+    integration_start,
+    integration_end)
+
+    area_under_curve = 0
+    # implement the function here with a loop
+    return area_under_curve
 end
