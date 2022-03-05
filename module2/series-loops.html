@@ -347,6 +347,11 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#numerical-integration">
+   Numerical Integration
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#exercise">
    Exercise
   </a>
@@ -387,8 +392,8 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#problem-3">
-     Problem 3 -
+    <a class="reference internal nav-link" href="#problem-3-numerical-integration">
+     Problem 3 - Numerical Integration
     </a>
    </li>
   </ul>
@@ -539,6 +544,11 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#numerical-integration">
+   Numerical Integration
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#exercise">
    Exercise
   </a>
@@ -579,8 +589,8 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#problem-3">
-     Problem 3 -
+    <a class="reference internal nav-link" href="#problem-3-numerical-integration">
+     Problem 3 - Numerical Integration
     </a>
    </li>
   </ul>
@@ -743,7 +753,7 @@ final value: 55
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="o">:</span><span class="mi">10</span>
-    <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="c"># does i divided by 2 have a remainder not equal to zero</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="c"># does i divided by 2 have a remainder equal to zero</span>
         <span class="n">println</span><span class="p">(</span><span class="s">&quot;</span><span class="si">$</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="s">&quot;</span><span class="p">)</span>
     <span class="k">end</span>    
 <span class="k">end</span>
@@ -995,18 +1005,25 @@ final value: 55
 <span class="n">our_sum</span> <span class="o">=</span> <span class="n">sum</span><span class="p">(</span><span class="n">our_vector</span><span class="p">)</span>
 <span class="n">our_average</span> <span class="o">=</span> <span class="n">mean</span><span class="p">(</span><span class="n">our_vector</span><span class="p">)</span>
 <span class="n">our_median</span> <span class="o">=</span> <span class="n">median</span><span class="p">(</span><span class="n">our_vector</span><span class="p">)</span>
-
+<span class="n">dot_product</span> <span class="o">=</span> <span class="n">dot</span><span class="p">(</span><span class="n">our_vector</span><span class="p">,</span> <span class="n">our_vector</span><span class="p">)</span>
 
 <span class="n">println</span><span class="p">(</span><span class="n">our_sum</span><span class="p">)</span>
 <span class="n">println</span><span class="p">(</span><span class="n">our_average</span><span class="p">)</span>
 <span class="n">println</span><span class="p">(</span><span class="n">our_median</span><span class="p">)</span>
+<span class="n">println</span><span class="p">(</span><span class="n">dot_product</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100
-8.333333333333334
-6.5
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">invalid</span> <span class="n">redefinition</span> <span class="n">of</span> <span class="n">constant</span> <span class="n">dot_product</span>
+
+<span class="ne">Stacktrace</span>:
+ <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="n">top</span><span class="o">-</span><span class="n">level</span> <span class="n">scope</span>
+   <span class="o">@</span> <span class="n">In</span><span class="p">[</span><span class="mi">13</span><span class="p">]:</span><span class="mi">7</span>
+ <span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="nb">eval</span>
+   <span class="o">@</span> <span class="o">./</span><span class="n">boot</span><span class="o">.</span><span class="n">jl</span><span class="p">:</span><span class="mi">360</span> <span class="p">[</span><span class="n">inlined</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="n">include_string</span><span class="p">(</span><span class="n">mapexpr</span><span class="p">::</span><span class="n">typeof</span><span class="p">(</span><span class="n">REPL</span><span class="o">.</span><span class="n">softscope</span><span class="p">),</span> <span class="n">mod</span><span class="p">::</span><span class="n">Module</span><span class="p">,</span> <span class="n">code</span><span class="p">::</span><span class="n">String</span><span class="p">,</span> <span class="n">filename</span><span class="p">::</span><span class="n">String</span><span class="p">)</span>
+   <span class="o">@</span> <span class="n">Base</span> <span class="o">./</span><span class="n">loading</span><span class="o">.</span><span class="n">jl</span><span class="p">:</span><span class="mi">1116</span>
 </pre></div>
 </div>
 </div>
@@ -1057,15 +1074,6 @@ final value: 55
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>148.4131591026 exp_exact
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of iterations 25
-148.4131590788 series_expansion_value
-</pre></div>
-</div>
-</div>
 </div>
 </div>
 <div class="section" id="cos-x-and-sin-x">
@@ -1074,7 +1082,7 @@ final value: 55
 <p><span class="math notranslate nohighlight">\( sin(x) = \sum_{n=0}^{\infty} (-1)^{n}\frac{x^{2n+1}}{(2n+1)!} = x -\frac{x^3}{3!} + \frac{x^5}{5!} -... \)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="n">calculate_cos_series_term</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="n">calculate_cos_series_term</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
     <span class="k">return</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">^</span><span class="n">i</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">^</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="p">))</span><span class="o">/</span><span class="n">factorial</span><span class="p">(</span><span class="n">big</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="p">))</span> 
 <span class="k">end</span>
 
@@ -1085,7 +1093,7 @@ final value: 55
     <span class="c"># loop until the difference between exact value and series expansion value</span>
     <span class="c"># stop at 10000 iterations </span>
     <span class="k">while</span> <span class="n">abs</span><span class="p">(</span><span class="n">exact</span> <span class="o">-</span> <span class="n">series_expansion_value</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="o">^-</span><span class="mi">7</span> <span class="o">&amp;&amp;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10000</span>
-        <span class="n">series_term_i</span> <span class="o">=</span> <span class="n">calculate_cos_series_term</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="n">series_term_i</span> <span class="o">=</span> <span class="n">calculate_cos_series_term</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
         <span class="n">series_expansion_value</span> <span class="o">+=</span> <span class="n">series_term_i</span>
         <span class="n">i</span><span class="o">+=</span> <span class="mi">1</span>
     <span class="k">end</span>
@@ -1093,7 +1101,7 @@ final value: 55
     <span class="k">return</span> <span class="n">series_expansion_value</span>
 <span class="k">end</span>
 
-<span class="n">x</span> <span class="o">=</span> <span class="mf">.4</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="mf">3.14159</span>
 <span class="n">cos_exact</span> <span class="o">=</span> <span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="n">cos_exact</span> <span class="o">=</span> <span class="n">round</span><span class="p">(</span><span class="n">cos_exact</span><span class="p">;</span> <span class="n">digits</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span> <span class="c">#don&#39;t worry too much about how this rounding works</span>
 <span class="n">println</span><span class="p">(</span><span class="s">&quot;</span><span class="si">$</span><span class="p">(</span><span class="n">cos_exact</span><span class="p">)</span><span class="s"> cos_exact&quot;</span><span class="p">)</span>
@@ -1104,16 +1112,56 @@ final value: 55
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.921060994 cos_exact
-number of iterations 4
-0.9210609778 series_expansion_value
-</pre></div>
-</div>
-</div>
 </div>
 <p>Notice how the calculate_series_cos and calculate_series_exponential were essentially identical. They only thing that is different is the function that calculates the ith series term.</p>
 <p>You will do sin(x) as a exercise problem.</p>
+</div>
+</div>
+</div>
+<div class="section" id="numerical-integration">
+<h2>Numerical Integration<a class="headerlink" href="#numerical-integration" title="Permalink to this headline">¶</a></h2>
+<p>Another application of series are numerical techniques to calculate the area under a curve. One such technique using the midpoint rule divides the area under the curve between the integration limits a and b into n rectangles. The sum of the area of the rectangles is the approximation of the integral value. The larger n becomes, the closer to the exact integral. In the infinite limit, the values are the same. (This process is also called a <a class="reference external" href="https://en.wikipedia.org/wiki/Riemann_sum">Riemann Sum</a>)</p>
+<div class="math notranslate nohighlight">
+\[M_{n} = \sum_{i=0}^{n} f(x_i) Δx \]</div>
+<div class="math notranslate nohighlight">
+\[ Δx = \frac{b-a}{n} \]</div>
+<div class="math notranslate nohighlight">
+\[\lim_{n \to \infty}  M_{n} = \int_a^b f(x) \: \mathrm{d}x \]</div>
+<p><img alt="Riemann Sum" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Riemann_sum_convergence.png/300px-Riemann_sum_convergence.png" /></p>
+<p>(source: <a class="reference external" href="http://wikipedia.org">wikipedia.org</a>)</p>
+<div class="math notranslate nohighlight">
+\[ \int_0^1 \exp^{-2x} dx = \frac{1}{2} - \frac{1}{2 e^{2}} ≈ 0.43233 \]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="n">function_to_be_integrated</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">)</span>
+<span class="k">end</span>
+
+<span class="k">function</span> <span class="n">numerical_integration</span><span class="p">(</span><span class="n">number_of_rectangles</span><span class="p">,</span>
+     <span class="n">integration_start</span><span class="p">,</span> 
+     <span class="n">integration_end</span><span class="p">,</span> 
+     <span class="n">integration_function</span><span class="p">)</span>
+
+    <span class="n">area_under_curve</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">Δx</span> <span class="o">=</span> <span class="p">(</span><span class="n">integration_end</span><span class="o">-</span><span class="n">integration_start</span><span class="p">)</span><span class="o">/</span><span class="n">number_of_rectangles</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">0</span><span class="o">:</span><span class="n">number_of_rectangles</span>
+        <span class="n">area_under_curve</span> <span class="o">+=</span> <span class="n">integration_function</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">Δx</span><span class="p">)</span><span class="o">*</span><span class="n">Δx</span>
+    <span class="k">end</span>
+    <span class="k">return</span> <span class="n">area_under_curve</span>
+<span class="k">end</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="mi">10000</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="c">## you can pass a function as a parameter to be used in another function. </span>
+<span class="n">area_under_curve</span> <span class="o">=</span> <span class="n">numerical_integration</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">function_to_be_integrated</span><span class="p">)</span>
+
+<span class="n">analytical_area_under_curve</span> <span class="o">=</span> <span class="mf">0.43233</span> <span class="c"># calculated with wolfram alpha </span>
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;analytical: </span><span class="si">$</span><span class="p">(</span><span class="n">analytical_area_under_curve</span><span class="p">)</span><span class="s">&quot;</span><span class="p">)</span>
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;numerical: </span><span class="si">$</span><span class="p">(</span><span class="n">area_under_curve</span><span class="p">)</span><span class="s">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -1131,7 +1179,7 @@ number of iterations 4
 </div>
 <div class="section" id="exercise-file">
 <h3>Exercise File<a class="headerlink" href="#exercise-file" title="Permalink to this headline">¶</a></h3>
-<p>There will be a file called m-module-e-exercise.jl (where n is the module number, m is the problem number). This file will have a scaffolding of functions that you will need to complete.</p>
+<p>There will be a file called m-module-e-exercise.jl (where m is the module number, e is the problem number). This file will have a scaffolding of functions that you will need to complete.</p>
 <p>Here is an example of how to use a julia file in jupyter notebook:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1141,17 +1189,13 @@ number of iterations 4
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hello
-</pre></div>
-</div>
-</div>
 </div>
 </div>
 <div class="section" id="test-runner">
 <h3>Test Runner<a class="headerlink" href="#test-runner" title="Permalink to this headline">¶</a></h3>
-<p>There will be a file called n-exercise-test-runner.jl for each module. This file runs test that will call the functions in your exercise file. <strong>DO NOT MODIFY THIS FILE.</strong> These test files will let you know if you have done the exercise correctly.</p>
+<p>There will be a file called m-module-e-exercise-test-runner.jl for each module. This file runs test that will call the functions in your exercise file. <strong>DO NOT MODIFY THIS FILE.</strong> These test files will let you know if you have done the exercise correctly.</p>
 <p>Inside this file are tests called “Unit Tests.” These types of tests are very common in software engineering. In a good codebase, unit tests should be written to account for every scenario your code is expected to fulfil.</p>
+<p><strong>To receive credit for the module your code must pass all of the tests.</strong></p>
 <p>An example of a unit test in julia:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1159,11 +1203,6 @@ number of iterations 4
 <span class="n">expected_value</span> <span class="o">=</span> <span class="mi">5</span>
 <span class="n">our_value</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span>
 <span class="nd">@test</span> <span class="n">expected_value</span> <span class="o">==</span> <span class="n">our_value</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold -Color-Bold-Green">Test Passed</span>
 </pre></div>
 </div>
 </div>
@@ -1179,42 +1218,6 @@ number of iterations 4
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-White">hello tests: </span><span class=" -Color -Color-Bold">Test Failed</span> at <span class=" -Color -Color-Bold">In[18]:5</span>
-  Expression: our_value == wrong_value
-   Evaluated: 5.0 == 8.333333333333334
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Stacktrace:
- [1] <span class=" -Color -Color-Bold">macro expansion</span>
-   @ In[18]:5 [inlined]
- [2] <span class=" -Color -Color-Bold">macro expansion</span>
-   @ /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.6/Test/src/Test.jl:1151 [inlined]
- [3] top-level scope
-   @ In[18]:5
-<span class=" -Color -Color-Bold -Color-Bold-White">Test Summary: | </span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">Fail  </span><span class=" -Color -Color-Bold -Color-Bold-Cyan">Total</span>
-hello tests   |    1  <span class=" -Color -Color-Cyan">    1</span>
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">Some</span> <span class="n">tests</span> <span class="n">did</span> <span class="ow">not</span> <span class="k">pass</span><span class="p">:</span> <span class="mi">0</span> <span class="n">passed</span><span class="p">,</span> <span class="mi">1</span> <span class="n">failed</span><span class="p">,</span> <span class="mi">0</span> <span class="n">errored</span><span class="p">,</span> <span class="mi">0</span> <span class="n">broken</span><span class="o">.</span>
-
-<span class="ne">Stacktrace</span>:
- <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="n">finish</span><span class="p">(</span><span class="n">ts</span><span class="p">::</span><span class="n">Test</span><span class="o">.</span><span class="n">DefaultTestSet</span><span class="p">)</span>
-   <span class="o">@</span> <span class="n">Test</span> <span class="o">/</span><span class="n">buildworker</span><span class="o">/</span><span class="n">worker</span><span class="o">/</span><span class="n">package_linux64</span><span class="o">/</span><span class="n">build</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">julia</span><span class="o">/</span><span class="n">stdlib</span><span class="o">/</span><span class="n">v1</span><span class="mf">.6</span><span class="o">/</span><span class="n">Test</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">Test</span><span class="o">.</span><span class="n">jl</span><span class="p">:</span><span class="mi">913</span>
- <span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="n">macro</span> <span class="n">expansion</span>
-   <span class="o">@</span> <span class="o">/</span><span class="n">buildworker</span><span class="o">/</span><span class="n">worker</span><span class="o">/</span><span class="n">package_linux64</span><span class="o">/</span><span class="n">build</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">julia</span><span class="o">/</span><span class="n">stdlib</span><span class="o">/</span><span class="n">v1</span><span class="mf">.6</span><span class="o">/</span><span class="n">Test</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">Test</span><span class="o">.</span><span class="n">jl</span><span class="p">:</span><span class="mi">1161</span> <span class="p">[</span><span class="n">inlined</span><span class="p">]</span>
- <span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="n">top</span><span class="o">-</span><span class="n">level</span> <span class="n">scope</span>
-   <span class="o">@</span> <span class="n">In</span><span class="p">[</span><span class="mi">18</span><span class="p">]:</span><span class="mi">5</span>
- <span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="nb">eval</span>
-   <span class="o">@</span> <span class="o">./</span><span class="n">boot</span><span class="o">.</span><span class="n">jl</span><span class="p">:</span><span class="mi">360</span> <span class="p">[</span><span class="n">inlined</span><span class="p">]</span>
- <span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="n">include_string</span><span class="p">(</span><span class="n">mapexpr</span><span class="p">::</span><span class="n">typeof</span><span class="p">(</span><span class="n">REPL</span><span class="o">.</span><span class="n">softscope</span><span class="p">),</span> <span class="n">mod</span><span class="p">::</span><span class="n">Module</span><span class="p">,</span> <span class="n">code</span><span class="p">::</span><span class="n">String</span><span class="p">,</span> <span class="n">filename</span><span class="p">::</span><span class="n">String</span><span class="p">)</span>
-   <span class="o">@</span> <span class="n">Base</span> <span class="o">./</span><span class="n">loading</span><span class="o">.</span><span class="n">jl</span><span class="p">:</span><span class="mi">1116</span>
-</pre></div>
-</div>
-</div>
 </div>
 </div>
 <div class="section" id="example-test-runner">
@@ -1222,8 +1225,7 @@ hello tests   |    1  <span class=" -Color -Color-Cyan">    1</span>
 <p>Here is how to use one, the tests will be grouped and named to help you figure out which pass and which fail:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">include</span><span class="p">(</span><span class="s">&quot;hello-test-runner.jl&quot;</span><span class="p">)</span>
-<span class="n">run_tests_module_hello</span><span class="p">()</span>
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">include</span><span class="p">(</span><span class="s">&quot;hello-test-runner.jl&quot;</span><span class="p">)</span> <span class="c">#including the file runs the tests</span>
 </pre></div>
 </div>
 </div>
@@ -1236,39 +1238,18 @@ hello tests   |    1  <span class=" -Color -Color-Cyan">    1</span>
 <p>Implement these in the provided file: <span class="xref myst">module-2-exercise-1.jl</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">include</span><span class="p">(</span><span class="s">&quot;module-2-exercise-1.jl&quot;</span><span class="p">)</span>
-<span class="n">odd_numbers</span> <span class="o">=</span> <span class="n">get_odd_numbers</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">odd_numbers</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7-element Vector{Float64}:
-  1.0
-  3.0
-  5.0
-  7.0
-  9.0
- 11.0
- 13.0
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="c"># include(&quot;module-2-exercise-1.jl&quot;)</span>
+<span class="c"># odd_numbers = get_odd_numbers(7)</span>
+<span class="c"># display(odd_numbers)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">include</span><span class="p">(</span><span class="s">&quot;module-2-exercise-1.jl&quot;</span><span class="p">)</span>
-<span class="n">powers_of_there</span> <span class="o">=</span> <span class="n">get_powers_of_three</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">powers_of_there</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4-element Vector{Float64}:
- 0.0
- 0.0
- 0.0
- 0.0
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="c"># include(&quot;module-2-exercise-1.jl&quot;)</span>
+<span class="c"># powers_of_there = get_powers_of_three(4)</span>
+<span class="c"># display(powers_of_there)</span>
 </pre></div>
 </div>
 </div>
@@ -1276,32 +1257,14 @@ hello tests   |    1  <span class=" -Color -Color-Cyan">    1</span>
 <p>You can run the code below to run the unit tests against your implementation of the exercises. It will give you error messages if something is wrong, and will print out the tests as successful if it succeeds.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">include</span><span class="p">(</span><span class="s">&quot;module-2-exercise-1a-test-runner.jl&quot;</span><span class="p">)</span> <span class="c">#including the file runs the tests</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold -Color-Bold-White">Test Summary:                        | </span><span class=" -Color -Color-Bold -Color-Bold-Green">Pass  </span><span class=" -Color -Color-Bold -Color-Bold-Cyan">Total</span>
-PUT YOUR NAME HERE: odd number tests | <span class=" -Color -Color-Green">   3  </span><span class=" -Color -Color-Cyan">    3</span>
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Test.DefaultTestSet(&quot;PUT YOUR NAME HERE: odd number tests&quot;, Any[Test.DefaultTestSet(&quot;1&quot;, Any[], 1, false, false), Test.DefaultTestSet(&quot;2&quot;, Any[], 1, false, false), Test.DefaultTestSet(&quot;4&quot;, Any[], 1, false, false)], 0, false, false)
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="c"># include(&quot;module-2-exercise-1a-test-runner.jl&quot;) #including the file runs the tests</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">include</span><span class="p">(</span><span class="s">&quot;module-2-exercise-1b-test-runner.jl&quot;</span><span class="p">)</span> <span class="c">#including the file runs the tests</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold -Color-Bold-White">Test Summary:                             | </span><span class=" -Color -Color-Bold -Color-Bold-Green">Pass  </span><span class=" -Color -Color-Bold -Color-Bold-Cyan">Total</span>
-PUT YOUR NAME HERE: powers of three tests | <span class=" -Color -Color-Green">   4  </span><span class=" -Color -Color-Cyan">    4</span>
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Test.DefaultTestSet(&quot;PUT YOUR NAME HERE: powers of three tests&quot;, Any[], 4, false, false)
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="c"># include(&quot;module-2-exercise-1b-test-runner.jl&quot;) #including the file runs the tests</span>
 </pre></div>
 </div>
 </div>
@@ -1309,10 +1272,32 @@ PUT YOUR NAME HERE: powers of three tests | <span class=" -Color -Color-Green"> 
 </div>
 <div class="section" id="problem-2-implement-sin-x-as-a-series-expansion">
 <h3>Problem 2 - Implement sin(x) as a series expansion<a class="headerlink" href="#problem-2-implement-sin-x-as-a-series-expansion" title="Permalink to this headline">¶</a></h3>
-<p>Using similar functions to the cos(x) example above, implement a series expansion of sin(x).</p>
+<p>Using similar functions to the cos(x) example above, implement a series expansion of sin(x). Complete this exercise in <span class="xref myst">module-2-exercise-2.jl</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="c"># include(&quot;module-2-exercise-2-test-runner.jl&quot;) #including the file runs the tests</span>
+</pre></div>
 </div>
-<div class="section" id="problem-3">
-<h3>Problem 3 -<a class="headerlink" href="#problem-3" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="section" id="problem-3-numerical-integration">
+<h3>Problem 3 - Numerical Integration<a class="headerlink" href="#problem-3-numerical-integration" title="Permalink to this headline">¶</a></h3>
+<p>Using similar steps as the numerical integration techniques above (Riemann Sum). Get the area under the curve for the normalized particle in a one-dimensional box wave function squared. Limits of integration are any a ≥ 0 to b ≤ L. L is the box length. Integrate with a given number of rectangles ( <span class="math notranslate nohighlight">\(n_{r}\)</span> ).</p>
+<div class="math notranslate nohighlight">
+\[M_{n_{r}} = \sum_{i=0}^{n_{r}} Ψ^{*}_n(x_i)Ψ_n(x_i) Δx \]</div>
+<div class="math notranslate nohighlight">
+\[ Δx = \frac{b-a}{n_{r}} \]</div>
+<div class="math notranslate nohighlight">
+\[\lim_{i \to \infty}  M_{n_{r}} = \int_a^b Ψ^{*}_n(x)Ψ_n(x) \: \mathrm{d}x \]</div>
+<p>Complete this exercise in <span class="xref myst">module-2-exercise-3.jl</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="c"># include(&quot;module-2-exercise-3-test-runner.jl&quot;) #including the file runs the tests</span>
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="some-other-thoughts-before-you-go">
