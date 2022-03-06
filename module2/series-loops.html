@@ -1095,12 +1095,12 @@ final value: 55
 <span class="n">our_sum</span> <span class="o">=</span> <span class="n">sum</span><span class="p">(</span><span class="n">our_vector</span><span class="p">)</span>
 <span class="n">our_average</span> <span class="o">=</span> <span class="n">mean</span><span class="p">(</span><span class="n">our_vector</span><span class="p">)</span>
 <span class="n">our_median</span> <span class="o">=</span> <span class="n">median</span><span class="p">(</span><span class="n">our_vector</span><span class="p">)</span>
-<span class="n">dot_product</span> <span class="o">=</span> <span class="n">dot</span><span class="p">(</span><span class="n">our_vector</span><span class="p">,</span> <span class="n">our_vector</span><span class="p">)</span>
+<span class="n">dot_product_value</span> <span class="o">=</span> <span class="n">dot</span><span class="p">(</span><span class="n">our_vector</span><span class="p">,</span> <span class="n">our_vector</span><span class="p">)</span>
 
 <span class="n">println</span><span class="p">(</span><span class="n">our_sum</span><span class="p">)</span>
 <span class="n">println</span><span class="p">(</span><span class="n">our_average</span><span class="p">)</span>
 <span class="n">println</span><span class="p">(</span><span class="n">our_median</span><span class="p">)</span>
-<span class="n">println</span><span class="p">(</span><span class="n">dot_product</span><span class="p">)</span>
+<span class="n">println</span><span class="p">(</span><span class="n">dot_product_value</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1118,18 +1118,20 @@ final value: 55
 <p>julia provides the function factorial(n) for computing <span class="math notranslate nohighlight">\(n!\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="n">calculate_exp_series_term</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="n">calculate_exp_series_term</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">x</span><span class="o">^</span><span class="n">n</span><span class="p">)</span><span class="o">/</span><span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> 
 <span class="k">end</span>
 
-<span class="n">println</span><span class="p">(</span><span class="n">calculate_exp_series_term</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span> <span class="c"># first term in the series  </span>
-<span class="n">println</span><span class="p">(</span><span class="n">calculate_exp_series_term</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span> <span class="c"># second term in the series</span>
+<span class="n">println</span><span class="p">(</span><span class="n">calculate_exp_series_term</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span> <span class="c"># first term in the series for e^2</span>
+<span class="n">println</span><span class="p">(</span><span class="n">calculate_exp_series_term</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span> <span class="c"># second term in the series e^2</span>
+<span class="n">println</span><span class="p">(</span><span class="n">calculate_exp_series_term</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span> <span class="c"># third term in the series e^2</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.0
-12.5
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.0
+2.0
+1.3333333333333333
 </pre></div>
 </div>
 </div>
@@ -1138,7 +1140,7 @@ final value: 55
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="n">calculate_exp_series_term</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
-    <span class="k">return</span> <span class="p">(</span><span class="n">x</span><span class="o">^</span><span class="n">n</span><span class="p">)</span><span class="o">/</span><span class="n">factorial</span><span class="p">(</span><span class="n">big</span><span class="p">(</span><span class="n">n</span><span class="p">))</span> 
+    <span class="k">return</span> <span class="p">(</span><span class="n">x</span><span class="o">^</span><span class="n">n</span><span class="p">)</span><span class="o">/</span><span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> 
 <span class="k">end</span>
 
 <span class="k">function</span> <span class="n">calculate_series_exponential</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
@@ -1147,7 +1149,7 @@ final value: 55
     <span class="n">exp_exact</span> <span class="o">=</span> <span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
     
     <span class="k">while</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">20</span>
-        <span class="n">series_term_n</span> <span class="o">=</span> <span class="n">calculate_exp_series_term</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+        <span class="n">series_term_n</span> <span class="o">=</span> <span class="n">calculate_exp_series_term</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
         <span class="n">series_expansion_value</span> <span class="o">+=</span> <span class="n">series_term_n</span>
         <span class="n">n</span><span class="o">+=</span> <span class="mi">1</span>
     <span class="k">end</span>
@@ -1163,7 +1165,7 @@ final value: 55
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of iterations 11
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7.389056098930174096302926002447136436794678258905275247874665809481061117778201
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7.3890560989301735
 </pre></div>
 </div>
 </div>
@@ -1183,7 +1185,7 @@ final value: 55
     <span class="n">series_term_n</span> <span class="o">=</span> <span class="mi">1</span> <span class="c">#use a starting value that will allow us to go into the loop</span>
 
     <span class="k">while</span> <span class="n">series_term_n</span> <span class="o">&gt;=</span> <span class="mf">.01</span> <span class="o">&amp;&amp;</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">20</span>
-        <span class="n">series_term_n</span> <span class="o">=</span> <span class="n">calculate_exp_series_term</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+        <span class="n">series_term_n</span> <span class="o">=</span> <span class="n">calculate_exp_series_term</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>
         <span class="n">series_expansion_value</span> <span class="o">+=</span> <span class="n">series_term_n</span>
         <span class="n">n</span><span class="o">+=</span> <span class="mi">1</span>
     <span class="k">end</span>
@@ -1199,7 +1201,7 @@ final value: 55
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of iterations 11
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7.387301587301587301587301587301587301587301587301587301587301587301587301587317
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7.387301587301587
 </pre></div>
 </div>
 </div>
@@ -1207,8 +1209,10 @@ final value: 55
 <p>Here is a final version.</p>
 <p>A couple of functions used here</p>
 <ul class="simple">
-<li><p>exp() gives us the exact value for e^x</p></li>
-<li><p>big() creates a number</p></li>
+<li><p>exp(): gives us the exact value for e^x</p></li>
+<li><p>big(): creates a number that can be very large, signals to julia to handle the factorial function differently (don’t worry about this for now)</p></li>
+<li><p>round(): rounds a floating point number to a specified number of digits.</p></li>
+<li><p>Float64(): converts a number to a Float64, again don’t worry too much about this.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1224,7 +1228,7 @@ final value: 55
     <span class="n">series_term_n</span> <span class="o">=</span> <span class="mi">1</span> <span class="c">#use a starting value that will allow us to go into the loop</span>
      
     <span class="k">while</span> <span class="n">series_term_n</span> <span class="o">&gt;</span> <span class="mf">.01</span> <span class="o">&amp;&amp;</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">1000</span>
-        <span class="n">series_term_n</span> <span class="o">=</span> <span class="n">calculate_exp_series_term</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+        <span class="n">series_term_n</span> <span class="o">=</span> <span class="n">calculate_exp_series_term</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
         <span class="n">series_expansion_value</span> <span class="o">+=</span> <span class="n">series_term_n</span>
         <span class="n">n</span><span class="o">+=</span> <span class="mi">1</span>
     <span class="k">end</span>
@@ -1277,7 +1281,7 @@ final value: 55
         <span class="n">series_expansion_value</span> <span class="o">+=</span> <span class="n">series_term_n</span>
         <span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span>
     <span class="k">end</span>
-    <span class="n">println</span><span class="p">(</span><span class="s">&quot;number of iterations </span><span class="si">$</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="s">&quot;</span><span class="p">)</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">&quot;number of iterations </span><span class="si">$</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="s">&quot;</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">series_expansion_value</span>
 <span class="k">end</span>
 
@@ -1294,8 +1298,19 @@ final value: 55
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0 cos_exact
-number of iterations 11
-1.0003012185 series_expansion_value
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="ne">UndefVarError</span>: i not defined
+
+<span class="ne">Stacktrace</span>:
+ <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="n">calculate_series_cos</span><span class="p">(</span><span class="n">x</span><span class="p">::</span><span class="n">Float64</span><span class="p">)</span>
+   <span class="o">@</span> <span class="n">Main</span> <span class="o">./</span><span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span><span class="mi">15</span>
+ <span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="n">top</span><span class="o">-</span><span class="n">level</span> <span class="n">scope</span>
+   <span class="o">@</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span><span class="mi">23</span>
+ <span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="nb">eval</span>
+   <span class="o">@</span> <span class="o">./</span><span class="n">boot</span><span class="o">.</span><span class="n">jl</span><span class="p">:</span><span class="mi">360</span> <span class="p">[</span><span class="n">inlined</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="n">include_string</span><span class="p">(</span><span class="n">mapexpr</span><span class="p">::</span><span class="n">typeof</span><span class="p">(</span><span class="n">REPL</span><span class="o">.</span><span class="n">softscope</span><span class="p">),</span> <span class="n">mod</span><span class="p">::</span><span class="n">Module</span><span class="p">,</span> <span class="n">code</span><span class="p">::</span><span class="n">String</span><span class="p">,</span> <span class="n">filename</span><span class="p">::</span><span class="n">String</span><span class="p">)</span>
+   <span class="o">@</span> <span class="n">Base</span> <span class="o">./</span><span class="n">loading</span><span class="o">.</span><span class="n">jl</span><span class="p">:</span><span class="mi">1116</span>
 </pre></div>
 </div>
 </div>
