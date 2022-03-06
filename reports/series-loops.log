@@ -17,29 +17,24 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-using LinearAlgebra 
-using Statistics # statistical functions
-our_vector = [1,2,3,4,5,6,7,8,9,10,15, 30]
-our_sum = sum(our_vector)
-our_average = mean(our_vector)
-our_median = median(our_vector)
-dot_product = dot(our_vector, our_vector)
-
-println(our_sum)
-println(our_average)
-println(our_median)
-println(dot_product)
-
+println( % 2)
+println(1 % 2)
+println(2 % 2)
+println(3 % 2)
+println(4 % 2)
+println(5 % 2)
+println(33 % 2)
+println(1047 % 2)
 ------------------
 
-invalid redefinition of constant dot_product
+syntax: "%" is not a unary operator
 
 Stacktrace:
  [1] top-level scope
-   @ In[13]:7
+   @ In[5]:1
  [2] eval
    @ ./boot.jl:360 [inlined]
  [3] include_string(mapexpr::typeof(REPL.softscope), mod::Module, code::String, filename::String)
    @ Base ./loading.jl:1116
-LoadError: invalid redefinition of constant dot_product
+LoadError: syntax: "%" is not a unary operator
 

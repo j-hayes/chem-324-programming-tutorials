@@ -42,6 +42,8 @@
     <script src="../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
@@ -243,6 +245,26 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#numerical-integration">
+   Numerical Integration
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-3-numerical-integration">
+     Problem 3 - Numerical Integration
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -255,6 +277,26 @@
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#numerical-integration">
+   Numerical Integration
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-3-numerical-integration">
+     Problem 3 - Numerical Integration
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -263,6 +305,77 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="matricies-and-determinants">
 <h1>Matricies and Determinants<a class="headerlink" href="#matricies-and-determinants" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="numerical-integration">
+<h2>Numerical Integration<a class="headerlink" href="#numerical-integration" title="Permalink to this headline">¶</a></h2>
+<p>Another application of series are numerical techniques to calculate the area under a curve. One such technique using the midpoint rule divides the area under the curve between the integration limits a and b into n rectangles. The sum of the area of the rectangles is the approximation of the integral value. The larger n becomes, the closer to the exact integral. In the infinite limit, the values are the same. (This process is also called a <a class="reference external" href="https://en.wikipedia.org/wiki/Riemann_sum">Riemann Sum</a>)</p>
+<div class="math notranslate nohighlight">
+\[M_{n} = \sum_{i=0}^{n} f(x_i) Δx \]</div>
+<div class="math notranslate nohighlight">
+\[ Δx = \frac{b-a}{n} \]</div>
+<div class="math notranslate nohighlight">
+\[\lim_{n \to \infty}  M_{n} = \int_a^b f(x) \: \mathrm{d}x \]</div>
+<p><img alt="Riemann Sum" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Riemann_sum_convergence.png/300px-Riemann_sum_convergence.png" /></p>
+<p>(source: <a class="reference external" href="http://wikipedia.org">wikipedia.org</a>)</p>
+<div class="math notranslate nohighlight">
+\[ \int_0^1 \exp^{-2x} dx = \frac{1}{2} - \frac{1}{2 e^{2}} ≈ 0.43233 \]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="n">function_to_be_integrated</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">)</span>
+<span class="k">end</span>
+
+<span class="k">function</span> <span class="n">numerical_integration</span><span class="p">(</span><span class="n">number_of_rectangles</span><span class="p">,</span>
+     <span class="n">integration_start</span><span class="p">,</span> 
+     <span class="n">integration_end</span><span class="p">,</span> 
+     <span class="n">integration_function</span><span class="p">)</span>
+
+    <span class="n">area_under_curve</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">Δx</span> <span class="o">=</span> <span class="p">(</span><span class="n">integration_end</span><span class="o">-</span><span class="n">integration_start</span><span class="p">)</span><span class="o">/</span><span class="n">number_of_rectangles</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">0</span><span class="o">:</span><span class="n">number_of_rectangles</span>
+        <span class="n">area_under_curve</span> <span class="o">+=</span> <span class="n">integration_function</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">Δx</span><span class="p">)</span><span class="o">*</span><span class="n">Δx</span>
+    <span class="k">end</span>
+    <span class="k">return</span> <span class="n">area_under_curve</span>
+<span class="k">end</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="mi">10000</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="c">## you can pass a function as a parameter to be used in another function. </span>
+<span class="n">area_under_curve</span> <span class="o">=</span> <span class="n">numerical_integration</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">function_to_be_integrated</span><span class="p">)</span>
+
+<span class="n">analytical_area_under_curve</span> <span class="o">=</span> <span class="mf">0.43233</span> <span class="c"># calculated with wolfram alpha </span>
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;analytical: </span><span class="si">$</span><span class="p">(</span><span class="n">analytical_area_under_curve</span><span class="p">)</span><span class="s">&quot;</span><span class="p">)</span>
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;numerical: </span><span class="si">$</span><span class="p">(</span><span class="n">area_under_curve</span><span class="p">)</span><span class="s">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>analytical: 0.43233
+numerical: 0.4323891265869634
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="problem-3-numerical-integration">
+<h3>Problem 3 - Numerical Integration<a class="headerlink" href="#problem-3-numerical-integration" title="Permalink to this headline">¶</a></h3>
+<p>Using similar steps as the numerical integration techniques above (Riemann Sum). Get the area under the curve for the normalized particle in a one-dimensional box wave function squared. Limits of integration are any a ≥ 0 to b ≤ L. L is the box length. Integrate with a given number of rectangles ( <span class="math notranslate nohighlight">\(n_{r}\)</span> ).</p>
+<div class="math notranslate nohighlight">
+\[M_{n_{r}} = \sum_{i=0}^{n_{r}} Ψ^{*}_n(x_i)Ψ_n(x_i) Δx \]</div>
+<div class="math notranslate nohighlight">
+\[ Δx = \frac{b-a}{n_{r}} \]</div>
+<div class="math notranslate nohighlight">
+\[\lim_{i \to \infty}  M_{n_{r}} = \int_a^b Ψ^{*}_n(x)Ψ_n(x) \: \mathrm{d}x \]</div>
+<p>Complete this exercise in <span class="xref myst">module-2-exercise-3.jl</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="c"># include(&quot;module-3-exercise-3-test-runner.jl&quot;) #including the file runs the tests</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
