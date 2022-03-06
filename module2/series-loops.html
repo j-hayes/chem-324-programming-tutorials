@@ -310,6 +310,18 @@
     <a class="reference internal nav-link" href="#iterate-over-an-array-using-a-loop">
      Iterate over an array using a loop
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#assert-macro">
+       Assert Macro
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#length-function">
+       length() function
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#using-keyword">
@@ -502,6 +514,18 @@
     <a class="reference internal nav-link" href="#iterate-over-an-array-using-a-loop">
      Iterate over an array using a loop
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#assert-macro">
+       Assert Macro
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#length-function">
+       length() function
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#using-keyword">
@@ -792,7 +816,7 @@ final value: 55
 <h4>A simple way of doing it if statement<a class="headerlink" href="#a-simple-way-of-doing-it-if-statement" title="Permalink to this headline">¶</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">println</span><span class="p">(</span> <span class="o">%</span> <span class="mi">2</span><span class="p">)</span>
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">println</span><span class="p">(</span><span class="mi">0</span> <span class="o">%</span> <span class="mi">2</span><span class="p">)</span>
 <span class="n">println</span><span class="p">(</span><span class="mi">1</span> <span class="o">%</span> <span class="mi">2</span><span class="p">)</span>
 <span class="n">println</span><span class="p">(</span><span class="mi">2</span> <span class="o">%</span> <span class="mi">2</span><span class="p">)</span>
 <span class="n">println</span><span class="p">(</span><span class="mi">3</span> <span class="o">%</span> <span class="mi">2</span><span class="p">)</span>
@@ -804,15 +828,14 @@ final value: 55
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="ne">syntax</span>: &quot;%&quot; is not a unary operator
-
-<span class="ne">Stacktrace</span>:
- <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="n">top</span><span class="o">-</span><span class="n">level</span> <span class="n">scope</span>
-   <span class="o">@</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">]:</span><span class="mi">1</span>
- <span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="nb">eval</span>
-   <span class="o">@</span> <span class="o">./</span><span class="n">boot</span><span class="o">.</span><span class="n">jl</span><span class="p">:</span><span class="mi">360</span> <span class="p">[</span><span class="n">inlined</span><span class="p">]</span>
- <span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="n">include_string</span><span class="p">(</span><span class="n">mapexpr</span><span class="p">::</span><span class="n">typeof</span><span class="p">(</span><span class="n">REPL</span><span class="o">.</span><span class="n">softscope</span><span class="p">),</span> <span class="n">mod</span><span class="p">::</span><span class="n">Module</span><span class="p">,</span> <span class="n">code</span><span class="p">::</span><span class="n">String</span><span class="p">,</span> <span class="n">filename</span><span class="p">::</span><span class="n">String</span><span class="p">)</span>
-   <span class="o">@</span> <span class="n">Base</span> <span class="o">./</span><span class="n">loading</span><span class="o">.</span><span class="n">jl</span><span class="p">:</span><span class="mi">1116</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+1
+0
+1
+0
+1
+1
+1
 </pre></div>
 </div>
 </div>
@@ -847,6 +870,15 @@ final value: 55
 <div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="o">:</span><span class="mi">5</span>   
     <span class="n">println</span><span class="p">(</span><span class="s">&quot;</span><span class="si">$</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="p">)</span><span class="s">&quot;</span><span class="p">)</span>   
 <span class="k">end</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+4
+6
+8
+10
 </pre></div>
 </div>
 </div>
@@ -897,6 +929,21 @@ final value: 55
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value at i=1: 1
+value at i=2: 3
+value at i=3: 6
+value at i=4: 10
+value at i=5: 15
+value at i=6: 21
+value at i=7: 28
+value at i=8: 36
+value at i=9: 45
+value at i=10: 55
+final value: 55
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -910,6 +957,20 @@ final value: 55
 
 <span class="n">second_point</span> <span class="o">=</span> <span class="n">point_int_space_origin</span> <span class="o">+</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
 <span class="n">display</span><span class="p">(</span><span class="n">second_point</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3-element Vector{Int64}:
+ 0
+ 0
+ 0
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3-element Vector{Int64}:
+ 1
+ 1
+ 2
 </pre></div>
 </div>
 </div>
@@ -930,6 +991,26 @@ final value: 55
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3-element Vector{Int64}:
+ 2
+ 4
+ 6
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3-element Vector{Int64}:
+ 2
+ 4
+ 6
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3-element Vector{Int64}:
+  3
+ 10
+ 30
+</pre></div>
+</div>
+</div>
 </div>
 <p>Of course, we don’t have to limit ourselves to loops with length 3. Julia provides some operations functions for getting attributes of the array.</p>
 <div class="section" id="getting-a-value-at-a-specific-index">
@@ -944,6 +1025,12 @@ final value: 55
 <span class="n">longer_vector</span> <span class="o">=</span> <span class="p">[</span><span class="mf">12.23</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mf">.12</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="o">-</span><span class="mf">8.32</span><span class="p">]</span>
 <span class="n">sum_of_first_two_terms</span> <span class="o">=</span> <span class="n">longer_vector</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">longer_vector</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
 <span class="n">println</span><span class="p">(</span><span class="n">sum_of_first_two_terms</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
+13.23
 </pre></div>
 </div>
 </div>
@@ -987,11 +1074,16 @@ final value: 55
 </div>
 </div>
 <p>Try to change the vectors and get the value for that result.</p>
+<div class="section" id="assert-macro">
+<h4>Assert Macro<a class="headerlink" href="#assert-macro" title="Permalink to this headline">¶</a></h4>
 <p>The vectors must have the same length for the dot product to have a valid meaning.</p>
 <p>We can check to see if this is the case by using the assert “macro.”</p>
 <p>A macro is something provided by the Julia language to do some basic functionality without having to write a special function for it.</p>
 <p>The assert macro checks a boolean result, if it is true the code proceeds forward. If it is false an error message is thrown.</p>
-<p>There is also a build in function provided by Julia length(array) that returns the number of items in the array as an integer.</p>
+</div>
+<div class="section" id="length-function">
+<h4>length() function<a class="headerlink" href="#length-function" title="Permalink to this headline">¶</a></h4>
+<p>There is a built in function provided by Julia length(array) that returns the number of items in the array as an integer.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">vector_a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
@@ -1034,12 +1126,28 @@ final value: 55
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="ne">AssertionError</span>: length(vector1) == length(vector2)
+
+<span class="ne">Stacktrace</span>:
+ <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="n">dot_product</span><span class="p">(</span><span class="n">vector1</span><span class="p">::</span><span class="n">Vector</span><span class="p">{</span><span class="n">Int64</span><span class="p">},</span> <span class="n">vector2</span><span class="p">::</span><span class="n">Vector</span><span class="p">{</span><span class="n">Int64</span><span class="p">})</span>
+   <span class="o">@</span> <span class="n">Main</span> <span class="o">./</span><span class="n">In</span><span class="p">[</span><span class="mi">15</span><span class="p">]:</span><span class="mi">2</span>
+ <span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="n">top</span><span class="o">-</span><span class="n">level</span> <span class="n">scope</span>
+   <span class="o">@</span> <span class="n">In</span><span class="p">[</span><span class="mi">15</span><span class="p">]:</span><span class="mi">16</span>
+ <span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="nb">eval</span>
+   <span class="o">@</span> <span class="o">./</span><span class="n">boot</span><span class="o">.</span><span class="n">jl</span><span class="p">:</span><span class="mi">360</span> <span class="p">[</span><span class="n">inlined</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="n">include_string</span><span class="p">(</span><span class="n">mapexpr</span><span class="p">::</span><span class="n">typeof</span><span class="p">(</span><span class="n">REPL</span><span class="o">.</span><span class="n">softscope</span><span class="p">),</span> <span class="n">mod</span><span class="p">::</span><span class="n">Module</span><span class="p">,</span> <span class="n">code</span><span class="p">::</span><span class="n">String</span><span class="p">,</span> <span class="n">filename</span><span class="p">::</span><span class="n">String</span><span class="p">)</span>
+   <span class="o">@</span> <span class="n">Base</span> <span class="o">./</span><span class="n">loading</span><span class="o">.</span><span class="n">jl</span><span class="p">:</span><span class="mi">1116</span>
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="using-keyword">
 <h3>Using keyword<a class="headerlink" href="#using-keyword" title="Permalink to this headline">¶</a></h3>
 <p>We have talked about “built in” features of the Julia language, the most recent example was “length()” Everything we have used so far is part of the “Base” module of the “standard library” of features.</p>
-<p>There are other things provided by the language that are not included by default, you have to “ask for them” to be provided. The way to do this is by adding a “using” statement.</p>
+<p>There are other things provided by the language that are not included by default, you have to “ask for them” to be provided. The way to do this is by adding a “using” statement.  “using” statements need to be at the top of the file.</p>
 <p>Julia has many libraries providing often used functionality. The first one of these we will use Linear Algebra</p>
 <div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="k">using</span> <span class="n">LinearAlgebra</span>
 </pre></div>
@@ -1316,11 +1424,12 @@ number of iterations 11
 </div>
 <div class="section" id="submitting">
 <h3>Submitting<a class="headerlink" href="#submitting" title="Permalink to this headline">¶</a></h3>
-<p>Please submit your exercises julia files in a folder named <strong>LastName_FirstName_Module_N_Exercise</strong> and save it to a zip file. <strong>Do not change the file names</strong></p>
+<p>Please save your exercise julia files in a folder named <strong>LastName_FirstName_Module_N_Exercise</strong> and save it to a zip file. <strong>Do not change the file names</strong>  Upload the zip to canvas.</p>
 </div>
 <div class="section" id="exercise-file">
 <h3>Exercise File<a class="headerlink" href="#exercise-file" title="Permalink to this headline">¶</a></h3>
 <p>There will be a file called m-module-e-exercise.jl (where m is the module number, e is the problem number). This file will have a scaffolding of functions that you will need to complete.</p>
+<p>The include function is how to include the code from a different file. It should be at the top of the file.</p>
 <p>Here is an example of how to use a julia file in jupyter notebook:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1382,8 +1491,8 @@ hello name tests | <span class=" -Color -Color-Green">   1  </span><span class="
 </div>
 </div>
 </div>
-<p>** The code below is commented out so it doesn’t run until you are ready.**</p>
-<p>Remove the # when you are ready.</p>
+<p><strong>The code snippets below is commented out so it doesn’t run until you are ready.</strong></p>
+<p>Remove the # when you are ready to use it.</p>
 </div>
 <div class="section" id="problem-1-build-an-array">
 <h3>Problem 1 - Build an Array<a class="headerlink" href="#problem-1-build-an-array" title="Permalink to this headline">¶</a></h3>

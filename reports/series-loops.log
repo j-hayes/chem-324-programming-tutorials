@@ -17,24 +17,34 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-println( % 2)
-println(1 % 2)
-println(2 % 2)
-println(3 % 2)
-println(4 % 2)
-println(5 % 2)
-println(33 % 2)
-println(1047 % 2)
+function dot_product(vector1, vector2)
+    @assert length(vector1) == length(vector2) 
+    for i in 1:length(vector1)
+        v1_i = vector1[i]
+        v2_i = vector2[i]
+        new_term = v1_i * v2_i
+        dot_product_value += new_term
+    end
+    return dot_product_value
+end
+
+
+vector_a = [1,2,3]
+vector_b = [-1,-2,-3, 4] # the problem is here
+
+value = dot_product(vector_a, vector_b)
 ------------------
 
-syntax: "%" is not a unary operator
+AssertionError: length(vector1) == length(vector2)
 
 Stacktrace:
- [1] top-level scope
-   @ In[5]:1
- [2] eval
+ [1] dot_product(vector1::Vector{Int64}, vector2::Vector{Int64})
+   @ Main ./In[15]:2
+ [2] top-level scope
+   @ In[15]:16
+ [3] eval
    @ ./boot.jl:360 [inlined]
- [3] include_string(mapexpr::typeof(REPL.softscope), mod::Module, code::String, filename::String)
+ [4] include_string(mapexpr::typeof(REPL.softscope), mod::Module, code::String, filename::String)
    @ Base ./loading.jl:1116
-LoadError: syntax: "%" is not a unary operator
+LoadError: AssertionError: length(vector1) == length(vector2)
 
