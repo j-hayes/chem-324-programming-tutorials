@@ -17,34 +17,26 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-function dot_product(vector1, vector2)
-    @assert length(vector1) == length(vector2) 
-    for i in 1:length(vector1)
-        v1_i = vector1[i]
-        v2_i = vector2[i]
-        new_term = v1_i * v2_i
-        dot_product_value += new_term
-    end
-    return dot_product_value
+using Test
+expected_value = 5
+wrong_value = 25 / 3
+@testset "hello tests" begin
+    @test our_value == wrong_value # a test that will fail
 end
-
-
-vector_a = [1,2,3]
-vector_b = [-1,-2,-3, 4] # the problem is here
-
-value = dot_product(vector_a, vector_b)
 ------------------
 
-AssertionError: length(vector1) == length(vector2)
+[91mSome tests did not pass: 0 passed, 1 failed, 0 errored, 0 broken.[39m
 
 Stacktrace:
- [1] dot_product(vector1::Vector{Int64}, vector2::Vector{Int64})
-   @ Main ./In[15]:2
- [2] top-level scope
-   @ In[15]:16
- [3] eval
+ [1] finish(ts::Test.DefaultTestSet)
+   @ Test /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.6/Test/src/Test.jl:913
+ [2] macro expansion
+   @ /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.6/Test/src/Test.jl:1161 [inlined]
+ [3] top-level scope
+   @ In[26]:5
+ [4] eval
    @ ./boot.jl:360 [inlined]
- [4] include_string(mapexpr::typeof(REPL.softscope), mod::Module, code::String, filename::String)
+ [5] include_string(mapexpr::typeof(REPL.softscope), mod::Module, code::String, filename::String)
    @ Base ./loading.jl:1116
-LoadError: AssertionError: length(vector1) == length(vector2)
+LoadError: [91mSome tests did not pass: 0 passed, 1 failed, 0 errored, 0 broken.[39m
 

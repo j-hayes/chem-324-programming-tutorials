@@ -429,8 +429,20 @@
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#download-links-and-installation-instructions">
-     download links and installation instructions
+     Download links and installation instructions
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#installing-julia-the-language-we-are-using">
+       Installing Julia (The language we are using):
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#installing-visual-studio-code-ide">
+       Installing Visual Studio Code (IDE)
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -633,8 +645,20 @@
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#download-links-and-installation-instructions">
-     download links and installation instructions
+     Download links and installation instructions
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#installing-julia-the-language-we-are-using">
+       Installing Julia (The language we are using):
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#installing-visual-studio-code-ide">
+       Installing Visual Studio Code (IDE)
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -799,7 +823,7 @@ final value: 55
 <span class="n">println</span><span class="p">(</span><span class="s">&quot;final value: </span><span class="si">$</span><span class="p">(</span><span class="n">summation_value</span><span class="p">)</span><span class="s">&quot;</span><span class="p">)</span>
 
 <span class="n">summation_value</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">7</span><span class="o">:</span><span class="mi">11</span>
+<span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">5</span><span class="o">:</span><span class="mi">11</span>
     <span class="n">summation_value</span> <span class="o">+=</span> <span class="n">i</span> 
 <span class="k">end</span>
 <span class="n">println</span><span class="p">(</span><span class="s">&quot;final value: </span><span class="si">$</span><span class="p">(</span><span class="n">summation_value</span><span class="p">)</span><span class="s">&quot;</span><span class="p">)</span>
@@ -887,8 +911,8 @@ final value: 55
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">number_of_even_printed</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">while</span> <span class="n">number_of_even_printed</span> <span class="o">&lt;=</span> <span class="mi">5</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">while</span> <span class="n">number_of_even_printed</span> <span class="o">&lt;</span> <span class="mi">5</span>
     <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span>
         <span class="n">number_of_even_printed</span> <span class="o">+=</span> <span class="mi">1</span> 
         <span class="n">println</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
@@ -899,8 +923,7 @@ final value: 55
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
-2
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
 4
 6
 8
@@ -1109,6 +1132,7 @@ final value: 55
 <div class="cell_input docutils container">
 <div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="n">dot_product</span><span class="p">(</span><span class="n">vector1</span><span class="p">,</span> <span class="n">vector2</span><span class="p">)</span>
     <span class="nd">@assert</span> <span class="n">length</span><span class="p">(</span><span class="n">vector1</span><span class="p">)</span> <span class="o">==</span> <span class="n">length</span><span class="p">(</span><span class="n">vector2</span><span class="p">)</span> 
+    <span class="n">dot_product_value</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="o">:</span><span class="n">length</span><span class="p">(</span><span class="n">vector1</span><span class="p">)</span>
         <span class="n">v1_i</span> <span class="o">=</span> <span class="n">vector1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
         <span class="n">v2_i</span> <span class="o">=</span> <span class="n">vector2</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
@@ -1120,24 +1144,14 @@ final value: 55
 
 
 <span class="n">vector_a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
-<span class="n">vector_b</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span> <span class="c"># the problem is here</span>
+<span class="n">vector_b</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span> <span class="c"># the problem is here</span>
 
 <span class="n">value</span> <span class="o">=</span> <span class="n">dot_product</span><span class="p">(</span><span class="n">vector_a</span><span class="p">,</span> <span class="n">vector_b</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="ne">AssertionError</span>: length(vector1) == length(vector2)
-
-<span class="ne">Stacktrace</span>:
- <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="n">dot_product</span><span class="p">(</span><span class="n">vector1</span><span class="p">::</span><span class="n">Vector</span><span class="p">{</span><span class="n">Int64</span><span class="p">},</span> <span class="n">vector2</span><span class="p">::</span><span class="n">Vector</span><span class="p">{</span><span class="n">Int64</span><span class="p">})</span>
-   <span class="o">@</span> <span class="n">Main</span> <span class="o">./</span><span class="n">In</span><span class="p">[</span><span class="mi">15</span><span class="p">]:</span><span class="mi">2</span>
- <span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="n">top</span><span class="o">-</span><span class="n">level</span> <span class="n">scope</span>
-   <span class="o">@</span> <span class="n">In</span><span class="p">[</span><span class="mi">15</span><span class="p">]:</span><span class="mi">16</span>
- <span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="nb">eval</span>
-   <span class="o">@</span> <span class="o">./</span><span class="n">boot</span><span class="o">.</span><span class="n">jl</span><span class="p">:</span><span class="mi">360</span> <span class="p">[</span><span class="n">inlined</span><span class="p">]</span>
- <span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="n">include_string</span><span class="p">(</span><span class="n">mapexpr</span><span class="p">::</span><span class="n">typeof</span><span class="p">(</span><span class="n">REPL</span><span class="o">.</span><span class="n">softscope</span><span class="p">),</span> <span class="n">mod</span><span class="p">::</span><span class="n">Module</span><span class="p">,</span> <span class="n">code</span><span class="p">::</span><span class="n">String</span><span class="p">,</span> <span class="n">filename</span><span class="p">::</span><span class="n">String</span><span class="p">)</span>
-   <span class="o">@</span> <span class="n">Base</span> <span class="o">./</span><span class="n">loading</span><span class="o">.</span><span class="n">jl</span><span class="p">:</span><span class="mi">1116</span>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-14
 </pre></div>
 </div>
 </div>
@@ -1162,6 +1176,11 @@ final value: 55
 <span class="n">vector_b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
 <span class="n">julia_computed_value</span> <span class="o">=</span> <span class="n">dot</span><span class="p">(</span><span class="n">vector_a</span><span class="p">,</span><span class="n">vector_b</span><span class="p">)</span>
 <span class="n">println</span><span class="p">(</span><span class="n">julia_computed_value</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>32
 </pre></div>
 </div>
 </div>
@@ -1208,6 +1227,14 @@ final value: 55
 <span class="n">println</span><span class="p">(</span><span class="n">our_average</span><span class="p">)</span>
 <span class="n">println</span><span class="p">(</span><span class="n">our_median</span><span class="p">)</span>
 <span class="n">println</span><span class="p">(</span><span class="n">dot_product_value</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100
+8.333333333333334
+6.5
+1510
 </pre></div>
 </div>
 </div>
@@ -1269,7 +1296,7 @@ final value: 55
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of iterations 11
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of iterations 20
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7.3890560989301735
@@ -1305,7 +1332,7 @@ final value: 55
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of iterations 11
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of iterations 9
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7.387301587301587
@@ -1358,7 +1385,9 @@ final value: 55
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7.3890560989 exp_exact
-7.3873015873 series_expansion_value
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7.3873015873 series_expansion_value
 </pre></div>
 </div>
 </div>
@@ -1439,6 +1468,11 @@ number of iterations 11
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hello
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="test-runner">
@@ -1456,6 +1490,11 @@ number of iterations 11
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold -Color-Bold-Green">Test Passed</span>
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1468,6 +1507,42 @@ number of iterations 11
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-White">hello tests: </span><span class=" -Color -Color-Bold">Test Failed</span> at <span class=" -Color -Color-Bold">In[26]:5</span>
+  Expression: our_value == wrong_value
+   Evaluated: 5.0 == 8.333333333333334
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Stacktrace:
+ [1] <span class=" -Color -Color-Bold">macro expansion</span>
+   @ In[26]:5 [inlined]
+ [2] <span class=" -Color -Color-Bold">macro expansion</span>
+   @ /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.6/Test/src/Test.jl:1151 [inlined]
+ [3] top-level scope
+   @ In[26]:5
+<span class=" -Color -Color-Bold -Color-Bold-White">Test Summary: | </span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">Fail  </span><span class=" -Color -Color-Bold -Color-Bold-Cyan">Total</span>
+hello tests   |    1  <span class=" -Color -Color-Cyan">    1</span>
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">Some</span> <span class="n">tests</span> <span class="n">did</span> <span class="ow">not</span> <span class="k">pass</span><span class="p">:</span> <span class="mi">0</span> <span class="n">passed</span><span class="p">,</span> <span class="mi">1</span> <span class="n">failed</span><span class="p">,</span> <span class="mi">0</span> <span class="n">errored</span><span class="p">,</span> <span class="mi">0</span> <span class="n">broken</span><span class="o">.</span>
+
+<span class="ne">Stacktrace</span>:
+ <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="n">finish</span><span class="p">(</span><span class="n">ts</span><span class="p">::</span><span class="n">Test</span><span class="o">.</span><span class="n">DefaultTestSet</span><span class="p">)</span>
+   <span class="o">@</span> <span class="n">Test</span> <span class="o">/</span><span class="n">buildworker</span><span class="o">/</span><span class="n">worker</span><span class="o">/</span><span class="n">package_linux64</span><span class="o">/</span><span class="n">build</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">julia</span><span class="o">/</span><span class="n">stdlib</span><span class="o">/</span><span class="n">v1</span><span class="mf">.6</span><span class="o">/</span><span class="n">Test</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">Test</span><span class="o">.</span><span class="n">jl</span><span class="p">:</span><span class="mi">913</span>
+ <span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="n">macro</span> <span class="n">expansion</span>
+   <span class="o">@</span> <span class="o">/</span><span class="n">buildworker</span><span class="o">/</span><span class="n">worker</span><span class="o">/</span><span class="n">package_linux64</span><span class="o">/</span><span class="n">build</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">julia</span><span class="o">/</span><span class="n">stdlib</span><span class="o">/</span><span class="n">v1</span><span class="mf">.6</span><span class="o">/</span><span class="n">Test</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">Test</span><span class="o">.</span><span class="n">jl</span><span class="p">:</span><span class="mi">1161</span> <span class="p">[</span><span class="n">inlined</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="n">top</span><span class="o">-</span><span class="n">level</span> <span class="n">scope</span>
+   <span class="o">@</span> <span class="n">In</span><span class="p">[</span><span class="mi">26</span><span class="p">]:</span><span class="mi">5</span>
+ <span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="nb">eval</span>
+   <span class="o">@</span> <span class="o">./</span><span class="n">boot</span><span class="o">.</span><span class="n">jl</span><span class="p">:</span><span class="mi">360</span> <span class="p">[</span><span class="n">inlined</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="n">include_string</span><span class="p">(</span><span class="n">mapexpr</span><span class="p">::</span><span class="n">typeof</span><span class="p">(</span><span class="n">REPL</span><span class="o">.</span><span class="n">softscope</span><span class="p">),</span> <span class="n">mod</span><span class="p">::</span><span class="n">Module</span><span class="p">,</span> <span class="n">code</span><span class="p">::</span><span class="n">String</span><span class="p">,</span> <span class="n">filename</span><span class="p">::</span><span class="n">String</span><span class="p">)</span>
+   <span class="o">@</span> <span class="n">Base</span> <span class="o">./</span><span class="n">loading</span><span class="o">.</span><span class="n">jl</span><span class="p">:</span><span class="mi">1116</span>
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="example-test-runner">
@@ -1476,17 +1551,6 @@ number of iterations 11
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">include</span><span class="p">(</span><span class="s">&quot;hello-test-runner.jl&quot;</span><span class="p">)</span> <span class="c">#including the file runs the tests</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold -Color-Bold-White">Test Summary: | </span><span class=" -Color -Color-Bold -Color-Bold-Green">Pass  </span><span class=" -Color -Color-Bold -Color-Bold-Cyan">Total</span>
-hello tests   | <span class=" -Color -Color-Green">   1  </span><span class=" -Color -Color-Cyan">    1</span>
-<span class=" -Color -Color-Bold -Color-Bold-White">Test Summary:    | </span><span class=" -Color -Color-Bold -Color-Bold-Green">Pass  </span><span class=" -Color -Color-Bold -Color-Bold-Cyan">Total</span>
-hello name tests | <span class=" -Color -Color-Green">   1  </span><span class=" -Color -Color-Cyan">    1</span>
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Test.DefaultTestSet(&quot;hello name tests&quot;, Any[], 1, false, false)
 </pre></div>
 </div>
 </div>
@@ -1504,18 +1568,6 @@ hello name tests | <span class=" -Color -Color-Green">   1  </span><span class="
 <div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="c"># include(&quot;module-2-exercise-1.jl&quot;)</span>
 <span class="c"># odd_numbers = get_odd_numbers(7)</span>
 <span class="c"># display(odd_numbers)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7-element Vector{Float64}:
- 0.0
- 0.0
- 0.0
- 0.0
- 0.0
- 0.0
- 0.0
 </pre></div>
 </div>
 </div>
@@ -1596,11 +1648,41 @@ hello name tests | <span class=" -Color -Color-Green">   1  </span><span class="
 </div>
 <div class="section" id="vscode-ide">
 <h2>VSCode IDE<a class="headerlink" href="#vscode-ide" title="Permalink to this headline">¶</a></h2>
+<p>I will be posting an optional video on installing and using VSCode soon.</p>
 <div class="section" id="virtues-of-using-an-ide">
 <h3>virtues of using an ide<a class="headerlink" href="#virtues-of-using-an-ide" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>shortcuts</p></li>
+<li><p>snippets</p>
+<ul>
+<li><p>short cuts that will scaffold out common blocks of code</p></li>
+</ul>
+</li>
+<li><p>visual debugger (this one is especially helpful for new programmers)</p></li>
+<li><p>syntax highlighting</p></li>
+<li><p>intellisense</p>
+<ul>
+<li><p>the text editor gives you suggestions based on what you type which can autocomplete. (e.g. function names, variable names, types)</p></li>
+</ul>
+</li>
+<li><p>and so much more!</p></li>
+</ul>
 </div>
 <div class="section" id="download-links-and-installation-instructions">
-<h3>download links and installation instructions<a class="headerlink" href="#download-links-and-installation-instructions" title="Permalink to this headline">¶</a></h3>
+<h3>Download links and installation instructions<a class="headerlink" href="#download-links-and-installation-instructions" title="Permalink to this headline">¶</a></h3>
+<p>I will post a video of me showing how to do this later but here are two links if you want to try to figure it out yourself</p>
+<div class="section" id="installing-julia-the-language-we-are-using">
+<h4>Installing Julia (The language we are using):<a class="headerlink" href="#installing-julia-the-language-we-are-using" title="Permalink to this headline">¶</a></h4>
+<p><a class="reference external" href="https://julialang.org/downloads/">https://julialang.org/downloads/</a></p>
+</div>
+<div class="section" id="installing-visual-studio-code-ide">
+<h4>Installing Visual Studio Code (IDE)<a class="headerlink" href="#installing-visual-studio-code-ide" title="Permalink to this headline">¶</a></h4>
+<p><a class="reference external" href="https://code.visualstudio.com/download">https://code.visualstudio.com/download</a></p>
+<p>after installing VS code install the VS code extension:
+<a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=julialang.language-julia">https://marketplace.visualstudio.com/items?itemName=julialang.language-julia</a></p>
+<p>Helpful tutorial:
+<a class="reference external" href="https://code.visualstudio.com/docs/languages/julia">https://code.visualstudio.com/docs/languages/julia</a></p>
+</div>
 </div>
 </div>
 </div>
