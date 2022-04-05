@@ -6,8 +6,9 @@ parts:
     - file: 0-intro
     - file: 0-intro-videos
     - file: module2/series-loops
+    - file: module3/module-2-review
     - file: module3/matrices-determinants
-    - file: module4/matrix-eigenvalue
+    - file: module4/file-io
     - file: module5/quantum-mechanical-applications
   - caption: Advanced Topics
     chapters:

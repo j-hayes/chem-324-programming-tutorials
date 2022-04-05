@@ -1,5 +1,5 @@
 using Test
-include("module-3-exercise-3.jl")
+include("module-3-optional-exercise.jl")
 
 #quantum number = 1
 area_under_curve_zero_to_zero = one_dimensional_PIB_numerical_integration(1, 4, 100000, 0, 0)
