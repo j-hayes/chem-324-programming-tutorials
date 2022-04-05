@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Software Engineering Concepts &#8212; CHEM 324 Programming Tutorials</title>
+    <title>Review / Clarifications &#8212; CHEM 324 Programming Tutorials</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -51,8 +51,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Computer Science Topics" href="1-computer-science-topics.html" />
-    <link rel="prev" title="Applications in Quantum Mechanics" href="../module5/quantum-mechanical-applications.html" />
+    <link rel="next" title="Matricies and Determinants" href="matrices-determinants.html" />
+    <link rel="prev" title="Loops, Arrays (Vectors), and Series" href="../module2/series-loops.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -96,7 +96,7 @@
   Main Content
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../0-intro.html">
    Introduction and Overview
@@ -112,13 +112,13 @@
    Loops, Arrays (Vectors), and Series
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../module3/module-2-review.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Review / Clarifications
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../module3/matrices-determinants.html">
+  <a class="reference internal" href="matrices-determinants.html">
    Matricies and Determinants
   </a>
  </li>
@@ -138,14 +138,14 @@
   Advanced Topics
  </span>
 </p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../advanced/0-software-engineering-concepts.html">
    Software Engineering Concepts
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="1-computer-science-topics.html">
+  <a class="reference internal" href="../advanced/1-computer-science-topics.html">
    Computer Science Topics
   </a>
  </li>
@@ -190,7 +190,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/advanced/0-software-engineering-concepts.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/module3/module-2-review.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -210,7 +210,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/j-hayes/chem-324-programming-tutorials/issues/new?title=Issue%20on%20page%20%2Fadvanced/0-software-engineering-concepts.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/j-hayes/chem-324-programming-tutorials/issues/new?title=Issue%20on%20page%20%2Fmodule3/module-2-review.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -231,7 +231,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/j-hayes/chem-324-programming-tutorials/main?urlpath=lab/tree/advanced/0-software-engineering-concepts.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/j-hayes/chem-324-programming-tutorials/main?urlpath=lab/tree/module3/module-2-review.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
@@ -254,72 +254,49 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#coding-style-and-documentation">
-   Coding Style and Documentation
+  <a class="reference internal nav-link" href="#id1">
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#self-documenting-code">
-     Self documenting code
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#use-of-comments">
-     Use of comments
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#design-patterns">
-   Design Patterns
+  <a class="reference internal nav-link" href="#working-with-julia-files-binder-jupyter-vscode">
+   Working With Julia Files / Binder / Jupyter / VSCode
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#a-central-question-to-ask-yourself-before-writing-code">
-     A Central Question to ask yourself before writing code
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#object-oriented-programming">
-     Object oriented programming
+    <a class="reference internal nav-link" href="#anatomy-of-a-julia-file">
+     Anatomy of a Julia File
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#a-quick-caveat">
-       A Quick Caveat
+      <a class="reference internal nav-link" href="#top-of-file">
+       Top of file
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#bicycle-class">
-     Bicycle Class
+    <a class="reference internal nav-link" href="#middle-of-file">
+     Middle of file
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#rider-class">
-     Rider Class
+    <a class="reference internal nav-link" href="#bottom-of-file-script-portion-optional">
+     Bottom of file “Script” portion (optional)
     </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#world-simulation-class">
-     World / Simulation class
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#design-question">
-       Design Question
-      </a>
-     </li>
-    </ul>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#example">
-   Example
+  <a class="reference internal nav-link" href="#binder">
+   Binder
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-to-run-code-visual-debugging-in-vscode">
+     How to run code + visual debugging in VSCode
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -331,7 +308,7 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Software Engineering Concepts</h1>
+                <h1>Review / Clarifications</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -342,72 +319,49 @@
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#coding-style-and-documentation">
-   Coding Style and Documentation
+  <a class="reference internal nav-link" href="#id1">
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#self-documenting-code">
-     Self documenting code
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#use-of-comments">
-     Use of comments
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#design-patterns">
-   Design Patterns
+  <a class="reference internal nav-link" href="#working-with-julia-files-binder-jupyter-vscode">
+   Working With Julia Files / Binder / Jupyter / VSCode
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#a-central-question-to-ask-yourself-before-writing-code">
-     A Central Question to ask yourself before writing code
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#object-oriented-programming">
-     Object oriented programming
+    <a class="reference internal nav-link" href="#anatomy-of-a-julia-file">
+     Anatomy of a Julia File
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#a-quick-caveat">
-       A Quick Caveat
+      <a class="reference internal nav-link" href="#top-of-file">
+       Top of file
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#bicycle-class">
-     Bicycle Class
+    <a class="reference internal nav-link" href="#middle-of-file">
+     Middle of file
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#rider-class">
-     Rider Class
+    <a class="reference internal nav-link" href="#bottom-of-file-script-portion-optional">
+     Bottom of file “Script” portion (optional)
     </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#world-simulation-class">
-     World / Simulation class
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#design-question">
-       Design Question
-      </a>
-     </li>
-    </ul>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#example">
-   Example
+  <a class="reference internal nav-link" href="#binder">
+   Binder
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-to-run-code-visual-debugging-in-vscode">
+     How to run code + visual debugging in VSCode
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -418,95 +372,50 @@
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="software-engineering-concepts">
-<h1>Software Engineering Concepts<a class="headerlink" href="#software-engineering-concepts" title="Permalink to this headline">¶</a></h1>
-<p>This page will have discussions on more advanced topics for those interested in diving deeper.</p>
-<div class="section" id="coding-style-and-documentation">
-<h2>Coding Style and Documentation<a class="headerlink" href="#coding-style-and-documentation" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="self-documenting-code">
-<h3>Self documenting code<a class="headerlink" href="#self-documenting-code" title="Permalink to this headline">¶</a></h3>
-<p><strong>Using Type Declarations</strong>
-when to specify, vs when to use “generic” / over-loadable</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="review-clarifications">
+<h1>Review / Clarifications<a class="headerlink" href="#review-clarifications" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="section" id="use-of-comments">
-<h3>Use of comments<a class="headerlink" href="#use-of-comments" title="Permalink to this headline">¶</a></h3>
-</div>
-</div>
-<div class="section" id="design-patterns">
-<h2>Design Patterns<a class="headerlink" href="#design-patterns" title="Permalink to this headline">¶</a></h2>
-<p>Everything we have talked about so far has been very practical, we are learning the basics of syntax and how to write some basic programs.</p>
-<p>We are now going to take a step back and talk about some essentials in writing “good” code.</p>
-<div class="section" id="a-central-question-to-ask-yourself-before-writing-code">
-<h3>A Central Question to ask yourself before writing code<a class="headerlink" href="#a-central-question-to-ask-yourself-before-writing-code" title="Permalink to this headline">¶</a></h3>
-<p>I would categorize two main types of writing code: scripting and everything else (I say it this way because the other word used is usually programming, and scripting is a type of programming so, yeah there isn’t a good word). I will call everything else code base development (development for short). These two concepts are not mutually exclusive, they are two sides of a coin or ends of a spectrum.</p>
-<ul class="simple">
-<li><p>Scripting is writing (single use) code that uses other code to perform some specific task.</p></li>
-<li><p>Development is building a larger set of functions that can be combined and used in many different ways to accomplish many related tasks.</p></li>
-</ul>
-</div>
-<div class="section" id="object-oriented-programming">
-<h3><a class="reference external" href="https://en.wikipedia.org/wiki/Object-oriented_programming">Object oriented programming</a><a class="headerlink" href="#object-oriented-programming" title="Permalink to this headline">¶</a></h3>
-<p>“Object-oriented programming (OOP) is a programming paradigm based on the concept of “objects”, which can contain data and code: data in the form of fields (often known as attributes or properties), and code, in the form of procedures (often known as methods).”</p>
-<p>The construct to define the data and code are called classes. These constructs are how we model the real world concepts in code.</p>
-<p>A “instantiation” of a class (i.e. using the class definition and creating one) is called an object. E.g. if we have a person class, we can create multiple people objects representing the different people involved in our model.</p>
-<div class="section" id="a-quick-caveat">
-<h4>A Quick Caveat<a class="headerlink" href="#a-quick-caveat" title="Permalink to this headline">¶</a></h4>
-<p>Julia is not an “object-oriented” language, however the concepts of objected oriented programming can and should still be applied. The exercise of arranging the functionality you build into logically separated groups will pay dividends in how well organized and understandable your code will be. I will talk about most of this in general and provide some concrete examples for study.</p>
+<div class="section" id="working-with-julia-files-binder-jupyter-vscode">
+<h2>Working With Julia Files / Binder / Jupyter / VSCode<a class="headerlink" href="#working-with-julia-files-binder-jupyter-vscode" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="anatomy-of-a-julia-file">
+<h3>Anatomy of a Julia File<a class="headerlink" href="#anatomy-of-a-julia-file" title="Permalink to this headline">¶</a></h3>
+<p>As an example lets look at <span class="xref myst">anatomy_of_julia.jl</span></p>
+<p>The first thing to know is that the computer reads the lines of code in the julia file from top to bottom and executes the code in that order.</p>
+<div class="section" id="top-of-file">
+<h4>Top of file<a class="headerlink" href="#top-of-file" title="Permalink to this headline">¶</a></h4>
+<p>At the very top of the file puts two types of statements to allow the file to use code from other files, julia modules, or external packages.</p>
+<p>using statements: These bring in functionality from external sources to your code base (julia modules, external packages)
+include statements: These bring in functionality from other files in your code.  include(“../module2/hello.jl”)</p>
 </div>
 </div>
-<div class="section" id="bicycle-class">
-<h3>Bicycle Class<a class="headerlink" href="#bicycle-class" title="Permalink to this headline">¶</a></h3>
-<p>An easy example of a concept we want to class could be a bicycle. There is a multitude of attributes about a bicycle, so lets pick a context for the problem. Let’s think about what we would need to know if we were writing a simulation with a bunch of bikes on a road.</p>
-<ul class="simple">
-<li><p>attributes about the car that do not change</p>
-<ul>
-<li><p>make</p></li>
-<li><p>model</p></li>
-<li><p>year</p></li>
-<li><p>vin number</p></li>
-<li><p>weight</p></li>
-<li><p>coefficient of drag</p></li>
-<li><p>color</p></li>
-<li><p>gears</p></li>
-<li><p>wheel diameter</p></li>
-</ul>
-</li>
-<li><p>attributes that might change</p>
-<ul>
-<li><p>its speed moving on the road</p></li>
-<li><p>position on the road (gps, (x,y,z), etc)</p></li>
-<li><p>what gear the bike is currently in</p></li>
-</ul>
-</li>
-<li><p>functions that could be performed on a bicycle</p>
-<ul>
-<li><p>speed up (push the pedal)</p></li>
-<li><p>slow down (hit the breaks or )</p></li>
-<li><p>steer right or left</p></li>
-<li><p>change gear</p></li>
-<li><p>update position</p></li>
-</ul>
-</li>
-</ul>
+<div class="section" id="middle-of-file">
+<h3>Middle of file<a class="headerlink" href="#middle-of-file" title="Permalink to this headline">¶</a></h3>
+<p>This is where we define functions, shared variables etc.</p>
 </div>
-<div class="section" id="rider-class">
-<h3>Rider Class<a class="headerlink" href="#rider-class" title="Permalink to this headline">¶</a></h3>
-<p>The next question to ask is who is going to be using the bicycle. Obviously the bike doesn’t pedal itself, so it shouldn’t be calling the speed up function on itself. We can define a special type of person and its relationship with the bike. In our model we can describe the relationship as the rider “has a bike.”</p>
-<p>The rider can push the pedals, hit the breaks, look for other bikes or obstacles and decide to steer the bike.</p>
-</div>
-<div class="section" id="world-simulation-class">
-<h3>World / Simulation class<a class="headerlink" href="#world-simulation-class" title="Permalink to this headline">¶</a></h3>
-<p>Then at the highest level we could define a class with functions that run the simulation. It keeps track of all the riders and their bikes, and prompts the riders to perform actions on the bikes.</p>
-<div class="section" id="design-question">
-<h4>Design Question<a class="headerlink" href="#design-question" title="Permalink to this headline">¶</a></h4>
-<p>What class should keep track of positions and velocities of the bikes over time?</p>
-<p>How would any of this differ if we were modeling a sailboat instead of a bike.</p>
+<div class="section" id="bottom-of-file-script-portion-optional">
+<h3>Bottom of file “Script” portion (optional)<a class="headerlink" href="#bottom-of-file-script-portion-optional" title="Permalink to this headline">¶</a></h3>
+<p>At the bottom you can write lines of code that will be executed. This is only necessary if that file is going to be something you want to execute every time that file is used. This is where we “use” the functionality defined in the functions above or in the functionality we have included from other places. This code must be below any function it is using or importing.</p>
+<p>For files that are just defining functions or structs you would not have this script section. An example of this is <span class="xref myst">hello.jl</span> which just defines some functions that can be used elsewhere</p>
 </div>
 </div>
+<div class="section" id="binder">
+<h2>Binder<a class="headerlink" href="#binder" title="Permalink to this headline">¶</a></h2>
+<p>The easiest way to run a file from binder (jupyterhub) is to use an include statement</p>
+<p><code class="docutils literal notranslate"><span class="pre">include(&quot;path</span> <span class="pre">to</span> <span class="pre">file</span> <span class="pre">here&quot;)</span></code></p>
+<p>This will load the functions and run any scripting lines.</p>
+<div class="section" id="how-to-run-code-visual-debugging-in-vscode">
+<h3>How to run code + visual debugging in VSCode<a class="headerlink" href="#how-to-run-code-visual-debugging-in-vscode" title="Permalink to this headline">¶</a></h3>
+<p>See this documentation for details:
+<a class="reference external" href="https://code.visualstudio.com/docs/languages/julia">https://code.visualstudio.com/docs/languages/julia</a></p>
+<p>Basics of Julia Syntax</p>
+<p>Math
+Functions
+Printing
+Loops
+Vectors/Matrices</p>
 </div>
-<div class="section" id="example">
-<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
-<p>I have made two “simulations” of bike riders moving around on a two dimensional area. One shows what code can look like if you do not follow any sort of patters, implementing all of the functionality in one big lump. The other shows how it might look if you follow some object oriented design. It should be evident which is easier to understand and to extend.</p>
 </div>
 </div>
 
@@ -523,7 +432,7 @@ when to specify, vs when to use “generic” / over-loadable</p>
         },
         kernelOptions: {
             kernelName: "julia-1.6",
-            path: "./advanced"
+            path: "./module3"
         },
         predefinedOutput: true
     }
@@ -535,17 +444,17 @@ when to specify, vs when to use “generic” / over-loadable</p>
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="../module5/quantum-mechanical-applications.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../module2/series-loops.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Applications in Quantum Mechanics</p>
+            <p class="prev-next-title">Loops, Arrays (Vectors), and Series</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="1-computer-science-topics.html" title="next page">
+    <a class='right-next' id="next-link" href="matrices-determinants.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Computer Science Topics</p>
+        <p class="prev-next-title">Matricies and Determinants</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
