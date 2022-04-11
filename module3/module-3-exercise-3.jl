@@ -8,4 +8,3 @@ function problem_2(A)
     # implement here
     return is_symmetric #return the x vector
 end
-A = [1 2 3;2 1 4;3 4 1]
