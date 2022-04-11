@@ -1,5 +1,5 @@
 function get_module_3_excersise_2_author_name()
-    return "YOU NAME HERE"
+    return "YOUR NAME HERE"
 end
 
 function problem_2()

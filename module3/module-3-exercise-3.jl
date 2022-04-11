@@ -1,10 +1,10 @@
 function get_module_3_excersise_3_author_name()
-    return "YOU NAME HERE"
+    return "YOUR NAME HERE"
 end
 
-function problem_2(A)
+function problem_3(A)
     dimension_of_A = size(A)[1]
-    is_symmetric = false
-    # implement here
+    is_symmetric = true
+    #implement your loops here
     return is_symmetric #return the x vector
 end

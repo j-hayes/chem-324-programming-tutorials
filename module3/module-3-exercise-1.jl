@@ -2,7 +2,7 @@ A = [-1 42 23; 44 -5 3; 2 -5 3] #do not change this line
 B = [2 3 1; 4 45 -31; 22 12 10] #do not change this line
 
 function get_module_3_excersise_1_author_name()
-    return "YOU NAME HERE"
+    return "YOUR NAME HERE"
 end
 
 function problem_1_1()

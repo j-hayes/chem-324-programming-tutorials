@@ -1,7 +1,7 @@
 using LinearAlgebra
 
 function get_module_3_excersise_4_author_name()
-    return "YOU NAME HER"
+    return "YOUR NAME HERE"
 end
 
 function problem_4(a)
