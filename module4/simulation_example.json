@@ -1,0 +1,36 @@
+{
+  "bikes": [
+    {
+      "bike_attributes": {
+        "make": "Make1",
+        "model": "Model1",
+        "weight": 15.04,
+        "drag_coefficient": 0.746
+      },
+      "x_position": 0,
+      "y_position": 3
+    },
+    {
+      "bike_attributes": {
+        "make": "Make1",
+        "model": "Model1",
+        "weight": 19.4,
+        "drag_coefficient": 0.597
+      },
+      "x_position": 2,
+      "y_position": 99
+    }
+  ],
+  "current_time": 5,
+  "timed_bike_positions": [
+    [
+      [1, 1, 1, 0],
+      [1, 1, 2, 3]
+    ],
+    [
+      [1, 2, 1, 2],
+      [100, 99, 99, 99]
+    ]
+  ],
+  "simulation_run_time": 4
+}

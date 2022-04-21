@@ -1,3 +1,4 @@
+using JSON
 include("../bike/bike.jl")
 include("../bike/bike-initializer.jl")
 include("../rider/rider.jl")
@@ -42,5 +43,6 @@ function run_simulation(number_of_bikes, number_of_seconds)
     while simulation.current_time <= number_of_seconds
         run_simulation_step(simulation)
     end
+    println(JSON.json(simulation))
     print_results(simulation)
 end
