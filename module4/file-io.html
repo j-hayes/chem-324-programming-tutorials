@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>File IO &#8212; CHEM 324 Programming Tutorials</title>
+    <title>Input Output (IO) &#8212; CHEM 324 Programming Tutorials</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -124,7 +124,7 @@
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   File IO
+   Input Output (IO)
   </a>
  </li>
  <li class="toctree-l1">
@@ -248,6 +248,94 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Input Output (IO)
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#file-io">
+     File IO
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#writing-to-plain-text">
+       Writing to Plain Text
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#reading-from-plain-text">
+       Reading from Plain Text
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#loop-read">
+         Loop Read
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#readlines">
+         readlines()
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#comma-separated-lists">
+       Comma Separated Lists
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#reading-from-csv">
+       Reading from CSV
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#writing-csv">
+       Writing CSV
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#json-javascript-object-notation">
+   JSON (Javascript Object Notation)
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#json-example-code">
+     JSON Example Code
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercises">
+     Exercises
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#preparation-for-final-module">
+       Preparation for Final Module
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#main-exercise">
+       Main Exercise
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -255,19 +343,638 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>File IO</h1>
+                <h1>Input Output (IO)</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Input Output (IO)
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#file-io">
+     File IO
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#writing-to-plain-text">
+       Writing to Plain Text
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#reading-from-plain-text">
+       Reading from Plain Text
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#loop-read">
+         Loop Read
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#readlines">
+         readlines()
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#comma-separated-lists">
+       Comma Separated Lists
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#reading-from-csv">
+       Reading from CSV
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#writing-csv">
+       Writing CSV
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#json-javascript-object-notation">
+   JSON (Javascript Object Notation)
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#json-example-code">
+     JSON Example Code
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercises">
+     Exercises
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#preparation-for-final-module">
+       Preparation for Final Module
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#main-exercise">
+       Main Exercise
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="file-io">
-<h1>File IO<a class="headerlink" href="#file-io" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="input-output-io">
+<h1>Input Output (IO)<a class="headerlink" href="#input-output-io" title="Permalink to this headline">¶</a></h1>
+<p>Often one wants to store the results of their program runs. This is done by saving the data to a file or database. We will focus on storing to files.</p>
+<p>To acheive this we will use the input output (here after abreviated IO) capabilites of Julia.</p>
+<p>You have actually been using a type of output through out the previous modules. Printing to the console is a form of io, e.g. ```println(“hello world”)````</p>
+<p>There is a corresponding way to read user input from the console however it doesn’t work in these Jupyter notebook so you need to run it in a regular julia file. Copy and paste the following lines of code into a julia file and run it locally. (Or run <span class="xref myst">module-4-hello-input.jl</span>)</p>
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Please Tell Me Your Name and Press Enter: &quot;</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">readline</span><span class="p">()</span> <span class="c">#This line reads the text from the user in the console after they click the enter key. </span>
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;hello </span><span class="si">$</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="s">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="section" id="file-io">
+<h2>File IO<a class="headerlink" href="#file-io" title="Permalink to this headline">¶</a></h2>
+<p>One of the most common type of IO is reading and writing to a file. There are many formats that we can store data on a file. Some common human readable formats:</p>
+<ul class="simple">
+<li><p>Plain Txt (.txt extension)</p></li>
+<li><p>Comma Separated Values (.csv extension)</p></li>
+<li><p>Javascript Object Notation (.json extension)</p></li>
+</ul>
+<p>We will show examples of reading and writing to all of these.</p>
+<div class="section" id="writing-to-plain-text">
+<h3>Writing to Plain Text<a class="headerlink" href="#writing-to-plain-text" title="Permalink to this headline">¶</a></h3>
+<p>The first step is to create an object called an IOStream that points to the file we want to write to. Julia provides us the function open() to do this. The function takes two arguments:</p>
+<ul class="simple">
+<li><p>The path of the file</p></li>
+<li><p>a character code signifying what we are going to do with the file</p>
+<ul>
+<li><p>r</p>
+<ul>
+<li><p>read</p></li>
+</ul>
+</li>
+<li><p>w</p>
+<ul>
+<li><p>write and overwrite exiting data in the file (truncate)</p></li>
+</ul>
+</li>
+<li><p>a</p>
+<ul>
+<li><p>write and append to the end</p></li>
+</ul>
+</li>
+<li><p>r+</p>
+<ul>
+<li><p>read, write</p></li>
+</ul>
+</li>
+<li><p>w+</p>
+<ul>
+<li><p>read, write, create (a file that doesn’t exist yet), truncate	truncate</p></li>
+</ul>
+</li>
+<li><p>a+</p>
+<ul>
+<li><p>read, write, create, append</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Next to write to the file we use the function write(). The first argument passed to write is our IOStream, the second is the text we want to write.</p>
+<p>Finally you must close the IOStream (Otherwise other processes on the computer won’t be able to use it, i.e. you won’t be able to open it).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">io</span> <span class="o">=</span> <span class="n">open</span><span class="p">(</span><span class="s">&quot;hello_output.txt&quot;</span><span class="p">,</span> <span class="s">&quot;w+&quot;</span><span class="p">);</span> 
+<span class="n">write</span><span class="p">(</span><span class="n">io</span><span class="p">,</span> <span class="s">&quot;Hello File Output&quot;</span><span class="p">)</span>
+<span class="n">close</span><span class="p">(</span><span class="n">io</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>After running the above code you should be able to open the file <span class="xref myst">hello_output.txt</span> and see its contents.</p>
+<p>Now lets write other text to it using write and see that the data clears and puts in the new text.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">io</span> <span class="o">=</span> <span class="n">open</span><span class="p">(</span><span class="s">&quot;hello_output.txt&quot;</span><span class="p">,</span> <span class="s">&quot;w+&quot;</span><span class="p">);</span> 
+<span class="n">write</span><span class="p">(</span><span class="n">io</span><span class="p">,</span> <span class="s">&quot;Different Text </span><span class="se">\n</span><span class="s">&quot;</span><span class="p">)</span> <span class="c">#the \n means create a new line after this text</span>
+<span class="n">close</span><span class="p">(</span><span class="n">io</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now lets append instead:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">io</span> <span class="o">=</span> <span class="n">open</span><span class="p">(</span><span class="s">&quot;hello_output.txt&quot;</span><span class="p">,</span> <span class="s">&quot;a&quot;</span><span class="p">);</span> 
+<span class="n">write</span><span class="p">(</span><span class="n">io</span><span class="p">,</span> <span class="s">&quot;A second line of text </span><span class="se">\n</span><span class="s">&quot;</span><span class="p">)</span>
+<span class="n">close</span><span class="p">(</span><span class="n">io</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>To make that \n more clear lets do one more append without it and see the result. (You can run this code over and over and it will keep writing on the same line.)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">io</span> <span class="o">=</span> <span class="n">open</span><span class="p">(</span><span class="s">&quot;hello_output.txt&quot;</span><span class="p">,</span> <span class="s">&quot;a&quot;</span><span class="p">);</span> 
+<span class="n">write</span><span class="p">(</span><span class="n">io</span><span class="p">,</span> <span class="s">&quot;A third line &quot;</span><span class="p">)</span>
+<span class="n">write</span><span class="p">(</span><span class="n">io</span><span class="p">,</span> <span class="s">&quot;of text. &quot;</span><span class="p">)</span>
+<span class="n">close</span><span class="p">(</span><span class="n">io</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="reading-from-plain-text">
+<h3>Reading from Plain Text<a class="headerlink" href="#reading-from-plain-text" title="Permalink to this headline">¶</a></h3>
+<p>Now we will read from a text file: <span class="xref myst">hello_file_input.txt</span>. The process is basically the same, but we will use the function readline() instead of write.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">io</span> <span class="o">=</span> <span class="n">open</span><span class="p">(</span><span class="s">&quot;./hello_file_input.txt&quot;</span><span class="p">,</span> <span class="s">&quot;r&quot;</span><span class="p">);</span> 
+<span class="n">our_input</span> <span class="o">=</span> <span class="n">readline</span><span class="p">(</span><span class="n">io</span><span class="p">)</span> <span class="c">#reads one line from the file</span>
+<span class="n">close</span><span class="p">(</span><span class="n">io</span><span class="p">)</span>
+
+<span class="n">println</span><span class="p">(</span><span class="n">our_input</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>line 1
+</pre></div>
+</div>
+</div>
+</div>
+<p>Text files usually have more than one line, so we want a way to read all of the text. There are two ways of doing this. There are reasons for doing one or the other.</p>
+<ul class="simple">
+<li><p>Use the readlines() function which returns all of the lines in an array of strings.</p>
+<ul>
+<li><p>You know you want all the lines, the file is small enough that it doesn’t matter to get them all at once</p></li>
+</ul>
+</li>
+<li><p>Loop using the readline() funtion until the read method gives you an end of file message using the eof() function.</p>
+<ul>
+<li><p>You are searching for specific text so you don’t need the whole file and can stop once you’ve found what you want, the file is too large to put into memory all at once, i.e. the file has more data than your computer has RAM ~16 GB.</p></li>
+</ul>
+</li>
+</ul>
+<div class="section" id="loop-read">
+<h4>Loop Read<a class="headerlink" href="#loop-read" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">io</span> <span class="o">=</span> <span class="n">open</span><span class="p">(</span><span class="s">&quot;./hello_file_input_multiline.txt&quot;</span><span class="p">,</span> <span class="s">&quot;r&quot;</span><span class="p">);</span> 
+<span class="k">while</span> <span class="o">!</span><span class="n">eof</span><span class="p">(</span><span class="n">io</span><span class="p">)</span> <span class="c"># while the iostream has not reached the end of the file</span>
+    <span class="n">our_input</span> <span class="o">=</span> <span class="n">readline</span><span class="p">(</span><span class="n">io</span><span class="p">)</span> <span class="c">#reads one line at a timee</span>
+    <span class="n">println</span><span class="p">(</span><span class="n">our_input</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">our_input</span> <span class="o">==</span> <span class="s">&quot;line 4&quot;</span>
+        <span class="k">break</span> <span class="c"># stop at line 4</span>
+    <span class="k">end</span>
+<span class="k">end</span>
+<span class="n">close</span><span class="p">(</span><span class="n">io</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>line 1
+line 2
+line 3
+line 4
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="readlines">
+<h4>readlines()<a class="headerlink" href="#readlines" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">io</span> <span class="o">=</span> <span class="n">open</span><span class="p">(</span><span class="s">&quot;./hello_file_input_multiline.txt&quot;</span><span class="p">,</span> <span class="s">&quot;r&quot;</span><span class="p">);</span> 
+<span class="n">our_input</span> <span class="o">=</span> <span class="n">readlines</span><span class="p">(</span><span class="n">io</span><span class="p">)</span> <span class="c">#reads one line at a timee</span>
+<span class="k">for</span> <span class="n">input</span> <span class="k">in</span> <span class="n">our_input</span>
+    <span class="n">println</span><span class="p">(</span><span class="n">input</span><span class="p">)</span>
+<span class="k">end</span> 
+
+<span class="n">close</span><span class="p">(</span><span class="n">io</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>line 1
+line 2
+line 3
+line 4
+line 5
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="comma-separated-lists">
+<h3>Comma Separated Lists<a class="headerlink" href="#comma-separated-lists" title="Permalink to this headline">¶</a></h3>
+<p>Comma separated lists are a convenient way to store tabular data (e.g. tables, matrices, spreadsheets). The following table</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>——-</p></th>
+<th class="head"><p>——-</p></th>
+<th class="head"><p>——</p></th>
+<th class="head"><p>——-</p></th>
+<th class="head"><p>—-</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>hello</p></td>
+<td><p>table</p></td>
+<td><p>text</p></td>
+<td><p>here</p></td>
+<td><p>is</p></td>
+</tr>
+<tr class="row-odd"><td><p>some</p></td>
+<td><p>stuff</p></td>
+<td><p>1</p></td>
+<td><p>4</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-even"><td><p>8</p></td>
+<td><p>8</p></td>
+<td><p>8</p></td>
+<td><p>8</p></td>
+<td><p>8</p></td>
+</tr>
+</tbody>
+</table>
+<p>would be represented as:</p>
+<p>hello,table,text,here,is</p>
+<p>some,stuff,1,4,3</p>
+<p>8,8,8,8,8</p>
+<p>You can see an example file here: <span class="xref myst">example.csv</span></p>
+<p>You can also open this file in Excel. You can also export excel files to csv.
+Export data to a text file by saving it</p>
+<p>You can convert an Excel worksheet to a text file by using the Save As command: <a class="reference external" href="https://support.microsoft.com/en-us/office/import-or-export-text-txt-or-csv-files-5250ac4c-663c-47ce-937b-339e391393ba">Detailed Instructions </a></p>
+<ul class="simple">
+<li><p>Go to File &gt; Save As.</p></li>
+<li><p>Click Browse.</p></li>
+<li><p>In the Save As dialog box, under Save as type box, choose the text file format for the worksheet; for example, click Text (Tab delimited) or CSV (Comma delimited).</p></li>
+</ul>
+<p>There is also a vs-code extension to modify CSV files.
+Name: Edit csv
+VS Marketplace Link: <a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=janisdd.vscode-edit-csv">https://marketplace.visualstudio.com/items?itemName=janisdd.vscode-edit-csv</a></p>
+</div>
+<div class="section" id="reading-from-csv">
+<h3>Reading from CSV<a class="headerlink" href="#reading-from-csv" title="Permalink to this headline">¶</a></h3>
+<p>Csv files are actually just text files, you don’t have to name them csv for this to work, you could have a text file with comma separated data, so we will read from them and write to them in the same way.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">io</span> <span class="o">=</span> <span class="n">open</span><span class="p">(</span><span class="s">&quot;./example.csv&quot;</span><span class="p">,</span> <span class="s">&quot;r&quot;</span><span class="p">);</span> 
+<span class="n">our_input</span> <span class="o">=</span> <span class="n">readlines</span><span class="p">(</span><span class="n">io</span><span class="p">)</span> <span class="c">#reads one line at a time</span>
+<span class="k">for</span> <span class="n">input</span> <span class="k">in</span> <span class="n">our_input</span>
+    <span class="n">println</span><span class="p">(</span><span class="n">input</span><span class="p">)</span>
+<span class="k">end</span> 
+
+<span class="n">close</span><span class="p">(</span><span class="n">io</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>row1,row2,row3,row4,row5
+39.765,61.974,49.116,98.257,39.836
+17.807,63.734,77.89,42.989,34.118
+60.773,78.374,30.569,81.741,25.595
+93.595,80.359,8.917,13.898,63.927
+32.753,51.49,21.208,71.139,86.566
+40.095,33.315,35.285,64.109,63.314
+22.353,56.237,53.043,26.098,66.377
+3.748,86.25,43.815,13.613,95.699
+86.384,70.958,36.108,34.371,67.863
+21.923,96.298,7.348,52.789,53.525
+94.17,41.767,84.59,8.32,27.025
+56.678,98.974,47.716,8.437,99.16
+82.14,38.983,10.205,90.33,11.064
+70.442,76.169,43.986,96.74,92.048
+51.474,96.682,73.766,61.426,43.427
+</pre></div>
+</div>
+</div>
+</div>
+<p>What if we want to get the values from the csv and use them individually, for example putting them in a matrix and printing the matrix in a nice fasion using the display() function.</p>
+<p>readline() and readlines() return a string or an array of strings representing the rows respectively. So we need to take two steps, take each row and split it into individual items and then put them in the correct place in the matrix. For this first example we will assume we know the size of the matrix up front.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">io</span> <span class="o">=</span> <span class="n">open</span><span class="p">(</span><span class="s">&quot;./example.csv&quot;</span><span class="p">,</span> <span class="s">&quot;r&quot;</span><span class="p">);</span> 
+<span class="n">our_input</span> <span class="o">=</span> <span class="n">readlines</span><span class="p">(</span><span class="n">io</span><span class="p">)</span> <span class="c">#reads one line at a time</span>
+<span class="n">csv_values</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">row</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">for</span> <span class="n">input</span> <span class="k">in</span> <span class="n">our_input</span><span class="p">[</span><span class="mi">2</span><span class="o">:</span><span class="k">end</span><span class="p">]</span> <span class="c"># for each skipping the first row (header) row</span>
+    <span class="n">row_values</span> <span class="o">=</span> <span class="n">split</span><span class="p">(</span><span class="n">input</span><span class="p">,</span> <span class="s">&quot;,&quot;</span><span class="p">)</span>
+    <span class="n">column</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">for</span> <span class="n">value</span> <span class="k">in</span> <span class="n">row_values</span>
+        <span class="n">numerical_value</span> <span class="o">=</span> <span class="n">parse</span><span class="p">(</span><span class="kt">Float64</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="c"># convert the string to a Float64</span>
+        <span class="n">csv_values</span><span class="p">[</span><span class="n">row</span><span class="p">,</span><span class="n">column</span><span class="p">]</span> <span class="o">=</span> <span class="n">numerical_value</span> <span class="c"># put it in the matrix</span>
+        <span class="n">column</span> <span class="o">+=</span> <span class="mi">1</span> <span class="c"># increment our column position in the row </span>
+    <span class="k">end</span>
+    <span class="n">row</span> <span class="o">+=</span> <span class="mi">1</span> <span class="c">#now that we have done all of the columns for the row, increment to the next row</span>
+<span class="k">end</span> 
+<span class="n">close</span><span class="p">(</span><span class="n">io</span><span class="p">)</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">csv_values</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15×5 Matrix{Float64}:
+ 39.765  61.974  49.116  98.257  39.836
+ 17.807  63.734  77.89   42.989  34.118
+ 60.773  78.374  30.569  81.741  25.595
+ 93.595  80.359   8.917  13.898  63.927
+ 32.753  51.49   21.208  71.139  86.566
+ 40.095  33.315  35.285  64.109  63.314
+ 22.353  56.237  53.043  26.098  66.377
+  3.748  86.25   43.815  13.613  95.699
+ 86.384  70.958  36.108  34.371  67.863
+ 21.923  96.298   7.348  52.789  53.525
+ 94.17   41.767  84.59    8.32   27.025
+ 56.678  98.974  47.716   8.437  99.16
+ 82.14   38.983  10.205  90.33   11.064
+ 70.442  76.169  43.986  96.74   92.048
+ 51.474  96.682  73.766  61.426  43.427
+</pre></div>
+</div>
+</div>
+</div>
+<p>I have also attached an example that does not assume it knows the amount of data in the csv. <span class="xref myst">csv_print.jl</span> In it I use the package CSV.jl and DataFrames.jl packages which handles all the CSV parsing for us.</p>
+</div>
+<div class="section" id="writing-csv">
+<h3>Writing CSV<a class="headerlink" href="#writing-csv" title="Permalink to this headline">¶</a></h3>
+<p>Here is a not very efficient but illustrative way of how to create a csv file</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">io</span> <span class="o">=</span> <span class="n">open</span><span class="p">(</span><span class="s">&quot;./write_to_csv.csv&quot;</span><span class="p">,</span> <span class="s">&quot;w+&quot;</span><span class="p">);</span> 
+<span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">;</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span><span class="p">;</span> <span class="mi">7</span> <span class="mi">8</span> <span class="mi">9</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="o">:</span><span class="mi">3</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="k">in</span> <span class="mi">1</span><span class="o">:</span><span class="mi">3</span>
+        <span class="n">csv_text</span> <span class="o">=</span> <span class="s">&quot;</span><span class="si">$</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">])</span><span class="s">&quot;</span>
+        <span class="k">if</span> <span class="n">j</span> <span class="o">!=</span> <span class="mi">3</span> <span class="c">#don&#39;t use comma if there</span>
+            <span class="n">csv_text</span> <span class="o">=</span>  <span class="n">csv_text</span> <span class="o">*</span> <span class="s">&quot;,&quot;</span> <span class="c">#concatenates the strings </span>
+        <span class="k">end</span>
+        <span class="n">write</span><span class="p">(</span><span class="n">io</span><span class="p">,</span> <span class="n">csv_text</span><span class="p">)</span>
+    <span class="k">end</span>
+    <span class="n">write</span><span class="p">(</span><span class="n">io</span><span class="p">,</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">)</span> <span class="c"># add new line</span>
+<span class="k">end</span>
+<span class="n">close</span><span class="p">(</span><span class="n">io</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Again the better way to do this is using CSV.jl</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="k">using</span> <span class="n">Tables</span><span class="p">,</span> <span class="n">CSV</span>
+<span class="n">io</span> <span class="o">=</span> <span class="n">open</span><span class="p">(</span><span class="s">&quot;./write_to_csv_with_package.csv&quot;</span><span class="p">,</span> <span class="s">&quot;w+&quot;</span><span class="p">);</span> 
+<span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">;</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span><span class="p">;</span> <span class="mi">7</span> <span class="mi">8</span> <span class="mi">9</span><span class="p">]</span>
+<span class="n">table</span>  <span class="o">=</span> <span class="n">Tables</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="n">CSV</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">io</span><span class="p">,</span> <span class="n">table</span><span class="p">)</span>
+<span class="n">close</span><span class="p">(</span><span class="n">io</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="json-javascript-object-notation">
+<h1>JSON (Javascript Object Notation)<a class="headerlink" href="#json-javascript-object-notation" title="Permalink to this headline">¶</a></h1>
+<p>JSON is a way of storing “object” data in a file that is human readable. Each property is denoted by a “NAME_OF_PROPERTY” then a : then the value for that property. Properties can be lists. The items which are comma separated and surrounded by [].
+You can read and write to JSON files using the JSON.jl package.</p>
+<p>A simple example of a javascript object for a simple struct:</p>
+<div class="highlight-Julia notranslate"><div class="highlight"><pre><span></span><span class="k">mutable struct</span> <span class="kt">Bike</span> 
+    <span class="n">weight</span> <span class="o">::</span> <span class="kt">Float64</span>
+    <span class="n">make</span> <span class="o">::</span> <span class="kt">String</span>
+    <span class="n">x_position</span> <span class="o">::</span> <span class="kt">Int</span>
+    <span class="n">y_position</span> <span class="o">::</span> <span class="kt">Int</span>
+
+<span class="k">end</span>
+</pre></div>
+</div>
+<div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;weight&quot;</span> <span class="p">:</span> <span class="mf">10.39</span><span class="p">,</span>
+    <span class="nt">&quot;make&quot;</span>  <span class="p">:</span> <span class="s2">&quot;Trek&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;x_position&quot;</span> <span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="nt">&quot;y_position&quot;</span> <span class="p">:</span> <span class="mi">-2</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Here is a more complex example that is an export of the bike simulation, with arrays of data.</p>
+<div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;bikes&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;bike_attributes&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;make&quot;</span><span class="p">:</span> <span class="s2">&quot;Make1&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;Model1&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;weight&quot;</span><span class="p">:</span> <span class="mf">15.04</span><span class="p">,</span>
+        <span class="nt">&quot;drag_coefficient&quot;</span><span class="p">:</span> <span class="mf">0.746</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;x_position&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="nt">&quot;y_position&quot;</span><span class="p">:</span> <span class="mi">3</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;bike_attributes&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;make&quot;</span><span class="p">:</span> <span class="s2">&quot;Make1&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;Model1&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;weight&quot;</span><span class="p">:</span> <span class="mf">19.4</span><span class="p">,</span>
+        <span class="nt">&quot;drag_coefficient&quot;</span><span class="p">:</span> <span class="mf">0.597</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;x_position&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="nt">&quot;y_position&quot;</span><span class="p">:</span> <span class="mi">99</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="nt">&quot;current_time&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+  <span class="nt">&quot;timed_bike_positions&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">[</span>
+      <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+      <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+    <span class="p">],</span>
+    <span class="p">[</span>
+      <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+      <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">99</span><span class="p">]</span>
+    <span class="p">]</span>
+  <span class="p">],</span>
+  <span class="nt">&quot;simulation_run_time&quot;</span><span class="p">:</span> <span class="mi">4</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Note: The above JSON has been “pretty printed” so it is easier to read. The white spacing and multiple lines are not strictly necessary.</p>
+<p>JSON parse method will return what is called a Dictionary. It is an object that has the ability to look up items in it by name using the following syntax:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">my_dict</span> <span class="o">=</span> <span class="kt">Dict</span><span class="p">()</span>
+<span class="n">my_dict</span><span class="p">[</span><span class="s">&quot;value&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;hello&quot;</span>
+<span class="n">my_dict</span><span class="p">[</span><span class="s">&quot;some_other_property&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.23</span>
+
+<span class="n">println</span><span class="p">(</span><span class="n">my_dict</span><span class="p">[</span><span class="s">&quot;value&quot;</span><span class="p">])</span>
+<span class="n">println</span><span class="p">(</span><span class="n">my_dict</span><span class="p">[</span><span class="s">&quot;some_other_property&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hello
+1.23
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="json-example-code">
+<h2>JSON Example Code<a class="headerlink" href="#json-example-code" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="k">using</span> <span class="n">JSON</span> 
+
+<span class="k">mutable struct</span> <span class="kt">Bike</span> 
+    <span class="n">weight</span> <span class="o">::</span> <span class="kt">Float64</span>
+    <span class="n">make</span> <span class="o">::</span> <span class="kt">String</span>
+    <span class="n">x_position</span> <span class="o">::</span> <span class="kt">Int</span>
+    <span class="n">y_position</span> <span class="o">::</span> <span class="kt">Int</span>
+
+<span class="k">end</span>
+
+<span class="n">our_json_object</span> <span class="o">=</span> <span class="n">JSON</span><span class="o">.</span><span class="n">parsefile</span><span class="p">(</span><span class="s">&quot;simulation_example.json&quot;</span><span class="p">)</span> 
+<span class="n">display</span><span class="p">(</span><span class="s">&quot;all bikes&quot;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">our_json_object</span><span class="p">[</span><span class="s">&quot;bikes&quot;</span><span class="p">])</span>
+<span class="n">display</span><span class="p">(</span><span class="s">&quot;bike 1 x position&quot;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">our_json_object</span><span class="p">[</span><span class="s">&quot;bikes&quot;</span><span class="p">][</span><span class="mi">1</span><span class="p">][</span><span class="s">&quot;x_position&quot;</span><span class="p">])</span>
+
+<span class="n">bike</span> <span class="o">=</span> <span class="n">Bike</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="s">&quot;TREK&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">io</span> <span class="o">=</span> <span class="n">open</span><span class="p">(</span><span class="s">&quot;example_json_output.json&quot;</span><span class="p">,</span> <span class="s">&quot;w+&quot;</span><span class="p">)</span>
+<span class="n">JSON</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="n">io</span><span class="p">,</span> <span class="n">bike</span><span class="p">)</span>
+<span class="n">close</span><span class="p">(</span><span class="n">io</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;all bikes&quot;
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2-element Vector{Any}:
+ Dict{String, Any}(&quot;y_position&quot; =&gt; 3, &quot;bike_attributes&quot; =&gt; Dict{String, Any}(&quot;make&quot; =&gt; &quot;Make1&quot;, &quot;weight&quot; =&gt; 15.04, &quot;model&quot; =&gt; &quot;Model1&quot;, &quot;drag_coefficient&quot; =&gt; 0.746), &quot;x_position&quot; =&gt; 0)
+ Dict{String, Any}(&quot;y_position&quot; =&gt; 99, &quot;bike_attributes&quot; =&gt; Dict{String, Any}(&quot;make&quot; =&gt; &quot;Make1&quot;, &quot;weight&quot; =&gt; 19.4, &quot;model&quot; =&gt; &quot;Model1&quot;, &quot;drag_coefficient&quot; =&gt; 0.597), &quot;x_position&quot; =&gt; 2)
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;bike 1 x position&quot;
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="preparation-for-final-module">
+<h3>Preparation for Final Module<a class="headerlink" href="#preparation-for-final-module" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p>Download VS CODE and Julia (Instructions in Previous Tutorial <a class="reference external" href="https://j-hayes.github.io/chem-324-programming-tutorials/module2/series-loops.html#installing-visual-studio-code-ide">Series Loops</a>)</p></li>
+<li><p>Download and run the code from the following repository:</p>
+<ol class="simple">
+<li><p>Follow the instructions for setup in the video for setting up the repository (Final Project Repository)[<a class="reference external" href="https://github.com/j-hayes/chem-324-programming-tutorials-final-project">https://github.com/j-hayes/chem-324-programming-tutorials-final-project</a>]</p></li>
+<li><p>Run the file main.jl</p>
+<ol class="simple">
+<li><p>See the output of the hartree fock run in the console.</p></li>
+<li><p>See an png file created with a plot in it.</p></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<p>Everyone will need to be able to run code on their own computer for the final module.</p>
+</div>
+<div class="section" id="main-exercise">
+<h3>Main Exercise<a class="headerlink" href="#main-exercise" title="Permalink to this headline">¶</a></h3>
+<p>Create your own program. You can do anything you want as long as it fulfils of the following criteria.</p>
+<p>Required:</p>
+<ul class="simple">
+<li><p>A written problem description of what the code does and how it fulfils the requirements (1-2 paragraphs)</p></li>
+<li><p>Can take in multiple inputs and give correct different outputs</p></li>
+<li><p>Do some sort of math</p></li>
+<li><p>Multiple Functions (use guidance in previous modules on separation of concerns)</p>
+<ul>
+<li><p>Unit test(s) proving that it does what is supposed to (doesn’t have to unit test the whole thing but tests your function)</p></li>
+</ul>
+</li>
+</ul>
+<p>2/3 of your choice</p>
+<ul class="simple">
+<li><p>Reads from a file/writes to a file</p></li>
+<li><p>Matrix algebra</p></li>
+<li><p>Models some data using object oriented concepts</p></li>
+</ul>
+<p>Some suggestions for inspiration:</p>
+<ul class="simple">
+<li><p>Find a text book problem and create something that can solve any problem of the same type with any input</p></li>
+<li><p>Create a Tick-Tac-Toe / Rock Paper Scissors game to play against the computer and keep track of scores over time</p></li>
+</ul>
+<p>Use your imagination, it can be as creative (or as trivial) as you like. I just want you to get some experience starting from just an idea and turning it into code. This exercise is likely to be the most challenging one of the whole course and may take more time than the others. If you need help, please reach out!</p>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
