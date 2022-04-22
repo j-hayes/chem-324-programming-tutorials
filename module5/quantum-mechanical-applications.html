@@ -42,6 +42,8 @@
     <script src="../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
@@ -226,11 +228,68 @@
 
             <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/j-hayes/chem-324-programming-tutorials/main?urlpath=lab/tree/module5/quantum-mechanical-applications.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
         </div>
 
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plotting">
+   Plotting
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-to-use-juliachem">
+   How to use JuliaChem
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#input-files">
+     Input Files
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#output">
+     Output
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#h2-hartree-fock-runner">
+     H2-Hartree-Fock Runner
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#final-project">
+   Final Project
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -243,6 +302,46 @@
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plotting">
+   Plotting
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-to-use-juliachem">
+   How to use JuliaChem
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#input-files">
+     Input Files
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#output">
+     Output
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#h2-hartree-fock-runner">
+     H2-Hartree-Fock Runner
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#final-project">
+   Final Project
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -251,6 +350,140 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="applications-in-quantum-mechanics">
 <h1>Applications in Quantum Mechanics<a class="headerlink" href="#applications-in-quantum-mechanics" title="Permalink to this headline">¶</a></h1>
+<p>In this module we will be using a Hartree-Fock implementation in Julia (Written by a Iowa State graduate student David Poole). We will use it to explore the energy differences between of the <span class="math notranslate nohighlight">\(H_2\)</span> atom at with varying internuclear distances.</p>
+<div class="section" id="plotting">
+<h2>Plotting<a class="headerlink" href="#plotting" title="Permalink to this headline">¶</a></h2>
+<p>One last thing we need to learn how to do in Julia for this project is how to make plots.</p>
+<p>Plotting functionality is provided by the Plots.jl extension.</p>
+<p>Example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="k">using</span> <span class="n">Plots</span>
+<span class="n">random_plot</span> <span class="o">=</span> <span class="n">plot</span><span class="p">(</span><span class="n">rand</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="n">title</span> <span class="o">=</span> <span class="s">&quot;Random Data Plot&quot;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s">&quot;Our Random Line&quot;</span><span class="p">)</span>
+<span class="n">xlabel!</span><span class="p">(</span><span class="s">&quot;X LABEL&quot;</span><span class="p">)</span>
+<span class="n">ylabel!</span><span class="p">(</span><span class="s">&quot;Y LABEL&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/quantum-mechanical-applications_1_0.svg" src="../_images/quantum-mechanical-applications_1_0.svg" /></div>
+</div>
+<p>Let’s break down what we did above and make it a bit easier to see what is going on with predictable data. Lets imagine we are ploting part of the function f(x) = 2x. We will create two arrays and plot them, one being integers 1 to 10 representing our X data and another array [2, 4, 6 … 20]</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="k">using</span> <span class="n">Plots</span>
+<span class="n">X</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">]</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="mi">18</span><span class="p">,</span><span class="mi">20</span><span class="p">]</span>
+<span class="n">random_plot</span> <span class="o">=</span> <span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">,</span> <span class="n">title</span> <span class="o">=</span> <span class="s">&quot;F(x) = 2x&quot;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s">&quot;Our Data&quot;</span><span class="p">)</span>
+<span class="n">xlabel!</span><span class="p">(</span><span class="s">&quot;X&quot;</span><span class="p">)</span>
+<span class="n">ylabel!</span><span class="p">(</span><span class="s">&quot;Y&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/quantum-mechanical-applications_3_0.svg" src="../_images/quantum-mechanical-applications_3_0.svg" /></div>
+</div>
+<p>We can also just plot a function with an input.</p>
+<ul class="simple">
+<li><p>The first parameter is the function to plot.</p></li>
+<li><p>The second 2 parameters are the range to plot.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="k">using</span> <span class="n">Plots</span>
+<span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">=</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">)</span>
+<span class="n">random_plot</span> <span class="o">=</span> <span class="n">plot</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span> <span class="n">title</span> <span class="o">=</span> <span class="s">&quot;F(x) = e^-x&quot;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s">&quot;e^-x&quot;</span><span class="p">)</span> 
+<span class="n">xlabel!</span><span class="p">(</span><span class="s">&quot;X&quot;</span><span class="p">)</span>
+<span class="n">ylabel!</span><span class="p">(</span><span class="s">&quot;Y&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/quantum-mechanical-applications_5_0.svg" src="../_images/quantum-mechanical-applications_5_0.svg" /></div>
+</div>
+<p>Multiple plots on the same image:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="k">using</span> <span class="n">Plots</span>
+<span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">=</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">)</span>
+<span class="n">f2</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">=</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="n">x</span><span class="p">)</span>
+<span class="n">random_plot</span> <span class="o">=</span> <span class="n">plot</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s">&quot;e^-x&quot;</span><span class="p">)</span> 
+<span class="n">random_plot</span> <span class="o">=</span> <span class="n">plot!</span><span class="p">(</span><span class="n">f2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s">&quot;e^-2x&quot;</span><span class="p">)</span> 
+
+<span class="n">xlabel!</span><span class="p">(</span><span class="s">&quot;X&quot;</span><span class="p">)</span>
+<span class="n">ylabel!</span><span class="p">(</span><span class="s">&quot;Y&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/quantum-mechanical-applications_7_0.svg" src="../_images/quantum-mechanical-applications_7_0.svg" /></div>
+</div>
+<p>Here is an example where we can save the plot to a file:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="k">using</span> <span class="n">Plots</span>
+<span class="n">random_plot</span> <span class="o">=</span> <span class="n">plot</span><span class="p">(</span><span class="n">rand</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="n">title</span> <span class="o">=</span> <span class="s">&quot;Random Data Plot&quot;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s">&quot;Our Random Line&quot;</span><span class="p">)</span>
+<span class="n">xlabel!</span><span class="p">(</span><span class="s">&quot;X LABEL&quot;</span><span class="p">)</span>
+<span class="n">ylabel!</span><span class="p">(</span><span class="s">&quot;Y LABEL&quot;</span><span class="p">)</span>
+<span class="n">savefig</span><span class="p">(</span><span class="n">random_plot</span><span class="p">,</span> <span class="s">&quot;randomplot&quot;</span><span class="p">)</span>      <span class="c"># it will save it as a png file</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="how-to-use-juliachem">
+<h2>How to use JuliaChem<a class="headerlink" href="#how-to-use-juliachem" title="Permalink to this headline">¶</a></h2>
+<p>At a high level, like most electronic structure theory codes, JuliaChem takes in an input file and then returns information about that system depending on what the input file tells it to do.</p>
+<p>Any use of JuliaChem starts with a call to JuliaChem.Initialize() and ends with a call to JuliaChem.Finalize()</p>
+<div class="highlight-Julia notranslate"><div class="highlight"><pre><span></span><span class="n">JuliaChem</span><span class="o">.</span><span class="n">Initialize</span><span class="p">()</span> 
+<span class="c"># do your calls calculations</span>
+<span class="n">JuliaChem</span><span class="o">.</span><span class="n">Finalize</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="section" id="input-files">
+<h3>Input Files<a class="headerlink" href="#input-files" title="Permalink to this headline">¶</a></h3>
+<p>The input files are JSON files using the <a class="reference external" href="https://molssi-qc-schema.readthedocs.io/en/latest/index.html">Molssi Quantum Chemistry Schema</a>. The main things to worry about as someone just learning quantum chemistry are:</p>
+<ul class="simple">
+<li><p>the molecule information,</p>
+<ul>
+<li><p>atoms denoted by their atomic symbol “H”, “O”, “Li”, etc.</p></li>
+<li><p>their positioning in XYZ coordinates.</p></li>
+</ul>
+</li>
+<li><p>the basis set you want to use.</p>
+<ul>
+<li><p>We will be using a minimal basis set: <a class="reference external" href="https://en.wikipedia.org/wiki/STO-nG_basis_sets">STO-3G</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="output">
+<h3>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h3>
+<p>The JuliaChem program returns a dictionary of values from the Hartree-Fock calculation. The value we are interested in is the Energy. We will plot the energy vs the internuclear distance to find the equilibrium distance (the one with the lowest energy).</p>
+</div>
+<div class="section" id="h2-hartree-fock-runner">
+<h3>H2-Hartree-Fock Runner<a class="headerlink" href="#h2-hartree-fock-runner" title="Permalink to this headline">¶</a></h3>
+<p>I have built a small set of functions you can call that will abstract away all of the JuliaChem stuff. All you need to do is pass in a distance in atomic units and it will build the input file, run the calculation through JuliaChem and return the resulting energy.</p>
+<p>You can see an example of this in the final project <a class="reference external" href="https://github.com/j-hayes/chem-324-programming-tutorials-final-project">repository</a> in the file main.jl</p>
+</div>
+</div>
+<div class="section" id="final-project">
+<h2>Final Project<a class="headerlink" href="#final-project" title="Permalink to this headline">¶</a></h2>
+<p>Create a Julia Script that:</p>
+<ul class="simple">
+<li><p>Uses JuliaChem to calculate the energies of the <span class="math notranslate nohighlight">\(H_2\)</span> molecule at various internuclear distances</p></li>
+<li><p>Plots those energies</p></li>
+<li><p>Prints the minimum energy and internuclear distance (the equilibrium distance)</p></li>
+</ul>
+<p>Note:
+The energy will not be the exact value, it depends on the basis set, but it should be close to values you can find in textbooks/literature articles. So test out a few values or ranges of values and you can start to find where the minimum is. Then you can build your range for your plot.</p>
+<p>Advice:</p>
+<ul class="simple">
+<li><p>Don’t start to close to 0, it will make your plot look weird because as <span class="math notranslate nohighlight">\(distance \rArr 0; E \rArr \infin \)</span></p></li>
+<li><p>Don’t go too far past the equilibrium value, it will just be a flat line.</p></li>
+<li><p>Look at the textbook / literature plots out there, they will give you some guidance on good ranges to use.</p></li>
+</ul>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -262,16 +495,16 @@
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "julia-1.6"
         },
         kernelOptions: {
-            kernelName: "python3",
+            kernelName: "julia-1.6",
             path: "./module5"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'julia-1.6'</script>
 
               </div>
               
