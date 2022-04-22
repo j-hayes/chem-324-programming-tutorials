@@ -1,0 +1,1 @@
+{"driver":"energy","molecule":{"symbols":["H","H"],"molecular_charge":0,"geometry":[0.0,0.0,0.0,0.0,0.0,0.9]},"model":{"basis":"STO-3G"},"keywords":{"prop":{"mulliken":true,"multipole":"dipole","mo energies":true},"scf":{"method":"RHF","guess":"hcore"}}}
