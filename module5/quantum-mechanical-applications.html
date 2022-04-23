@@ -433,6 +433,9 @@
 </div>
 <div class="section" id="how-to-use-juliachem">
 <h2>How to use JuliaChem<a class="headerlink" href="#how-to-use-juliachem" title="Permalink to this headline">¶</a></h2>
+<hr class="docutils" />
+<p><strong>WE WILL NEED TO RUN THIS ON GOOGLE COLLAB unless you have a linux computer See video instructions</strong></p>
+<hr class="docutils" />
 <p>At a high level, like most electronic structure theory codes, JuliaChem takes in an input file and then returns information about that system depending on what the input file tells it to do.</p>
 <p>Any use of JuliaChem starts with a call to JuliaChem.Initialize() and ends with a call to JuliaChem.Finalize()</p>
 <div class="highlight-Julia notranslate"><div class="highlight"><pre><span></span><span class="n">JuliaChem</span><span class="o">.</span><span class="n">Initialize</span><span class="p">()</span> 
@@ -464,7 +467,7 @@
 <div class="section" id="h2-hartree-fock-runner">
 <h3>H2-Hartree-Fock Runner<a class="headerlink" href="#h2-hartree-fock-runner" title="Permalink to this headline">¶</a></h3>
 <p>I have built a small set of functions you can call that will abstract away all of the JuliaChem stuff. All you need to do is pass in a distance in atomic units and it will build the input file, run the calculation through JuliaChem and return the resulting energy.</p>
-<p>You can see an example of this in the final project <a class="reference external" href="https://github.com/j-hayes/chem-324-programming-tutorials-final-project">repository</a> in the file main.jl</p>
+<p>You can see an example of this in the final project <a class="reference external" href="https://github.com/j-hayes/chem-324-programming-tutorials-final-project">repository</a> in the file CHEM_324_Final_Project.ipynb</p>
 </div>
 </div>
 <div class="section" id="final-project">
